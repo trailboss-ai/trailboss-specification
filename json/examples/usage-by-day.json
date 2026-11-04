@@ -1,0 +1,24 @@
+[
+  {
+    "cache_read": 2900,
+    "cache_write": 240,
+    "cost_usd": 0.01,
+    "input": 1310,
+    "key": "2026-10-01",
+    "output": 280,
+    "responses": 6,
+    "total": 4730,
+    "unpriced": 0
+  },
+  {
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_usd": 60.0,
+    "input": 0,
+    "key": "2026-10-05",
+    "output": 2000000,
+    "responses": 2,
+    "total": 2000000,
+    "unpriced": 0
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "path": "/home/user/code/api/client.py",
+    "edits": 4,
+    "last": "2026-11-03T18:22:10.000Z",
+    "version": 1,
+    "backup": "a1b2c3d4@v1",
+    "before": "backup",
+    "backup_file": "/home/user/.claude/file-history/7f9c2d1e-0a4b-4c55-9e1f-2b3c4d5e6f70/a1b2c3d4@v1",
+    "exists": true,
+    "differs": true,
+    "later": []
+  },
+  {
+    "path": "/home/user/code/api/retry.py",
+    "edits": 1,
+    "last": "2026-11-03T18:20:02.000Z",
+    "version": 1,
+    "backup": null,
+    "before": "created",
+    "backup_file": null,
+    "exists": true,
+    "differs": true,
+    "later": [
+      {
+        "agent": "codex",
+        "session": "0199bbbb-cccc-7ddd-8eee-ffff00001111",
+        "ts": "2026-11-03T18:40:00.000Z",
+        "title": "Write tests for the retry policy"
+      }
+    ]
+  }
+]

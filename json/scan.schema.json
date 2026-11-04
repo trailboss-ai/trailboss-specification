@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json scan",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "bytes": {
+        "type": "integer"
+      },
+      "enabled": {
+        "type": "boolean"
+      },
+      "errors": {
+        "type": "integer"
+      },
+      "files": {
+        "type": "integer"
+      },
+      "label": {
+        "type": "string"
+      },
+      "read": {
+        "type": "integer"
+      },
+      "roots": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "source": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      },
+      "unchanged": {
+        "type": "integer"
+      },
+      "warnings": {
+        "type": "array"
+      }
+    },
+    "required": [
+      "bytes",
+      "enabled",
+      "errors",
+      "files",
+      "label",
+      "read",
+      "roots",
+      "source",
+      "status",
+      "unchanged",
+      "warnings"
+    ]
+  }
+}

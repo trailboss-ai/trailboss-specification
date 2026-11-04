@@ -1,0 +1,65 @@
+[
+  {
+    "where": "t3 api",
+    "host": "herdr",
+    "terminal": "t3",
+    "agent": "claude",
+    "status": "working",
+    "stuck": false,
+    "quiet_min": null,
+    "pid": 41210,
+    "session": "7f9c2d1e-0a4b-4c55-9e1f-2b3c4d5e6f70",
+    "cwd": "/home/user/code/api",
+    "title": "Add retry to the billing client",
+    "cost_usd": 4.12,
+    "reported_cost_usd": 4.3,
+    "tokens": 1830442,
+    "workspace": "/home/user/code/api",
+    "shares_with": [
+      "t5 api"
+    ]
+  },
+  {
+    "where": "t5 api",
+    "host": "herdr",
+    "terminal": "t5",
+    "agent": "codex",
+    "status": "working",
+    "stuck": false,
+    "quiet_min": null,
+    "pid": 41388,
+    "session": "0199bbbb-cccc-7ddd-8eee-ffff00001111",
+    "cwd": "/home/user/code/api/client",
+    "title": "Write tests for the retry policy",
+    "cost_usd": 0.86,
+    "reported_cost_usd": null,
+    "tokens": 402118,
+    "workspace": "/home/user/code/api",
+    "shares_with": [
+      "t3 api"
+    ],
+    "parent": "t3 api"
+  },
+  {
+    "where": "pid 52007",
+    "host": null,
+    "terminal": null,
+    "agent": "pi",
+    "status": "idle",
+    "stuck": false,
+    "quiet_min": null,
+    "pid": 52007,
+    "session": "pi-9",
+    "cwd": "/home/user/notes",
+    "title": "Summarise the meeting",
+    "cost_usd": 0.04,
+    "reported_cost_usd": 0.04,
+    "tokens": 20311
+  },
+  {
+    "where": "t8 web",
+    "host": "herdr",
+    "terminal": "t8",
+    "status": "lost (trailboss resume)"
+  }
+]

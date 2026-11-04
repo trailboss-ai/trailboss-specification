@@ -1,0 +1,20 @@
+[
+  {
+    "exists": true,
+    "layer": "bundled",
+    "path": "data/prices.json",
+    "updated": "2026-11-02"
+  },
+  {
+    "exists": false,
+    "layer": "refreshed",
+    "path": "/home/user/.config/trailboss/prices-litellm.json",
+    "updated": null
+  },
+  {
+    "exists": false,
+    "layer": "user",
+    "path": "/home/user/.config/trailboss/prices.json",
+    "updated": null
+  }
+]

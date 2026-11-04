@@ -1,0 +1,20 @@
+[
+  {
+    "where": "t3 api",
+    "agent": "claude",
+    "action": "would type",
+    "detail": "claude --resume 7f9c2d1e-0a4b-4c55-9e1f-2b3c4d5e6f70"
+  },
+  {
+    "where": "pid:52007:1793758392370",
+    "agent": "pi",
+    "action": "run it yourself",
+    "detail": "cd '/home/user/notes' && pi --session pi-9"
+  },
+  {
+    "where": "t8 web",
+    "agent": "codex",
+    "action": "skipped",
+    "detail": "the folder /home/user/code/web is gone"
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json resume",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "agent": {
+        "type": "string"
+      },
+      "detail": {
+        "type": "string"
+      },
+      "where": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "agent",
+      "detail",
+      "where"
+    ]
+  }
+}

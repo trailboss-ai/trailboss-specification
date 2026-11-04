@@ -1,0 +1,13 @@
+[
+  {
+    "cache_read": 2900,
+    "cache_write": 240,
+    "cost_usd": 60.01,
+    "input": 1310,
+    "key": "all",
+    "output": 2000280,
+    "responses": 8,
+    "total": 2004730,
+    "unpriced": 0
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "cache_read": 1000,
+    "cache_write": 200,
+    "cost_usd": 60.0,
+    "input": 10,
+    "key": "claude-opus-5-5",
+    "output": 2000050,
+    "responses": 3,
+    "total": 2001260,
+    "unpriced": 0
+  },
+  {
+    "cache_read": 1600,
+    "cache_write": 0,
+    "cost_usd": 0.01,
+    "input": 700,
+    "key": "gpt-5.5",
+    "output": 130,
+    "responses": 3,
+    "total": 2430,
+    "unpriced": 0
+  },
+  {
+    "cache_read": 300,
+    "cache_write": 40,
+    "cost_usd": 0.0,
+    "input": 600,
+    "key": "claude-sonnet-4-6",
+    "output": 100,
+    "responses": 2,
+    "total": 1040,
+    "unpriced": 0
+  }
+]

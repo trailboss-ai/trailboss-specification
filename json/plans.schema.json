@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json plans",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "agents": {
+        "type": "string"
+      },
+      "cost_usd": {
+        "type": "number"
+      },
+      "cycle": {
+        "type": "string"
+      },
+      "last_cycle_usd": {
+        "type": "number"
+      },
+      "last_multiple": {
+        "type": "number"
+      },
+      "multiple": {
+        "type": "number"
+      },
+      "plan": {
+        "type": "string"
+      },
+      "price_usd": {
+        "type": "number"
+      },
+      "projected_multiple": {
+        "type": "number"
+      },
+      "projected_usd": {
+        "type": "number"
+      }
+    },
+    "required": [
+      "agents",
+      "cost_usd",
+      "cycle",
+      "last_cycle_usd",
+      "last_multiple",
+      "multiple",
+      "plan",
+      "price_usd",
+      "projected_multiple",
+      "projected_usd"
+    ]
+  }
+}

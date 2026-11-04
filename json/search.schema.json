@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json search",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "agent": {
+        "type": "string"
+      },
+      "cwd": {
+        "type": "string"
+      },
+      "path": {
+        "type": "string"
+      },
+      "resume_argv": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "role": {
+        "type": "string"
+      },
+      "session_id": {
+        "type": "string"
+      },
+      "snippet": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      },
+      "ts": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "agent",
+      "cwd",
+      "path",
+      "resume_argv",
+      "role",
+      "session_id",
+      "snippet",
+      "title",
+      "ts"
+    ]
+  }
+}

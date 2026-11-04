@@ -1,0 +1,17 @@
+[
+  {
+    "agent": "claude",
+    "cwd": "/work/app",
+    "path": "/home/user/.claude/projects/-home-user-shop/s-fast.jsonl",
+    "resume_argv": [
+      "claude",
+      "--resume",
+      "s-fast"
+    ],
+    "role": "user",
+    "session_id": "s-fast",
+    "snippet": "Rename the [helper]",
+    "title": "Rename the helper",
+    "ts": "2026-10-05T09:00:00.000Z"
+  }
+]

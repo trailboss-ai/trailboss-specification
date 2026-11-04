@@ -1,0 +1,48 @@
+[
+  {
+    "bytes": 5218,
+    "enabled": true,
+    "errors": 0,
+    "files": 3,
+    "label": "Claude Code",
+    "read": 0,
+    "roots": [
+      "/home/user/.claude/projects"
+    ],
+    "source": "claude",
+    "status": "ok",
+    "unchanged": 3,
+    "warnings": []
+  },
+  {
+    "bytes": 4030,
+    "enabled": true,
+    "errors": 0,
+    "files": 3,
+    "label": "Codex",
+    "read": 0,
+    "roots": [
+      "/home/user/.codex/sessions",
+      "/home/user/.codex/archived_sessions"
+    ],
+    "source": "codex",
+    "status": "ok",
+    "unchanged": 3,
+    "warnings": []
+  },
+  {
+    "bytes": 1299,
+    "enabled": true,
+    "errors": 0,
+    "files": 2,
+    "label": "pi",
+    "read": 0,
+    "roots": [
+      "/home/user/.pi/agent/sessions"
+    ],
+    "source": "pi",
+    "status": "ok",
+    "unchanged": 2,
+    "warnings": []
+  }
+]

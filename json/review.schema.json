@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json review",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "agent": {
+        "type": "string"
+      },
+      "cwd": {
+        "type": "string"
+      },
+      "edits": {
+        "type": "integer"
+      },
+      "files": {
+        "type": "integer"
+      },
+      "last": {
+        "type": "string"
+      },
+      "session": {
+        "type": "string"
+      },
+      "title": {
+        "type": [
+          "null",
+          "string"
+        ]
+      }
+    },
+    "required": [
+      "agent",
+      "cwd",
+      "edits",
+      "files",
+      "last",
+      "session",
+      "title"
+    ]
+  }
+}

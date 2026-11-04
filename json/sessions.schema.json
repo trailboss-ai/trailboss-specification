@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json sessions",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "agent": {
+        "type": "string"
+      },
+      "cost_usd": {
+        "type": [
+          "null",
+          "number"
+        ]
+      },
+      "cwd": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "ended": {
+        "type": "string"
+      },
+      "first_prompt": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "git_branch": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "id": {
+        "type": "string"
+      },
+      "path": {
+        "type": "string"
+      },
+      "reported_cost_usd": {
+        "type": [
+          "null",
+          "number"
+        ]
+      },
+      "resume_argv": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "started": {
+        "type": "string"
+      },
+      "title": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "tokens": {
+        "type": "integer"
+      },
+      "unpriced": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "agent",
+      "cost_usd",
+      "cwd",
+      "ended",
+      "first_prompt",
+      "git_branch",
+      "id",
+      "path",
+      "reported_cost_usd",
+      "resume_argv",
+      "started",
+      "title",
+      "tokens",
+      "unpriced"
+    ]
+  }
+}

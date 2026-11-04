@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json quota",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "note": {
+        "type": "string"
+      },
+      "pace": {
+        "type": "string"
+      },
+      "pace_percent": {
+        "type": "number"
+      },
+      "plan": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "provider": {
+        "type": "string"
+      },
+      "resets_at": {
+        "type": "integer"
+      },
+      "resets_in": {
+        "type": "string"
+      },
+      "used": {
+        "type": "string"
+      },
+      "used_percent": {
+        "type": "number"
+      },
+      "window": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "note",
+      "plan",
+      "provider"
+    ]
+  }
+}
