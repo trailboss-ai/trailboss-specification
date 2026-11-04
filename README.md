@@ -5,4 +5,6 @@ The formats other programs rely on when they work with Trailboss: today, every c
 - [VERSIONING.md](VERSIONING.md): what can change, what can't, and how a frontend checks the CLI it found.
 - [json/](json/): a JSON Schema per command (`<command>.schema.json`) and examples made from synthetic data (`examples/`).
 
-This folder is the source of truth: the CLI's tests check its output against these schemas.
+This repository is the source of truth: the CLI's tests check its output against these schemas. Report problems in [trailboss-ai/trailboss](https://github.com/trailboss-ai/trailboss/issues).
+
+License: MIT ([LICENSE](LICENSE)).

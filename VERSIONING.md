@@ -32,12 +32,12 @@ When `api` goes up, the CHANGELOG lists every incompatible change under **Change
 
 - `json/<command>.schema.json`: a [JSON Schema](https://json-schema.org/) (draft 2020-12) of each command's `--json` output. `review AGENT:ID` and `review AGENT:ID --diff PATH` have their own (`review-session`, `review-diff`).
 - `json/examples/<name>.json`: an example of each, made from synthetic data. `<name>` is the schema's name, optionally followed by `-<variant>` (`usage-by-day` is an example of `usage`).
-- `tests/specification.rs` checks every example against its schema, and the CLI's real output on the test fixtures against the schemas, on every test run.
+- The CLI's tests check every example against its schema, and its real output on synthetic transcripts against the schemas, on every test run.
 
 ## Changing the output
 
-In the same commit as the change to the CLI:
+The schema changes first, then the CLI, then the frontends:
 
-1. Update the command's schema (a new property, a new nullable type).
-2. Update its example: `python3 scripts/specification_examples.py` regenerates the ones made from fixtures (after `cargo build --release`); edit the hand-written ones (`live`, `events`, `resume`, `quota`, `stats`, `review*`) by hand.
-3. Add a CHANGELOG line. If it's incompatible, raise `API` in `src/main.rs` and follow the rules above.
+1. Update the command's schema here (a new property, a new nullable type), and its example.
+2. The CLI's output changes in a release that adds a line to its release notes. If the change is incompatible, `api` goes up, following the rules above.
+3. Frontends that use the new field raise the minimum version they need.
