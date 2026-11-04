@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json prices",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "exists": {
+        "type": "boolean"
+      },
+      "layer": {
+        "type": "string"
+      },
+      "path": {
+        "type": "string"
+      },
+      "updated": {
+        "type": [
+          "null",
+          "string"
+        ]
+      }
+    },
+    "required": [
+      "exists",
+      "layer",
+      "path",
+      "updated"
+    ]
+  }
+}

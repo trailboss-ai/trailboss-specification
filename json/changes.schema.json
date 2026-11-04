@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json changes",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "abs": {
+        "type": "string"
+      },
+      "agent": {
+        "type": "string"
+      },
+      "edits": {
+        "type": "integer"
+      },
+      "how": {
+        "type": "string"
+      },
+      "path": {
+        "type": "string"
+      },
+      "session": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      },
+      "tool": {
+        "type": "string"
+      },
+      "ts": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "path"
+    ]
+  }
+}

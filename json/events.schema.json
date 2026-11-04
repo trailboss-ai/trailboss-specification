@@ -1,0 +1,201 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json events",
+  "type": "object",
+  "properties": {
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "agent": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "agents": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "cwd": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "hosts": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "in_herdr": {
+            "type": "boolean"
+          },
+          "key": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "session": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "terminal": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "terminals": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "title": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "where": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "worked_ms": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "cwd",
+          "in_herdr",
+          "key",
+          "kind",
+          "title",
+          "where"
+        ]
+      }
+    },
+    "live": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "agent": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "cost_usd": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "cwd": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "host": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "parent": {
+            "type": "string"
+          },
+          "pid": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "quiet_min": {
+            "type": "null"
+          },
+          "reported_cost_usd": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "session": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "shares_with": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "status": {
+            "type": "string"
+          },
+          "stuck": {
+            "type": "boolean"
+          },
+          "terminal": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "title": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "tokens": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "where": {
+            "type": "string"
+          },
+          "workspace": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "agent",
+          "cost_usd",
+          "cwd",
+          "host",
+          "pid",
+          "quiet_min",
+          "reported_cost_usd",
+          "session",
+          "status",
+          "stuck",
+          "terminal",
+          "title",
+          "tokens",
+          "where"
+        ]
+      }
+    }
+  },
+  "required": [
+    "events",
+    "live"
+  ]
+}

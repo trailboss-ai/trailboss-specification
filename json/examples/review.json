@@ -1,0 +1,11 @@
+[
+  {
+    "agent": "claude",
+    "session": "7f9c2d1e-0a4b-4c55-9e1f-2b3c4d5e6f70",
+    "files": 2,
+    "edits": 5,
+    "last": "2026-11-03T18:22:10.000Z",
+    "title": "Add retry to the billing client",
+    "cwd": "/home/user/code/api"
+  }
+]

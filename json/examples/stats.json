@@ -1,0 +1,93 @@
+[
+  {
+    "days": 30,
+    "merged": 3,
+    "merged_this_week": 1,
+    "merged_last_week": 2,
+    "median_hours_to_merge": 5.5,
+    "ai_marked": {
+      "claude": 2,
+      "none": 1
+    },
+    "ai_share_percent": 67,
+    "with_agent_sessions": 2,
+    "cost_usd": 9.4,
+    "cost_per_pr_usd": 4.7,
+    "estimated_cost_usd": 11.2,
+    "estimated_cost_per_pr_usd": 5.6,
+    "open": 1,
+    "oldest_open_days": 3,
+    "by_repo": [
+      {
+        "repo": "example/api",
+        "merged": 3,
+        "commits": 11
+      }
+    ],
+    "commits_30d": 11,
+    "merged_30d": 3,
+    "merged_prev_30d": 2,
+    "reviews_30d": 4,
+    "reviews_prev_30d": 1,
+    "decided_90d": 6,
+    "merge_rate_90d": 83,
+    "weeks": [
+      {
+        "start": "2026-10-12",
+        "merged": 0
+      },
+      {
+        "start": "2026-10-19",
+        "merged": 1
+      },
+      {
+        "start": "2026-10-26",
+        "merged": 1
+      }
+    ],
+    "this_week": [
+      {
+        "date": "2026-11-02",
+        "merged": 1,
+        "future": false
+      },
+      {
+        "date": "2026-11-03",
+        "merged": 0,
+        "future": false
+      },
+      {
+        "date": "2026-11-04",
+        "merged": 0,
+        "future": true
+      }
+    ],
+    "logins": [
+      "example-dev"
+    ],
+    "prs": [
+      {
+        "merged": "2026-11-02",
+        "pr": "example/api#41",
+        "title": "Retry billing calls",
+        "branch": "retry-billing",
+        "hours_to_merge": 3.2,
+        "ai_marked": "claude",
+        "agent_sessions": 2,
+        "cost_usd": 6.1,
+        "estimated_cost_usd": 7.4
+      },
+      {
+        "merged": "2026-10-28",
+        "pr": "example/api#39",
+        "title": "Bump dependencies",
+        "branch": "deps",
+        "hours_to_merge": 7.8,
+        "ai_marked": "none",
+        "agent_sessions": 0,
+        "cost_usd": null,
+        "estimated_cost_usd": null
+      }
+    ]
+  }
+]

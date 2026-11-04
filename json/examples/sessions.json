@@ -1,0 +1,62 @@
+[
+  {
+    "agent": "claude",
+    "cost_usd": 60.0,
+    "cwd": "/work/app",
+    "ended": "2026-10-05T09:01:05.000Z",
+    "first_prompt": "Rename the helper",
+    "git_branch": null,
+    "id": "s-fast",
+    "path": "/home/user/.claude/projects/-home-user-shop/s-fast.jsonl",
+    "reported_cost_usd": null,
+    "resume_argv": [
+      "claude",
+      "--resume",
+      "s-fast"
+    ],
+    "started": "2026-10-05T09:00:00.000Z",
+    "title": "Rename the helper",
+    "tokens": 2000000,
+    "unpriced": 0
+  },
+  {
+    "agent": "claude",
+    "cost_usd": null,
+    "cwd": null,
+    "ended": "2026-10-02T09:00:01.000Z",
+    "first_prompt": "still parsed",
+    "git_branch": null,
+    "id": "s-unknown",
+    "path": "/home/user/.claude/projects/-home-user-shop/s-unknown.jsonl",
+    "reported_cost_usd": null,
+    "resume_argv": [
+      "claude",
+      "--resume",
+      "s-unknown"
+    ],
+    "started": "2026-10-02T09:00:00.000Z",
+    "title": "still parsed",
+    "tokens": 0,
+    "unpriced": 0
+  },
+  {
+    "agent": "claude",
+    "cost_usd": 0.0,
+    "cwd": "/work/app",
+    "ended": "2026-10-01T10:00:09.000Z",
+    "first_prompt": "Fix the flaky login test",
+    "git_branch": "main",
+    "id": "s-normal",
+    "path": "/home/user/.claude/projects/-home-user-shop/s-normal.jsonl",
+    "reported_cost_usd": 0.12,
+    "resume_argv": [
+      "claude",
+      "--resume",
+      "s-normal"
+    ],
+    "started": "2026-10-01T10:00:00.000Z",
+    "title": "Fix flaky login test",
+    "tokens": 1260,
+    "unpriced": 0
+  }
+]

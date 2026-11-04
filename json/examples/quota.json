@@ -1,0 +1,31 @@
+[
+  {
+    "provider": "claude",
+    "plan": "max",
+    "window": "5h",
+    "used": "42%",
+    "used_percent": 42.0,
+    "resets_at": 1793770000,
+    "resets_in": "2h 10m",
+    "pace": "78% at reset",
+    "pace_percent": 78.0,
+    "note": ""
+  },
+  {
+    "provider": "claude",
+    "plan": "max",
+    "window": "7d",
+    "used": "31%",
+    "used_percent": 31.0,
+    "resets_at": 1794200000,
+    "resets_in": "4d 3h",
+    "pace": "104% at reset \u26a0",
+    "pace_percent": 104.0,
+    "note": ""
+  },
+  {
+    "provider": "codex",
+    "plan": null,
+    "note": "not signed in"
+  }
+]

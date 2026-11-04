@@ -1,0 +1,472 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json insights",
+  "type": "object",
+  "properties": {
+    "chart": {
+      "type": "object",
+      "properties": {
+        "models": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "weeks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "parts": {
+                "type": "object",
+                "properties": {
+                  "Other": {
+                    "type": "integer"
+                  },
+                  "claude-fable-5": {
+                    "type": "integer"
+                  },
+                  "claude-opus-4-8": {
+                    "type": "integer"
+                  },
+                  "claude-opus-5": {
+                    "type": "integer"
+                  },
+                  "claude-opus-5-5": {
+                    "type": "integer"
+                  },
+                  "claude-sonnet-4-6": {
+                    "type": "integer"
+                  },
+                  "claude-sonnet-5": {
+                    "type": "integer"
+                  },
+                  "gpt-5.5": {
+                    "type": "integer"
+                  }
+                }
+              },
+              "start": {
+                "type": "string"
+              },
+              "total": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "parts",
+              "start",
+              "total"
+            ]
+          }
+        }
+      },
+      "required": [
+        "models",
+        "weeks"
+      ]
+    },
+    "filters": {
+      "type": "object",
+      "properties": {
+        "model": {
+          "type": "null"
+        },
+        "models": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "sessions": {
+                "type": "integer"
+              },
+              "tokens": {
+                "type": "integer"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "sessions",
+              "tokens",
+              "value"
+            ]
+          }
+        },
+        "provider": {
+          "type": "null"
+        },
+        "providers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "sessions": {
+                "type": "integer"
+              },
+              "tokens": {
+                "type": "integer"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "sessions",
+              "tokens",
+              "value"
+            ]
+          }
+        }
+      },
+      "required": [
+        "model",
+        "models",
+        "provider",
+        "providers"
+      ]
+    },
+    "from": {
+      "type": "null"
+    },
+    "heatmap": {
+      "type": "object",
+      "properties": {
+        "before": {
+          "type": "integer"
+        },
+        "sessions": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "start": {
+          "type": "string"
+        },
+        "tokens": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        }
+      },
+      "required": [
+        "before",
+        "sessions",
+        "start",
+        "tokens"
+      ]
+    },
+    "include_cache": {
+      "type": "boolean"
+    },
+    "leaderboard": {
+      "type": "object",
+      "properties": {
+        "count": {
+          "type": "integer"
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "change_percent": {
+                "type": "null"
+              },
+              "cost_usd": {
+                "type": "number"
+              },
+              "model": {
+                "type": "string"
+              },
+              "other_providers": {
+                "type": "integer"
+              },
+              "previous_tokens": {
+                "type": "null"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "rank": {
+                "type": "integer"
+              },
+              "sessions": {
+                "type": "integer"
+              },
+              "tokens": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "change_percent",
+              "cost_usd",
+              "model",
+              "other_providers",
+              "previous_tokens",
+              "provider",
+              "rank",
+              "sessions",
+              "tokens"
+            ]
+          }
+        },
+        "sessions": {
+          "type": "integer"
+        },
+        "tokens": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "count",
+        "rows",
+        "sessions",
+        "tokens"
+      ]
+    },
+    "metrics": {
+      "type": "object",
+      "properties": {
+        "current_streak_days": {
+          "type": "integer"
+        },
+        "lifetime_cost_usd": {
+          "type": "number"
+        },
+        "lifetime_reasoning": {
+          "type": "integer"
+        },
+        "lifetime_sessions": {
+          "type": "integer"
+        },
+        "lifetime_tokens": {
+          "type": "integer"
+        },
+        "longest_streak_days": {
+          "type": "integer"
+        },
+        "longest_task_ms": {
+          "type": "integer"
+        },
+        "peak_day": {
+          "type": "object",
+          "properties": {
+            "date": {
+              "type": "string"
+            },
+            "tokens": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "date",
+            "tokens"
+          ]
+        }
+      },
+      "required": [
+        "current_streak_days",
+        "lifetime_cost_usd",
+        "lifetime_reasoning",
+        "lifetime_sessions",
+        "lifetime_tokens",
+        "longest_streak_days",
+        "longest_task_ms",
+        "peak_day"
+      ]
+    },
+    "period": {
+      "type": "string"
+    },
+    "previous": {
+      "type": "null"
+    },
+    "to": {
+      "type": "string"
+    },
+    "today": {
+      "type": "string"
+    },
+    "totals": {
+      "type": "object",
+      "properties": {
+        "all": {
+          "type": "object",
+          "properties": {
+            "cache_hit_rate": {
+              "type": "number"
+            },
+            "cache_read": {
+              "type": "integer"
+            },
+            "cache_write": {
+              "type": "integer"
+            },
+            "cost_usd": {
+              "type": "number"
+            },
+            "input": {
+              "type": "integer"
+            },
+            "output": {
+              "type": "integer"
+            },
+            "reasoning": {
+              "type": "integer"
+            },
+            "sessions": {
+              "type": "integer"
+            },
+            "tokens": {
+              "type": "integer"
+            },
+            "top_model": {
+              "type": "object",
+              "properties": {
+                "model": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "tokens": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "model",
+                "provider",
+                "tokens"
+              ]
+            }
+          },
+          "required": [
+            "cache_hit_rate",
+            "cache_read",
+            "cache_write",
+            "cost_usd",
+            "input",
+            "output",
+            "reasoning",
+            "sessions",
+            "tokens",
+            "top_model"
+          ]
+        },
+        "day": {
+          "type": "object",
+          "properties": {
+            "cache_hit_rate": {
+              "type": [
+                "null",
+                "number"
+              ]
+            },
+            "cache_read": {
+              "type": "integer"
+            },
+            "cache_write": {
+              "type": "integer"
+            },
+            "cost_usd": {
+              "type": [
+                "null",
+                "number"
+              ]
+            },
+            "date": {
+              "type": "string"
+            },
+            "input": {
+              "type": "integer"
+            },
+            "output": {
+              "type": "integer"
+            },
+            "reasoning": {
+              "type": "integer"
+            },
+            "sessions": {
+              "type": "integer"
+            },
+            "tokens": {
+              "type": "integer"
+            },
+            "top_model": {
+              "type": [
+                "null",
+                "object"
+              ],
+              "properties": {
+                "model": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "tokens": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "model",
+                "provider",
+                "tokens"
+              ]
+            }
+          },
+          "required": [
+            "cache_hit_rate",
+            "cache_read",
+            "cache_write",
+            "cost_usd",
+            "date",
+            "input",
+            "output",
+            "reasoning",
+            "sessions",
+            "tokens",
+            "top_model"
+          ]
+        }
+      },
+      "required": [
+        "all",
+        "day"
+      ]
+    },
+    "week_start": {
+      "type": "string"
+    },
+    "year": {
+      "type": "integer"
+    },
+    "years": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    }
+  },
+  "required": [
+    "chart",
+    "filters",
+    "from",
+    "heatmap",
+    "include_cache",
+    "leaderboard",
+    "metrics",
+    "period",
+    "previous",
+    "to",
+    "today",
+    "totals",
+    "week_start",
+    "year",
+    "years"
+  ]
+}

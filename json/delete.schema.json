@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json delete",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "deleted": {
+        "type": "boolean"
+      },
+      "path": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "deleted",
+      "path"
+    ]
+  }
+}

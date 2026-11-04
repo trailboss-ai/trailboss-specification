@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json review AGENT:ID",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "backup": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "backup_file": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "before": {
+        "type": "string"
+      },
+      "differs": {
+        "type": "boolean"
+      },
+      "edits": {
+        "type": "integer"
+      },
+      "exists": {
+        "type": "boolean"
+      },
+      "last": {
+        "type": "string"
+      },
+      "later": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "agent": {
+              "type": "string"
+            },
+            "session": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "ts": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "agent",
+            "session",
+            "title",
+            "ts"
+          ]
+        }
+      },
+      "path": {
+        "type": "string"
+      },
+      "version": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "backup",
+      "backup_file",
+      "before",
+      "differs",
+      "edits",
+      "exists",
+      "last",
+      "later",
+      "path",
+      "version"
+    ]
+  }
+}

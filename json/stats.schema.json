@@ -1,0 +1,233 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json stats",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "ai_marked": {
+        "type": "object",
+        "properties": {
+          "claude": {
+            "type": "integer"
+          },
+          "none": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "claude",
+          "none"
+        ]
+      },
+      "ai_share_percent": {
+        "type": "integer"
+      },
+      "by_repo": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "commits": {
+              "type": "integer"
+            },
+            "merged": {
+              "type": "integer"
+            },
+            "repo": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "commits",
+            "merged",
+            "repo"
+          ]
+        }
+      },
+      "commits_30d": {
+        "type": "integer"
+      },
+      "cost_per_pr_usd": {
+        "type": "number"
+      },
+      "cost_usd": {
+        "type": "number"
+      },
+      "days": {
+        "type": "integer"
+      },
+      "decided_90d": {
+        "type": "integer"
+      },
+      "estimated_cost_per_pr_usd": {
+        "type": "number"
+      },
+      "estimated_cost_usd": {
+        "type": "number"
+      },
+      "logins": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "median_hours_to_merge": {
+        "type": "number"
+      },
+      "merge_rate_90d": {
+        "type": "integer"
+      },
+      "merged": {
+        "type": "integer"
+      },
+      "merged_30d": {
+        "type": "integer"
+      },
+      "merged_last_week": {
+        "type": "integer"
+      },
+      "merged_prev_30d": {
+        "type": "integer"
+      },
+      "merged_this_week": {
+        "type": "integer"
+      },
+      "oldest_open_days": {
+        "type": "integer"
+      },
+      "open": {
+        "type": "integer"
+      },
+      "prs": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "agent_sessions": {
+              "type": "integer"
+            },
+            "ai_marked": {
+              "type": "string"
+            },
+            "branch": {
+              "type": "string"
+            },
+            "cost_usd": {
+              "type": [
+                "null",
+                "number"
+              ]
+            },
+            "estimated_cost_usd": {
+              "type": [
+                "null",
+                "number"
+              ]
+            },
+            "hours_to_merge": {
+              "type": "number"
+            },
+            "merged": {
+              "type": "string"
+            },
+            "pr": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "agent_sessions",
+            "ai_marked",
+            "branch",
+            "cost_usd",
+            "estimated_cost_usd",
+            "hours_to_merge",
+            "merged",
+            "pr",
+            "title"
+          ]
+        }
+      },
+      "reviews_30d": {
+        "type": "integer"
+      },
+      "reviews_prev_30d": {
+        "type": "integer"
+      },
+      "this_week": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "date": {
+              "type": "string"
+            },
+            "future": {
+              "type": "boolean"
+            },
+            "merged": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "date",
+            "future",
+            "merged"
+          ]
+        }
+      },
+      "weeks": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "merged": {
+              "type": "integer"
+            },
+            "start": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "merged",
+            "start"
+          ]
+        }
+      },
+      "with_agent_sessions": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "ai_marked",
+      "ai_share_percent",
+      "by_repo",
+      "commits_30d",
+      "cost_per_pr_usd",
+      "cost_usd",
+      "days",
+      "decided_90d",
+      "estimated_cost_per_pr_usd",
+      "estimated_cost_usd",
+      "logins",
+      "median_hours_to_merge",
+      "merge_rate_90d",
+      "merged",
+      "merged_30d",
+      "merged_last_week",
+      "merged_prev_30d",
+      "merged_this_week",
+      "oldest_open_days",
+      "open",
+      "prs",
+      "reviews_30d",
+      "reviews_prev_30d",
+      "this_week",
+      "weeks",
+      "with_agent_sessions"
+    ]
+  }
+}
