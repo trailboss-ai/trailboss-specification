@@ -1,0 +1,41 @@
+{
+  "folders": [
+    {
+      "color": null,
+      "depth": 1,
+      "folded": false,
+      "id": "f1",
+      "name": "Clients",
+      "parent": null,
+      "rules": [],
+      "start": null
+    },
+    {
+      "color": "ansi4",
+      "depth": 2,
+      "folded": false,
+      "id": "f2",
+      "name": "Acme",
+      "parent": "f1",
+      "rules": [
+        "~/code/acme-*"
+      ],
+      "start": "/home/user/code/acme"
+    },
+    {
+      "color": null,
+      "depth": 1,
+      "folded": true,
+      "id": "f3",
+      "name": "Machines",
+      "parent": null,
+      "rules": [
+        "machine:vm-*"
+      ],
+      "start": null
+    }
+  ],
+  "spaces": {
+    "w3": null
+  }
+}

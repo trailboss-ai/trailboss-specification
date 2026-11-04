@@ -1,0 +1,24 @@
+[
+  {
+    "by": "rule",
+    "folder": "f2",
+    "id": "w1",
+    "rule": "~/code/acme-*"
+  },
+  {
+    "by": "rule",
+    "folder": "f3",
+    "id": "vm-2/w1",
+    "rule": "machine:vm-*"
+  },
+  {
+    "by": "hand",
+    "folder": null,
+    "id": "w3"
+  },
+  {
+    "by": null,
+    "folder": null,
+    "id": "w4"
+  }
+]

@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json folders",
+  "description": "Folders for a host's spaces, and the spaces filed by hand. Every `folders` action (add, edit, move, remove, file, unfile) prints this after it. Siblings show in the order listed.",
+  "type": "object",
+  "required": [
+    "folders",
+    "spaces"
+  ],
+  "properties": {
+    "folders": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "parent",
+          "color",
+          "start",
+          "rules",
+          "folded",
+          "depth"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Stable id, e.g. f3."
+          },
+          "name": {
+            "type": "string"
+          },
+          "parent": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The folder it's in; null at the top."
+          },
+          "color": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "ansi1 to ansi6 (Herdr's avatar colors), or null."
+          },
+          "start": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Where spaces made in it start, or null."
+          },
+          "rules": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "`name` (a folder name anywhere in the path), `~/path/with/*` (that folder or below), or `machine:glob`."
+          },
+          "folded": {
+            "type": "boolean"
+          },
+          "depth": {
+            "type": "integer",
+            "description": "1 at the top; at most 4."
+          }
+        }
+      }
+    },
+    "spaces": {
+      "type": "object",
+      "description": "Space id \u2192 folder id, or null for a space put at the top level on purpose. Spaces not listed are placed by rules (see `folders place`)."
+    }
+  }
+}
