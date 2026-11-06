@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json thread",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "cost_usd": {
+        "type": [
+          "null",
+          "number"
+        ],
+        "description": "The turn's API-equivalent cost in dollars, rounded to cents; null when no response has a price."
+      },
+      "ended": {
+        "type": [
+          "null",
+          "string"
+        ],
+        "description": "The last reply, tool result or response in the turn (ISO 8601); null when there's none yet."
+      },
+      "from": {
+        "type": "string",
+        "description": "\"you\" for a prompt you sent; \"agent\" for a message the agent sent into the session itself, such as a background task's report."
+      },
+      "model": {
+        "type": [
+          "null",
+          "string"
+        ],
+        "description": "The model of the turn's last response; null without usage."
+      },
+      "n": {
+        "type": "integer",
+        "description": "The turn's number in the session, from 1. Stable while the session grows."
+      },
+      "prompt": {
+        "type": "string",
+        "description": "The prompt's text."
+      },
+      "reply": {
+        "type": "string",
+        "description": "The agent's replies in the turn, joined by a blank line; Markdown as the agent wrote it. Empty while it hasn't replied."
+      },
+      "responses": {
+        "type": "integer",
+        "description": "How many API responses the turn took."
+      },
+      "tokens": {
+        "type": "integer",
+        "description": "Tokens the turn's responses used, cache reads and writes included."
+      },
+      "tools": {
+        "type": "integer",
+        "description": "How many tool results the turn has (those with output)."
+      },
+      "ts": {
+        "type": [
+          "null",
+          "string"
+        ],
+        "description": "When the prompt was sent (ISO 8601)."
+      }
+    },
+    "required": [
+      "cost_usd",
+      "ended",
+      "from",
+      "model",
+      "n",
+      "prompt",
+      "reply",
+      "responses",
+      "tokens",
+      "tools",
+      "ts"
+    ]
+  },
+  "description": "One session as a conversation, oldest turn first. A turn starts at each prompt; it holds the replies and usage up to the next prompt. Slash commands and their output are left out. Built from the index, so it shows what was indexed: prompts and replies in full, thinking and tool output not at all."
+}
