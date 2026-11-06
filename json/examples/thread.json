@@ -1,0 +1,15 @@
+[
+  {
+    "cost_usd": 0.0,
+    "ended": "2026-10-01T10:00:09.000Z",
+    "from": "you",
+    "model": "claude-opus-5-5",
+    "n": 1,
+    "prompt": "Fix the flaky login test",
+    "reply": "The login test races the session cookie; I added a wait.\n\nNo response requested.",
+    "responses": 1,
+    "tokens": 1260,
+    "tools": 1,
+    "ts": "2026-10-01T10:00:00.000Z"
+  }
+]
