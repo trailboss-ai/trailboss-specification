@@ -1,0 +1,18 @@
+[
+  {
+    "n": 1,
+    "ref": "refs/trailboss/checkpoints/claude/s-normal/1",
+    "commit": "3f1c9a0d2b7e4c5a6f8091a2b3c4d5e6f7a8b9c0",
+    "head": "a1b2c3d4e5f60718293a4b5c6d7e8f9012345678",
+    "ts": "2026-10-01T10:00:30+00:00",
+    "label": "add a retry to the client"
+  },
+  {
+    "n": 2,
+    "ref": "refs/trailboss/checkpoints/claude/s-normal/2",
+    "commit": "9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a291807",
+    "head": "a1b2c3d4e5f60718293a4b5c6d7e8f9012345678",
+    "ts": "2026-10-01T10:04:12+00:00",
+    "label": "checkpoint 2"
+  }
+]

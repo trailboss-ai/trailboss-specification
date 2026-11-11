@@ -1,0 +1,3 @@
+{
+  "diff": "diff --git a/client.py b/client.py\nindex 1d2e3f4..5a6b7c8 100644\n--- a/client.py\n+++ b/client.py\n@@ -1,2 +1,3 @@\n import requests\n+from retry import retry\n def charge(): ...\n"
+}

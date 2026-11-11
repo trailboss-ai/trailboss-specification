@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json checkpoint list AGENT:ID (and checkpoint save AGENT:ID)",
+  "description": "A session's checkpoints, oldest first: its folder saved as git commits under refs/trailboss/checkpoints/<agent>/<session>/<n>. `save` returns one row; when nothing changed since the last checkpoint, that one comes back with `saved` false.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "n": {
+        "type": "integer"
+      },
+      "ref": {
+        "type": "string"
+      },
+      "commit": {
+        "type": "string"
+      },
+      "head": {
+        "description": "HEAD when the checkpoint was saved; null in a repository with no commits yet",
+        "type": ["string", "null"]
+      },
+      "ts": {
+        "type": "string"
+      },
+      "label": {
+        "type": "string"
+      },
+      "saved": {
+        "description": "Only from save",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "n",
+      "ref",
+      "commit",
+      "head",
+      "ts",
+      "label"
+    ]
+  }
+}

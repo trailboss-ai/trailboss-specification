@@ -30,7 +30,7 @@ When `api` goes up, the CHANGELOG lists every incompatible change under **Change
 
 ## Where it's written down
 
-- `json/<command>.schema.json`: a [JSON Schema](https://json-schema.org/) (draft 2020-12) of each command's `--json` output. `review AGENT:ID` and `review AGENT:ID --diff PATH` have their own (`review-session`, `review-diff`).
+- `json/<command>.schema.json`: a [JSON Schema](https://json-schema.org/) (draft 2020-12) of each command's `--json` output. `review AGENT:ID` and `review AGENT:ID --diff PATH` have their own (`review-session`, `review-diff`), as does `checkpoint diff` (`checkpoint-diff`); `checkpoint list` and `checkpoint save` share `checkpoint`.
 - `json/examples/<name>.json`: an example of each, made from synthetic data. `<name>` is the schema's name, optionally followed by `-<variant>` (`usage-by-day` is an example of `usage`).
 - The CLI's tests check every example against its schema, and its real output on synthetic transcripts against the schemas, on every test run.
 

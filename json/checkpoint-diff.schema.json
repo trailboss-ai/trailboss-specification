@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json checkpoint diff AGENT:ID N",
+  "description": "What checkpoint N changed, as a unified diff: against the checkpoint before it; the first one against HEAD when it was saved.",
+  "type": "object",
+  "properties": {
+    "diff": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "diff"
+  ]
+}
