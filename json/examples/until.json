@@ -1,0 +1,12 @@
+{
+  "round": 3,
+  "passed": false,
+  "exit_code": 101,
+  "files_changed": false,
+  "cost_usd": 0.84,
+  "minutes": 12,
+  "paused_until": null,
+  "waiting_to_send": null,
+  "stopped": "same_failure",
+  "reason": "no progress: the check keeps failing the same way"
+}

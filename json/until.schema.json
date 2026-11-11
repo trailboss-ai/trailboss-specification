@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json until",
+  "description": "One JSON object per line while the loop runs: one per round (a check run after a finished turn), plus a line when the failure has to wait to be typed and a last line when it stops between rounds. Every line has every field. The check's output and the message typed are never in the output. Exit code 0 on a pass, 1 otherwise.",
+  "type": "object",
+  "properties": {
+    "round": {
+      "type": "integer",
+      "description": "Checks run so far (this line's round, for a round line)."
+    },
+    "passed": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "Whether the check passed; null on a line that isn't a round (a stop between rounds, or waiting to send)."
+    },
+    "exit_code": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "The check's exit code; null when not a round or killed by a signal."
+    },
+    "files_changed": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "Whether the session's folder changed since the check before; null when unknown (not a git work tree, or checked before the agent's first turn)."
+    },
+    "cost_usd": {
+      "type": "number",
+      "description": "Dollars the session has spent since the loop started."
+    },
+    "minutes": {
+      "type": "integer",
+      "description": "Minutes the loop has run, not counting quota pauses."
+    },
+    "paused_until": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "The plan's quota is used up: the loop waits until this time (seconds since the epoch) before typing."
+    },
+    "waiting_to_send": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Why the failure isn't typed yet (the agent isn't ready); tried again on every look. Said once per reason."
+    },
+    "stopped": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Why the loop ended, on its last line: passed, max_rounds, max_cost, max_time, same_failure, no_changes, session_ended or check_error. null while it goes on."
+    },
+    "reason": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The stop in a person's words."
+    }
+  },
+  "required": [
+    "cost_usd",
+    "exit_code",
+    "files_changed",
+    "minutes",
+    "passed",
+    "paused_until",
+    "reason",
+    "round",
+    "stopped",
+    "waiting_to_send"
+  ]
+}
