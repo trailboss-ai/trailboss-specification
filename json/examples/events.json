@@ -13,6 +13,31 @@
       "worked_ms": 412000
     },
     {
+      "kind": "needs_you",
+      "key": "herdr:t5",
+      "where": "t5 api",
+      "terminal": "t5",
+      "agent": "codex",
+      "session": "0199bbbb-cccc-7ddd-8eee-ffff00001111",
+      "title": "Write tests for the retry policy",
+      "cwd": "/home/user/code/api/client",
+      "in_herdr": true,
+      "needs": "Run: cargo test -p client"
+    },
+    {
+      "kind": "turn_finished",
+      "key": "pid:52007",
+      "where": "pid 52007",
+      "terminal": null,
+      "agent": "pi",
+      "session": "pi-9",
+      "title": "Summarise the meeting",
+      "cwd": "/home/user/notes",
+      "in_herdr": false,
+      "turn": 4,
+      "turn_ended_ms": 1790848809500
+    },
+    {
       "kind": "same_folder",
       "key": "herdr:t3",
       "where": "t3 api, t5 api",
@@ -49,6 +74,9 @@
       "cost_usd": 4.12,
       "reported_cost_usd": 4.3,
       "tokens": 1830442,
+      "turn": 7,
+      "turn_ended_ms": null,
+      "needs": null,
       "workspace": "/home/user/code/api",
       "shares_with": [
         "t5 api"
@@ -59,7 +87,7 @@
       "host": "herdr",
       "terminal": "t5",
       "agent": "codex",
-      "status": "working",
+      "status": "blocked",
       "stuck": false,
       "quiet_min": null,
       "pid": 41388,
@@ -69,6 +97,9 @@
       "cost_usd": 0.86,
       "reported_cost_usd": null,
       "tokens": 402118,
+      "turn": 3,
+      "turn_ended_ms": null,
+      "needs": "Run: cargo test -p client",
       "workspace": "/home/user/code/api",
       "shares_with": [
         "t3 api"
@@ -89,7 +120,10 @@
       "title": "Summarise the meeting",
       "cost_usd": 0.04,
       "reported_cost_usd": 0.04,
-      "tokens": 20311
+      "tokens": 20311,
+      "turn": 4,
+      "turn_ended_ms": 1790848809500,
+      "needs": null
     }
   ]
 }

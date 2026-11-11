@@ -14,6 +14,9 @@
     "cost_usd": 4.12,
     "reported_cost_usd": 4.3,
     "tokens": 1830442,
+    "turn": 7,
+    "turn_ended_ms": null,
+    "needs": null,
     "workspace": "/home/user/code/api",
     "shares_with": [
       "t5 api"
@@ -24,7 +27,7 @@
     "host": "herdr",
     "terminal": "t5",
     "agent": "codex",
-    "status": "working",
+    "status": "blocked",
     "stuck": false,
     "quiet_min": null,
     "pid": 41388,
@@ -34,6 +37,9 @@
     "cost_usd": 0.86,
     "reported_cost_usd": null,
     "tokens": 402118,
+    "turn": 3,
+    "turn_ended_ms": null,
+    "needs": "Run: cargo test -p client",
     "workspace": "/home/user/code/api",
     "shares_with": [
       "t3 api"
@@ -54,7 +60,10 @@
     "title": "Summarise the meeting",
     "cost_usd": 0.04,
     "reported_cost_usd": 0.04,
-    "tokens": 20311
+    "tokens": 20311,
+    "turn": 4,
+    "turn_ended_ms": 1790848809500,
+    "needs": null
   },
   {
     "where": "t8 web",

@@ -41,6 +41,13 @@
           "kind": {
             "type": "string"
           },
+          "needs": {
+            "description": "needs_you: why, as on the live row.",
+            "type": [
+              "null",
+              "string"
+            ]
+          },
           "session": {
             "type": [
               "null",
@@ -64,6 +71,17 @@
               "null",
               "string"
             ]
+          },
+          "turn": {
+            "description": "turn_finished: the turn that ended; null when the agent keeps no transcript to count in.",
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "turn_ended_ms": {
+            "description": "turn_finished: when it ended, in ms since the epoch (when Trailboss saw it, without a transcript).",
+            "type": "integer"
           },
           "where": {
             "type": [
@@ -109,6 +127,13 @@
             ]
           },
           "host": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "needs": {
+            "description": "Why the agent waits on you, in a few words (\"Plan to approve\", a question's first words, \"Run: npm test\", \"Rate limited\"); null when it doesn't.",
             "type": [
               "null",
               "string"
@@ -163,6 +188,20 @@
             ]
           },
           "tokens": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "turn": {
+            "description": "The turn under way, or the last one finished, counted from the transcript; null without one.",
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "turn_ended_ms": {
+            "description": "When that turn ended, in ms since the epoch; null while it's under way or unknown.",
             "type": [
               "integer",
               "null"
