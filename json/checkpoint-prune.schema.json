@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json checkpoint prune [FOLDER] [--yes]",
+  "description": "Checkpoints of sessions that ran in a linked git worktree the repository no longer lists (removed, or pruned after its folder was deleted), one row per session. Without --yes, the plan (`would drop`); with --yes, `dropped`. Checkpoints saved in the main worktree, or in one still listed, are never dropped. Empty when there is nothing to drop.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "description": "would drop or dropped",
+        "type": "string"
+      },
+      "session": {
+        "description": "AGENT:ID",
+        "type": "string"
+      },
+      "checkpoints": {
+        "description": "How many of the session's checkpoints go",
+        "type": "integer"
+      },
+      "worktree": {
+        "description": "The removed worktree's folder, as the checkpoints name it",
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "session",
+      "checkpoints",
+      "worktree"
+    ]
+  }
+}

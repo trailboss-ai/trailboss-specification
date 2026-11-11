@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "trailboss --json checkpoint restore AGENT:ID N [--yes]",
-  "description": "Putting a session's folder back as checkpoint N, one row per step. Without --yes, the plan: `would write` (from the checkpoint) or `would remove` (the checkpoint doesn't have it) per file. With --yes: first a `warning` row when --force restored a session that was working, needing you or showing no status (its path is where the agent runs), then a `safety` row whose path is the checkpoint ref holding the folder as it was (restore it to undo), then `written`, `removed` or `failed` per file, and a `kept` row whose path is the undo-stash folder holding every file replaced or removed. `skip` rows: files git ignores, submodules, or a folder already as the checkpoint. File paths are absolute.",
+  "description": "Putting a session's folder back as checkpoint N, one row per step. Without --yes, the plan: `would write` (from the checkpoint) or `would remove` (the checkpoint doesn't have it) per file. With --yes: first a `warning` row when --force restored a session that was working, needing you, or showing no status and no finished turn (its path is where the agent runs), then a `safety` row whose path is the checkpoint ref holding the folder as it was (restore it to undo), then `written`, `removed` or `failed` per file, and a `kept` row whose path is the undo-stash folder holding every file replaced or removed. `skip` rows: files git ignores, submodules, or a folder already as the checkpoint. File paths are absolute.",
   "type": "array",
   "items": {
     "type": "object",
