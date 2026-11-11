@@ -97,6 +97,13 @@
           "null"
         ]
       },
+      "tokens_note": {
+        "description": "Why `tokens` isn't the session's total yet, when the agent writes usage only at the end (Copilot CLI: \"not until it ends\"); null otherwise. A 0 is then shown as null.",
+        "type": [
+          "null",
+          "string"
+        ]
+      },
       "turn": {
         "description": "The turn under way, or the last one finished, counted from the transcript; null without one.",
         "type": [

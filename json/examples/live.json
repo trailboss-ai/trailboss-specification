@@ -21,7 +21,8 @@
     "workspace": "/home/user/code/api",
     "shares_with": [
       "t5 api"
-    ]
+    ],
+    "tokens_note": null
   },
   {
     "where": "t5 api",
@@ -46,7 +47,8 @@
     "shares_with": [
       "t3 api"
     ],
-    "parent": "t3 api"
+    "parent": "t3 api",
+    "tokens_note": null
   },
   {
     "where": "pid 52007",
@@ -66,7 +68,29 @@
     "turn": 4,
     "turn_ended_ms": 1790848809500,
     "needs": null,
-    "needs_kind": null
+    "needs_kind": null,
+    "tokens_note": null
+  },
+  {
+    "where": "pid 52311",
+    "host": null,
+    "terminal": null,
+    "agent": "copilot",
+    "status": "working",
+    "stuck": false,
+    "quiet_min": null,
+    "pid": 52311,
+    "session": "3c1d2e4f-1111-4aaa-8bbb-000000000001",
+    "cwd": "/home/user/code/shop",
+    "title": "Add a cart badge",
+    "cost_usd": null,
+    "reported_cost_usd": null,
+    "tokens": null,
+    "turn": null,
+    "turn_ended_ms": null,
+    "needs": null,
+    "needs_kind": null,
+    "tokens_note": "not until it ends"
   },
   {
     "where": "t8 web",
