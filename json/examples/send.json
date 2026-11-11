@@ -3,7 +3,31 @@
     "where": "t3 api",
     "agent": "claude",
     "action": "sent",
-    "detail": "was idle"
+    "detail": "was idle; started a turn"
+  },
+  {
+    "where": "t5 docs",
+    "agent": "claude",
+    "action": "held",
+    "detail": "was idle; held until its turn ends"
+  },
+  {
+    "where": "t6 web",
+    "agent": "claude",
+    "action": "no reaction",
+    "detail": "was done; sent, no reaction yet"
+  },
+  {
+    "where": "t7 app",
+    "agent": "claude",
+    "action": "sent",
+    "detail": "was idle; started a turn"
+  },
+  {
+    "where": "t4 ops",
+    "agent": "claude",
+    "action": "skipped",
+    "detail": "waiting on its own dialog (permission)"
   },
   {
     "where": "t8 web",
