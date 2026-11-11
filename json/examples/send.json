@@ -1,0 +1,26 @@
+[
+  {
+    "where": "t3 api",
+    "agent": "claude",
+    "action": "sent",
+    "detail": "was idle"
+  },
+  {
+    "where": "t8 web",
+    "agent": "codex",
+    "action": "skipped",
+    "detail": "it's working"
+  },
+  {
+    "where": "pid 52007",
+    "agent": "pi",
+    "action": "skipped",
+    "detail": "no terminal to type into"
+  },
+  {
+    "where": "t9",
+    "agent": null,
+    "action": "skipped",
+    "detail": "no agent there"
+  }
+]

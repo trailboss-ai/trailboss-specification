@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json send",
+  "description": "One row per chosen agent. action: would send (no --yes), sent, or skipped (detail says why). The message itself is never in the output. agent is null for a selector that found no agent.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "agent": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "detail": {
+        "type": "string"
+      },
+      "where": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "agent",
+      "detail",
+      "where"
+    ]
+  }
+}
