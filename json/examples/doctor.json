@@ -10,6 +10,7 @@
     { "check": "herdr-layout", "detail": "'main-trailboss' has no Trailboss block: tracking and resume don't run", "fix": "python3 /home/user/.config/herdr-app/mods/trailboss/setup_mod.py add-block", "status": "fail" },
     { "check": "herdr-keys", "detail": "no key for trailboss.insights", "fix": "python3 install.py --update (in trailboss-herdr)", "status": "warn" },
     { "check": "tmux", "detail": "not on the PATH (needed only with tmux)", "fix": null, "status": "skip" },
+    { "check": "tuios", "detail": "not running (needed only with tuios)", "fix": null, "status": "skip" },
     { "check": "gh", "detail": "not signed in: `trailboss stats` can't read pull requests", "fix": "gh auth login", "status": "warn" }
   ],
   "ok": false,

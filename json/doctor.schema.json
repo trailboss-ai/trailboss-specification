@@ -13,7 +13,7 @@
         "type": "object",
         "properties": {
           "check": {
-            "description": "What was checked: version, config, index, source:<agent>, herdr, herdr-mod, herdr-layout, herdr-keys, tmux, gh. More may be added.",
+            "description": "What was checked: version, config, index, source:<agent>, herdr, herdr-mod, herdr-layout, herdr-keys, tmux, tuios, gh. More may be added.",
             "type": "string"
           },
           "detail": {
