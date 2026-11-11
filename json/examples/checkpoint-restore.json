@@ -1,0 +1,27 @@
+[
+  {
+    "action": "safety",
+    "path": "refs/trailboss/checkpoints/claude/s-normal/3",
+    "detail": "checkpoint 3: the folder as it was; restore it to undo this"
+  },
+  {
+    "action": "removed",
+    "path": "/home/user/shop/retry.py",
+    "detail": "checkpoint doesn't have it"
+  },
+  {
+    "action": "written",
+    "path": "/home/user/shop/client.py",
+    "detail": "differs from the checkpoint"
+  },
+  {
+    "action": "skip",
+    "path": "/home/user/shop/debug.log",
+    "detail": "ignored by git: left alone"
+  },
+  {
+    "action": "kept",
+    "path": "/home/user/.local/share/trailboss/undo/2026-10-01T10-06-00.000Z",
+    "detail": "what was there before this restore"
+  }
+]
