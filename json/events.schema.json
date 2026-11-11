@@ -48,6 +48,13 @@
               "string"
             ]
           },
+          "needs_kind": {
+            "description": "needs_you: the kind of request, as on the live row.",
+            "type": [
+              "null",
+              "string"
+            ]
+          },
           "session": {
             "type": [
               "null",
@@ -134,6 +141,13 @@
           },
           "needs": {
             "description": "Why the agent waits on you, in a few words (\"Plan to approve\", a question's first words, \"Run: npm test\", \"Rate limited\"); null when it doesn't.",
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "needs_kind": {
+            "description": "What kind of request `needs` is, with nothing from the transcript: plan, question, run, edit, read, fetch, search, tool, rate_limit, error or waiting (more may be added).",
             "type": [
               "null",
               "string"

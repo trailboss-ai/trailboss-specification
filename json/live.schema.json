@@ -36,6 +36,13 @@
           "string"
         ]
       },
+      "needs_kind": {
+        "description": "What kind of request `needs` is, with nothing from the transcript: plan, question, run, edit, read, fetch, search, tool, rate_limit, error or waiting (more may be added).",
+        "type": [
+          "null",
+          "string"
+        ]
+      },
       "parent": {
         "type": "string"
       },

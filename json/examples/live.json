@@ -17,6 +17,7 @@
     "turn": 7,
     "turn_ended_ms": null,
     "needs": null,
+    "needs_kind": null,
     "workspace": "/home/user/code/api",
     "shares_with": [
       "t5 api"
@@ -40,6 +41,7 @@
     "turn": 3,
     "turn_ended_ms": null,
     "needs": "Run: cargo test -p client",
+    "needs_kind": "run",
     "workspace": "/home/user/code/api",
     "shares_with": [
       "t3 api"
@@ -63,7 +65,8 @@
     "tokens": 20311,
     "turn": 4,
     "turn_ended_ms": 1790848809500,
-    "needs": null
+    "needs": null,
+    "needs_kind": null
   },
   {
     "where": "t8 web",
