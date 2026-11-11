@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json doctor",
+  "description": "What's working and what isn't. Printed in full even when a check fails; the exit code is then 1.",
+  "type": "object",
+  "properties": {
+    "api": {
+      "type": "integer"
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "check": {
+            "description": "What was checked: version, config, index, source:<agent>, herdr, herdr-mod, herdr-layout, herdr-keys, tmux, gh. More may be added.",
+            "type": "string"
+          },
+          "detail": {
+            "description": "One line for people: what was found.",
+            "type": "string"
+          },
+          "fix": {
+            "description": "The command or step that would fix it; null when there's nothing to fix. Doctor never runs it.",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "description": "ok; warn (works, or fixes itself, but something's off); fail (broken: exit code 1); skip (not installed or not used).",
+            "type": "string"
+          }
+        },
+        "required": [
+          "check",
+          "detail",
+          "fix",
+          "status"
+        ]
+      }
+    },
+    "ok": {
+      "description": "False when any check's status is fail.",
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "api",
+    "checks",
+    "ok",
+    "version"
+  ]
+}
