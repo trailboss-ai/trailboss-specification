@@ -1,0 +1,24 @@
+[
+  {
+    "action": "started",
+    "definition": "reviewer",
+    "kind": "codex",
+    "source": "repo",
+    "path": "/home/user/shop/.trailboss/agents/reviewer.json",
+    "trust": "trusted",
+    "folder": "/home/user/shop",
+    "argv": [
+      "codex",
+      "-s",
+      "read-only",
+      "Review only: don't edit files.\n\n<brief>"
+    ],
+    "command": "codex -s read-only 'Review only: don'\\''t edit files.\n\n<brief>'",
+    "brief": true,
+    "label": "auth review",
+    "host": "herdr",
+    "terminal": "t11",
+    "parent": "claude:5f1c2a7e-0b2d-4c55-9a51-1f0e8f9d2c11",
+    "detail": "codex runs in /home/user/shop"
+  }
+]

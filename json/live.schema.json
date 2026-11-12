@@ -230,6 +230,20 @@
       },
       "workspace": {
         "type": "string"
+      },
+      "label": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The label `trailboss start` gave the agent in this terminal; null for one it didn't start."
+      },
+      "definition": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The agent definition `trailboss start` started in this terminal; null for one it didn't start."
       }
     },
     "required": [

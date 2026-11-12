@@ -40,7 +40,9 @@
     "shares_with": [
       "t5 api"
     ],
-    "tokens_note": null
+    "tokens_note": null,
+    "label": "auth review",
+    "definition": "reviewer"
   },
   {
     "where": "t5 api",
@@ -78,7 +80,9 @@
       "t3 api"
     ],
     "parent": "t3 api",
-    "tokens_note": null
+    "tokens_note": null,
+    "label": null,
+    "definition": null
   },
   {
     "where": "pid 52007",
@@ -111,7 +115,9 @@
     "background": null,
     "status_since": 1790848809500,
     "pinned": false,
-    "tokens_note": null
+    "tokens_note": null,
+    "label": null,
+    "definition": null
   },
   {
     "where": "pid 52311",
@@ -144,12 +150,16 @@
     "background": null,
     "status_since": null,
     "pinned": false,
-    "tokens_note": "not until it ends"
+    "tokens_note": "not until it ends",
+    "label": null,
+    "definition": null
   },
   {
     "where": "t8 web",
     "host": "herdr",
     "terminal": "t8",
-    "status": "lost (trailboss resume)"
+    "status": "lost (trailboss resume)",
+    "label": null,
+    "definition": null
   }
 ]

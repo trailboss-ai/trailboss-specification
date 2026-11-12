@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json start",
+  "description": "One row: the agent `start` would start (no --yes), or started (--yes), from an agent definition, in a new host terminal in a folder, outside a task: no worktree, no branch. The command runs directly, never through a shell. Started, its label is kept so `live` and `resume` show it. A start that fails is an error, not a row. Frontends should show an action they don't know as is.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string",
+        "description": "would start or started; more may be added."
+      },
+      "definition": {
+        "type": "string",
+        "description": "The definition's name, as `agents ls` lists it."
+      },
+      "kind": {
+        "type": "string",
+        "description": "claude, codex, gemini, copilot, opencode or pi."
+      },
+      "source": {
+        "type": "string",
+        "description": "repo, user or built-in."
+      },
+      "path": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The definition's file; null for a built-in one."
+      },
+      "trust": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "A repository definition's trust: always trusted here (an untrusted one is refused). Null for yours and built-in ones."
+      },
+      "folder": {
+        "type": "string",
+        "description": "The folder it starts in."
+      },
+      "argv": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "What it runs, with the first prompt (the definition's rules and the brief) shown as `<brief>`; without a brief, the definition's rules alone, else no prompt at all."
+      },
+      "command": {
+        "type": "string",
+        "description": "argv as one line to read; nothing runs it through a shell."
+      },
+      "brief": {
+        "type": "boolean",
+        "description": "Whether it was given a first prompt (--task or --task-file). The brief itself isn't printed."
+      },
+      "label": {
+        "type": "string",
+        "description": "--name, else the definition's name: its terminal's name, and what `live` and `resume` show."
+      },
+      "host": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "herdr, tmux, …; null when no host is running (the plan then says so)."
+      },
+      "terminal": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The new terminal's address, once started."
+      },
+      "parent": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "AGENT:ID of the session it belongs to: the one named with --parent, else the one it was started from."
+      },
+      "detail": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "definition",
+      "kind",
+      "source",
+      "path",
+      "trust",
+      "folder",
+      "argv",
+      "command",
+      "brief",
+      "label",
+      "host",
+      "terminal",
+      "parent",
+      "detail"
+    ]
+  }
+}
