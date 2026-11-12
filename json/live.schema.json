@@ -11,6 +11,38 @@
           "string"
         ]
       },
+      "background": {
+        "description": "Background jobs the agent left running, oldest first: Claude Code's background shells and monitors (while one of its processes holds the output open), Codex's processes started during a turn and alive after it ended. Read-only: nothing is stopped. null for agents whose jobs Trailboss can't tell apart.",
+        "type": [
+          "array",
+          "null"
+        ],
+        "items": {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "description": "shell or monitor (Claude Code), process (Codex); more may be added.",
+              "type": "string"
+            },
+            "label": {
+              "description": "What it runs, on one line, at most 80 characters: the call's description or command (Claude Code), the process's command line (Codex).",
+              "type": "string"
+            },
+            "since": {
+              "description": "When its process started, in ms since the epoch; null when unknown.",
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "kind",
+            "label",
+            "since"
+          ]
+        }
+      },
       "context_pct": {
         "description": "context_tokens over context_window, as a whole percentage; null when either is unknown, or the tokens exceed the window (a larger-context mode).",
         "type": [
@@ -26,13 +58,20 @@
         ]
       },
       "context_window": {
-        "description": "The model's context window in tokens: what Codex records, else the price table's max_input_tokens; null when unknown.",
+        "description": "The context window in tokens the agent runs with: what Codex records; for Claude Code 200k unless its 1M-context mode is on (the last response's requested model ends in [1m], else --model or the settings' model does) or the context already holds more, capped at the price table's max_input_tokens; else the price table's max_input_tokens; null when unknown.",
         "type": [
           "integer",
           "null"
         ]
       },
       "cost_usd": {
+        "type": [
+          "null",
+          "number"
+        ]
+      },
+      "cpu_pct": {
+        "description": "CPU the agent's process tree uses, in percent of one core (over 100 on several cores), to one decimal; null when unknown (no /proc).",
         "type": [
           "null",
           "number"
@@ -91,13 +130,35 @@
         "description": "The user pinned this terminal or session (`live --pin`).",
         "type": "boolean"
       },
+      "procs": {
+        "description": "How many processes the agent's tree has, itself included; null when unknown.",
+        "type": [
+          "integer",
+          "null"
+        ]
+      },
+      "quiet_busy": {
+        "description": "Working with no progress for a while, but its processes are busy (a long build or test run): busy, not stuck. `stuck` is the same when they aren't busy.",
+        "type": "boolean"
+      },
       "quiet_min": {
-        "type": "null"
+        "description": "Minutes without transcript progress, when `stuck` or `quiet_busy`; null otherwise.",
+        "type": [
+          "integer",
+          "null"
+        ]
       },
       "reported_cost_usd": {
         "type": [
           "null",
           "number"
+        ]
+      },
+      "rss_bytes": {
+        "description": "Resident memory of the agent's process tree, in bytes (memory shared between its processes counted in each); null when unknown.",
+        "type": [
+          "integer",
+          "null"
         ]
       },
       "session": {

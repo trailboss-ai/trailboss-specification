@@ -67,6 +67,7 @@
       "agent": "claude",
       "status": "working",
       "stuck": false,
+      "quiet_busy": false,
       "quiet_min": null,
       "pid": 41210,
       "session": "7f9c2d1e-0a4b-4c55-9e1f-2b3c4d5e6f70",
@@ -84,6 +85,16 @@
       "context_tokens": 380112,
       "context_window": 1000000,
       "context_pct": 38,
+      "cpu_pct": 38.2,
+      "rss_bytes": 612368384,
+      "procs": 4,
+      "background": [
+        {
+          "kind": "shell",
+          "label": "Start the dev server",
+          "since": 1790848500000
+        }
+      ],
       "status_since": 1790848650000,
       "pinned": true,
       "workspace": "/home/user/code/api",
@@ -98,6 +109,7 @@
       "agent": "codex",
       "status": "blocked",
       "stuck": false,
+      "quiet_busy": false,
       "quiet_min": null,
       "pid": 41388,
       "session": "0199bbbb-cccc-7ddd-8eee-ffff00001111",
@@ -115,6 +127,10 @@
       "context_tokens": 96004,
       "context_window": 258400,
       "context_pct": 37,
+      "cpu_pct": 0.4,
+      "rss_bytes": 96468992,
+      "procs": 3,
+      "background": [],
       "status_since": 1790848790000,
       "pinned": false,
       "workspace": "/home/user/code/api",
@@ -130,6 +146,7 @@
       "agent": "pi",
       "status": "idle",
       "stuck": false,
+      "quiet_busy": false,
       "quiet_min": null,
       "pid": 52007,
       "session": "pi-9",
@@ -147,6 +164,10 @@
       "context_tokens": 20311,
       "context_window": 1000000,
       "context_pct": 2,
+      "cpu_pct": 0.0,
+      "rss_bytes": 142606336,
+      "procs": 1,
+      "background": null,
       "status_since": 1790848809500,
       "pinned": false
     }
