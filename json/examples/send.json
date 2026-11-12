@@ -30,6 +30,12 @@
     "detail": "waiting on its own dialog (permission)"
   },
   {
+    "where": "t1 notes",
+    "agent": "claude",
+    "action": "skipped",
+    "detail": "your draft is in the input"
+  },
+  {
     "where": "t8 web",
     "agent": "codex",
     "action": "skipped",
@@ -40,7 +46,8 @@
     "agent": "claude",
     "action": "queued",
     "detail": "it's working; typed after its turn ends (q4)",
-    "id": "q4"
+    "id": "q4",
+    "nothing_looking": false
   },
   {
     "where": "pid 52007",

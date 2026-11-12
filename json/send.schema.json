@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "trailboss --json send",
-  "description": "One row per chosen agent. action: would send (no --yes), skipped (detail says why), or, once typed: sent (it started a turn; with --no-wait, only that it was typed), held (the agent holds it until the turn under way ends) or no reaction (typed, but it hadn't started a turn when checked; detail says if the message is still in its input box). With --queue, an agent mid-turn (working, or waiting on its own dialog) gets would queue, or queued with --yes: the message waits in `trailboss queue` (its id in id) and is typed once that turn ends. detail starts with the status the agent was in and adds what the look found, e.g. 'was idle; started a turn'. Frontends should show an action they don't know as is. The message itself is never in the output. agent is null for a selector that found no agent.",
+  "description": "One row per chosen agent. action: would send (no --yes), skipped (detail says why; 'your draft is in the input' when the agent's input box already holds text someone typed there, which is never typed over), or, once typed: sent (it started a turn; with --no-wait, only that it was typed), held (the agent holds it until the turn under way ends) or no reaction (typed, but it hadn't started a turn when checked; detail says if the message is still in its input box). With --queue, an agent mid-turn (working, or waiting on its own dialog) gets would queue, or queued with --yes: the message waits in `trailboss queue` (its id in id) and is typed once that turn ends. detail starts with the status the agent was in and adds what the look found, e.g. 'was idle; started a turn'. Frontends should show an action they don't know as is. The message itself is never in the output. agent is null for a selector that found no agent.",
   "type": "array",
   "items": {
     "type": "object",
@@ -25,6 +25,10 @@
       "id": {
         "type": "string",
         "description": "Only on a queued row: the queued message's id, for `trailboss queue rm`."
+      },
+      "nothing_looking": {
+        "type": "boolean",
+        "description": "Only on a queued row: true when nothing has looked at the agents in the last 5 minutes (no `trailboss events`, `watch` or Herdr block), so the message waits until one runs; detail says so too."
       }
     },
     "required": [

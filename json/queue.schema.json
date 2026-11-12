@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "trailboss --json queue",
-  "description": "Messages `send --queue --yes` keeps for agents mid-turn, oldest first, then the last 20 that finished. state: waiting (its turn hasn't ended), due (it has; typed once the agent is at rest), typing, or, finished, what came of it as `send` says it (sent, held, no reaction, or unknown when the delivery stopped before saying). detail says why it waits or what the look found. A message is typed only into the session it was queued for, one per rest: the next for the same agent waits for the turn the first one started to end. Frontends should show a state they don't know as is.",
+  "description": "Messages `send --queue --yes` keeps for agents mid-turn, oldest first, then the last 20 that finished. state: waiting (its turn hasn't ended), due (it has; typed once the agent is at rest), typing, or, finished, what came of it as `send` says it (sent, held, no reaction, or unknown when the delivery stopped before saying). detail says why it waits or what the look found ('not typed yet: your draft is in the input' while the agent's input box holds your text: it's tried again at each look). A message is typed only into the session it was queued for, one per rest: the next for the same agent waits for the turn the first one started to end. Frontends should show a state they don't know as is.",
   "type": "array",
   "items": {
     "type": "object",
@@ -53,6 +53,10 @@
           "null"
         ],
         "description": "When it finished, in Unix milliseconds; null while queued."
+      },
+      "nothing_looking": {
+        "type": "boolean",
+        "description": "True on a queued message when nothing has looked at the agents in the last 5 minutes (no `trailboss events`, `watch` or Herdr block): it waits until one runs, and detail says so too. False once finished."
       }
     },
     "required": [

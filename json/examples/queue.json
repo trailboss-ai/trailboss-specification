@@ -8,7 +8,8 @@
     "detail": "waits for its turn to end",
     "message": "rebase on main when you're done",
     "queued_ms": 1793000000000,
-    "at_ms": null
+    "at_ms": null,
+    "nothing_looking": false
   },
   {
     "id": "q5",
@@ -19,7 +20,8 @@
     "detail": "its turn ended; waits for it to be at rest",
     "message": "run the e2e tests too",
     "queued_ms": 1793000020000,
-    "at_ms": null
+    "at_ms": null,
+    "nothing_looking": false
   },
   {
     "id": "q3",
@@ -30,6 +32,7 @@
     "detail": "was idle; started a turn",
     "message": null,
     "queued_ms": 1792999000000,
-    "at_ms": 1792999400000
+    "at_ms": 1792999400000,
+    "nothing_looking": false
   }
 ]
