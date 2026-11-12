@@ -140,14 +140,14 @@
             ]
           },
           "needs": {
-            "description": "Why the agent waits on you, in a few words (\"Plan to approve\", a question's first words, \"Run: npm test\", \"Rate limited\"); null when it doesn't.",
+            "description": "Why the agent waits on you, in a few words (\"Plan to approve\", a question's first words, \"Run: npm test\", \"Rate limited\", the question a finished turn ended on); null when it doesn't.",
             "type": [
               "null",
               "string"
             ]
           },
           "needs_kind": {
-            "description": "What kind of request `needs` is, with nothing from the transcript: plan, question, run, edit, read, fetch, search, tool, rate_limit, error or waiting (more may be added).",
+            "description": "What kind of request `needs` is, with nothing from the transcript: plan, question, run, edit, read, fetch, search, tool, rate_limit, error, waiting or reply (a turn that ended on a question; more may be added).",
             "type": [
               "null",
               "string"

@@ -67,8 +67,8 @@
     "tokens": 20311,
     "turn": 4,
     "turn_ended_ms": 1790848809500,
-    "needs": null,
-    "needs_kind": null,
+    "needs": "Should I send it to the team?",
+    "needs_kind": "reply",
     "tokens_note": null
   },
   {
@@ -86,7 +86,7 @@
     "cost_usd": null,
     "reported_cost_usd": null,
     "tokens": null,
-    "turn": null,
+    "turn": 2,
     "turn_ended_ms": null,
     "needs": null,
     "needs_kind": null,
