@@ -287,7 +287,7 @@
             "type": "string"
           },
           "status_since": {
-            "description": "When the agent entered its current status, in ms since the epoch: as `events` last saw it change, else (at rest) when its last turn ended or its transcript last changed; null when unknown (working, with no earlier look).",
+            "description": "When the agent entered its current status, in ms since the epoch: as `events` last saw it change, else (working) when its turn started, at its prompt, else (at rest) when its last turn ended or its transcript last changed; null when unknown.",
             "type": [
               "integer",
               "null"
