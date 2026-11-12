@@ -1,0 +1,292 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json task show",
+  "description": "One task, as the card to read before accepting it: an object (not an array) with every field of its `task ls` row, and what it did. The summary is the agent's last message, read from the local index: it's for you, and Trailboss never logs or sends it anywhere.",
+  "type": "object",
+  "properties": {
+    "n": {
+      "type": "integer"
+    },
+    "state": {
+      "type": "string",
+      "description": "to do, working, needs you, ready, done or missing; more may be added."
+    },
+    "detail": {
+      "type": "string",
+      "description": "Why: the agent's status or what it waits on, or how it ended."
+    },
+    "title": {
+      "type": "string",
+      "description": "The brief's first line."
+    },
+    "agent": {
+      "type": "string"
+    },
+    "branch": {
+      "type": "string"
+    },
+    "base": {
+      "type": "string"
+    },
+    "folder": {
+      "type": "string"
+    },
+    "worktree": {
+      "type": "string"
+    },
+    "commits": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "Commits on its branch that the base branch doesn't have; null once done."
+    },
+    "files": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "Files its branch changed; null once done."
+    },
+    "uncommitted": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "Changed paths not committed in its worktree; null once done or gone."
+    },
+    "host": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "terminal": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "where": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Where its agent runs now, as `live` says; null when none is."
+    },
+    "session": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "AGENT:ID of its agent's session: the one live in its terminal, else the latest indexed in its worktree."
+    },
+    "parent": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "created_ms": {
+      "type": "integer"
+    },
+    "done_ms": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "outcome": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "merged or removed, once done."
+    },
+    "brief": {
+      "type": "string",
+      "description": "The whole brief."
+    },
+    "summary": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "The agent's last message in that session; null when none is indexed.",
+      "properties": {
+        "ts": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ts",
+        "text"
+      ]
+    },
+    "changed": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "description": "Files its branch changed since it left the base branch; null once done.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "Relative to the repository; `old => new` for a rename."
+          },
+          "added": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "Lines added; null for a binary file."
+          },
+          "removed": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "Lines removed; null for a binary file."
+          }
+        },
+        "required": [
+          "path",
+          "added",
+          "removed"
+        ]
+      }
+    },
+    "diffstat": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "Totals of `changed`; null once done.",
+      "properties": {
+        "files": {
+          "type": "integer"
+        },
+        "added": {
+          "type": "integer"
+        },
+        "removed": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "files",
+        "added",
+        "removed"
+      ]
+    },
+    "checks": {
+      "type": "array",
+      "description": "Checks known to have run on its session or in its worktree: `until` loops running there. Empty when none is known.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "check": {
+            "type": "string",
+            "description": "The check's command, its words joined by spaces."
+          },
+          "by": {
+            "type": "string",
+            "description": "What ran it: until; more may be added."
+          },
+          "state": {
+            "type": "string"
+          },
+          "round": {
+            "type": "integer"
+          },
+          "passed": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "How it ended last time; null before it has run."
+          }
+        },
+        "required": [
+          "check",
+          "by",
+          "passed"
+        ]
+      }
+    },
+    "can_accept": {
+      "type": "boolean",
+      "description": "Whether `task accept <n> --yes` would merge it now."
+    },
+    "accept_blocked": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Why accept would refuse it now, as accept would say; null when it would go through."
+    },
+    "log": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "description": "Commits on its branch the base branch doesn't have, newest first (`commits` counts them); null once done (its branch is gone).",
+      "items": {
+        "type": "object",
+        "properties": {
+          "hash": {
+            "type": "string"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "ts": {
+            "type": "string",
+            "description": "The commit time, ISO 8601."
+          }
+        },
+        "required": [
+          "hash",
+          "subject",
+          "ts"
+        ]
+      }
+    }
+  },
+  "required": [
+    "n",
+    "state",
+    "detail",
+    "title",
+    "agent",
+    "branch",
+    "base",
+    "folder",
+    "worktree",
+    "commits",
+    "files",
+    "host",
+    "terminal",
+    "where",
+    "parent",
+    "created_ms",
+    "done_ms",
+    "outcome",
+    "brief",
+    "summary",
+    "changed",
+    "diffstat",
+    "checks",
+    "can_accept",
+    "accept_blocked",
+    "log"
+  ]
+}

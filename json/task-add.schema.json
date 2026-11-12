@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "trailboss --json task add",
-  "description": "One row: the task `task add` would start (no --yes), or started (--yes). Started, its branch `work/<n>-<slug>` and worktree exist, made off the folder's current branch without touching that checkout, and the agent runs there in a new host terminal with the brief as its first prompt. Frontends should show an action they don't know as is.",
+  "description": "One row per brief: the tasks `task add` would start (no --yes), or started (--yes). With several briefs, every worktree is made before any agent starts. Started, its branch `work/<n>-<slug>` and worktree exist, made off the folder's current branch without touching that checkout, and the agent runs there in a new host terminal with the brief as its first prompt. A start that failed took its worktree and branch back (action `failed`). Frontends should show an action they don't know as is.",
   "type": "array",
   "items": {
     "type": "object",
@@ -12,7 +12,7 @@
       },
       "action": {
         "type": "string",
-        "description": "would start or started; more may be added."
+        "description": "would start, started or failed; more may be added."
       },
       "agent": {
         "type": "string"
@@ -30,7 +30,8 @@
         "description": "The top of the checkout it starts from."
       },
       "worktree": {
-        "type": "string"
+        "type": "string",
+        "description": "Under the folder `--worktrees` or the config's `tasks.worktrees` names (relative to the repository's top), else `worktrees/` beside the index."
       },
       "host": {
         "type": [
@@ -55,6 +56,29 @@
       },
       "detail": {
         "type": "string"
+      },
+      "shares": {
+        "type": "array",
+        "description": "Other tasks, added with it or open in the same folder, whose briefs name a file this brief names too: their agents may change the same file. Empty when none. A file is a word in the brief with an extension, like `src/login.rs` or `README.md`; `login.rs` and `src/login.rs` count as the same.",
+        "items": {
+          "type": "object",
+          "properties": {
+            "n": {
+              "type": "integer",
+              "description": "The other task's number."
+            },
+            "paths": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "n",
+            "paths"
+          ]
+        }
       }
     },
     "required": [
