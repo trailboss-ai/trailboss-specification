@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json agents trust",
+  "description": "One row, as `agents show` gives it, for the repository definition a name starts. Without --yes nothing is written and `trust` is its current state; with --yes, the file's content is recorded as trusted (beside the index) and `trust` is trusted. A name with no definition, one with a problem, or one not from a repository is an error.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "What `task add --agent` takes: the file's name without `.json`, or the agent kind for a built-in one."
+      },
+      "kind": {
+        "type": "string",
+        "description": "claude, codex, gemini, copilot, opencode or pi; more may be added. Empty when the file couldn't be read."
+      },
+      "source": {
+        "type": "string",
+        "description": "repo (the repository's `.trailboss/agents/`), user (`~/.config/trailboss/agents/`) or built-in. A name from an earlier source wins."
+      },
+      "path": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The definition's file; null when built in."
+      },
+      "active": {
+        "type": "boolean",
+        "description": "Whether this is the one its name starts: false when a definition earlier in repo, user, built-in order has the same name."
+      },
+      "description": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "model": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Passed as the kind's --model."
+      },
+      "args": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Flags and their values, from the allowlist `resume` keeps, after the model and before the brief."
+      },
+      "rules": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Text put before the brief, a blank line between."
+      },
+      "problem": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Why it can't be started (unreadable, an unknown key or kind, a flag off the allowlist or missing its value, one that would take the brief as its value); null when it can."
+      },
+      "command": {
+        "type": "string",
+        "description": "argv as one line to read, `<brief>` standing for the brief. For showing only: Trailboss never runs it through a shell."
+      },
+      "argv": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "What `task add` runs, without a shell: the program, --model, the args, the kind's prompt flag if it has one, then the first prompt (rules, a blank line, and `<brief>`)."
+      },
+      "overrides": {
+        "type": "array",
+        "description": "Definitions with the same name that this one wins over.",
+        "items": {
+          "type": "object",
+          "properties": {
+            "source": {
+              "type": "string"
+            },
+            "path": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "source",
+            "path"
+          ]
+        }
+      },
+      "trust": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "A repository definition's trust: trusted (`agents trust --yes` recorded this file with this content), new (never trusted) or changed (its content differs from what was trusted). `task add` starts a repository's definition only when trusted. Null for yours and built-in ones, which need no trust."
+      },
+      "shadows": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "The sources (user, built-in) of definitions with the same name that this one wins over, in order; empty when it replaces none or isn't active. A repository definition named claude, codex, \u2026 replaces the built-in one."
+      }
+    },
+    "required": [
+      "name",
+      "kind",
+      "source",
+      "path",
+      "active",
+      "description",
+      "model",
+      "args",
+      "rules",
+      "problem",
+      "command",
+      "argv",
+      "overrides",
+      "trust",
+      "shadows"
+    ]
+  }
+}

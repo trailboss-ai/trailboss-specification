@@ -95,6 +95,20 @@
             "path"
           ]
         }
+      },
+      "trust": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "A repository definition's trust: trusted (`agents trust --yes` recorded this file with this content), new (never trusted) or changed (its content differs from what was trusted). `task add` starts a repository's definition only when trusted. Null for yours and built-in ones, which need no trust."
+      },
+      "shadows": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "The sources (user, built-in) of definitions with the same name that this one wins over, in order; empty when it replaces none or isn't active. A repository definition named claude, codex, \u2026 replaces the built-in one."
       }
     },
     "required": [
@@ -110,7 +124,9 @@
       "problem",
       "command",
       "argv",
-      "overrides"
+      "overrides",
+      "trust",
+      "shadows"
     ]
   }
 }

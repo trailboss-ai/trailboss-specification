@@ -27,6 +27,10 @@
         "source": "user",
         "path": "/home/user/.config/trailboss/agents/reviewer.json"
       }
+    ],
+    "trust": "new",
+    "shadows": [
+      "user"
     ]
   }
 ]

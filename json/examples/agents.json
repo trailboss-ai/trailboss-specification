@@ -12,7 +12,11 @@
       "read-only"
     ],
     "rules": "Review only: don't edit files. Report what you'd change and why.",
-    "problem": null
+    "problem": null,
+    "trust": "trusted",
+    "shadows": [
+      "user"
+    ]
   },
   {
     "name": "reviewer",
@@ -27,7 +31,9 @@
       "plan"
     ],
     "rules": null,
-    "problem": null
+    "problem": null,
+    "trust": null,
+    "shadows": []
   },
   {
     "name": "tester",
@@ -42,7 +48,9 @@
       "/home/user/fixtures"
     ],
     "rules": null,
-    "problem": "--add-dir takes any number of values, so the brief after it would be read as one: put another flag after its values"
+    "problem": "--add-dir takes any number of values, so the brief after it would be read as one: put another flag after its values",
+    "trust": null,
+    "shadows": []
   },
   {
     "name": "claude",
@@ -54,7 +62,9 @@
     "model": null,
     "args": [],
     "rules": null,
-    "problem": null
+    "problem": null,
+    "trust": null,
+    "shadows": []
   },
   {
     "name": "codex",
@@ -66,6 +76,8 @@
     "model": null,
     "args": [],
     "rules": null,
-    "problem": null
+    "problem": null,
+    "trust": null,
+    "shadows": []
   }
 ]
