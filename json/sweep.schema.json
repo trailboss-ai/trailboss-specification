@@ -1,0 +1,286 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json sweep",
+  "description": "The agents and tasks started from a session (--parent, else the one sweep runs in) and their children, then what comes next: the decisions only you can make first, then what agents are doing on their own. Children come from `live`'s parent, `task add --parent` and `start --parent`. Sweep only reads: it types nothing and changes nothing. Frontends should show a state or kind they don't know as is.",
+  "type": "object",
+  "properties": {
+    "parent": {
+      "type": "string",
+      "description": "AGENT:ID of the session swept."
+    },
+    "rows": {
+      "type": "array",
+      "description": "Breadth first: the session's tasks, the agents `start` started, then other agents nested under it; then each one's own.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "description": "agent (started with `start`, or nested under the session in a host or by process) or task; more may be added."
+          },
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "A task's number and brief's first line, else the agent's label, session title or where it runs."
+          },
+          "n": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "The task's number; null for an agent."
+          },
+          "agent": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "session": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "AGENT:ID of its session, while known."
+          },
+          "parent": {
+            "type": "string",
+            "description": "AGENT:ID of the session it was started from."
+          },
+          "depth": {
+            "type": "integer",
+            "description": "0 for one started from the swept session, 1 for its children's, and so on."
+          },
+          "where": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Where its agent runs, as `live` says; for an agent that ended, the terminal it ran in."
+          },
+          "state": {
+            "type": "string",
+            "description": "An agent's: working, needs you, done (at rest after its turn) or ended. A task's, as `task ls` says: to do, working, needs you, ready, done or missing. More may be added."
+          },
+          "detail": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Why: its status, what it waits on, or how it ended."
+          },
+          "needs": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "What it waits on you for, as `live` says."
+          },
+          "turn_ended_ms": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "When its last turn ended, while running."
+          },
+          "said": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The first non-empty line of its agent's last message, from the local index."
+          },
+          "said_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "When it said it."
+          },
+          "branch": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "A task's branch."
+          },
+          "base": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The branch a task started from."
+          },
+          "folder": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "A task's checkout."
+          },
+          "worktree": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "A task's worktree."
+          },
+          "commits": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "Commits on a task's branch its base doesn't have; null for agents and done tasks."
+          },
+          "pr": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "description": "The open, merged or closed PR whose head is the task's branch, through `gh`; null when there's none, for agents, for done tasks, or when `gh` couldn't say (see gh_note).",
+            "properties": {
+              "number": {
+                "type": "integer"
+              },
+              "url": {
+                "type": "string"
+              },
+              "state": {
+                "type": "string",
+                "description": "open, merged or closed."
+              },
+              "draft": {
+                "type": "boolean"
+              },
+              "ci": {
+                "type": "string",
+                "description": "passing, failing, pending, or none (no checks); more may be added."
+              },
+              "mergeable": {
+                "type": [
+                  "boolean",
+                  "null"
+                ],
+                "description": "Whether GitHub can merge it; null while GitHub hasn't worked it out."
+              },
+              "conflicts": {
+                "type": [
+                  "boolean",
+                  "null"
+                ],
+                "description": "Whether it conflicts with its base; null while unknown."
+              },
+              "unresolved_threads": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "description": "Review threads not resolved, bots' included (the first 100); null when `gh` couldn't say (see gh_note)."
+              }
+            },
+            "required": [
+              "number",
+              "url",
+              "state",
+              "draft",
+              "ci",
+              "mergeable",
+              "conflicts",
+              "unresolved_threads"
+            ]
+          },
+          "gh_note": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Why the PR fields are unknown: `gh` isn't installed, isn't signed in, or failed. Sweep goes on without them."
+          }
+        },
+        "required": [
+          "kind",
+          "name",
+          "n",
+          "agent",
+          "session",
+          "parent",
+          "depth",
+          "where",
+          "state",
+          "detail",
+          "needs",
+          "turn_ended_ms",
+          "said",
+          "said_at",
+          "branch",
+          "base",
+          "folder",
+          "worktree",
+          "commits",
+          "pr",
+          "gh_note"
+        ]
+      }
+    },
+    "next": {
+      "type": "array",
+      "description": "At most one step per row: every decision before any wait.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "description": "decision (yours: answer an agent, accept a task, merge a PR, fix failing CI, resolve conflicts or review threads) or wait (an agent or CI is working); more may be added."
+          },
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The row's name."
+          },
+          "n": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "The row's task number."
+          },
+          "session": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The row's session."
+          },
+          "text": {
+            "type": "string",
+            "description": "What to do or what is happening, for people."
+          }
+        },
+        "required": [
+          "kind",
+          "name",
+          "n",
+          "session",
+          "text"
+        ]
+      }
+    },
+    "notes": {
+      "type": "array",
+      "description": "Each distinct gh_note once.",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "parent",
+    "rows",
+    "next",
+    "notes"
+  ]
+}
