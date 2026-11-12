@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "trailboss --json task ls",
-  "description": "Every task, oldest first. state: to do (no agent in it and no commits), working, needs you (waiting on you, or at rest with no commits), ready (its agent at rest or ended, with commits on its branch), done (accepted or removed), or missing (its worktree is gone). Frontends should show a state they don't know as is.",
+  "description": "Every task, oldest first. state: to do (no agent in it and no commits), working, needs you (waiting on you, or at rest with no commits), reviewing (ready but for its review: no reviewer yet, one working, or no notes written; only when its review is on), ready (its agent at rest or ended, with commits on its branch, and reviewed when its review is on), done (accepted or removed), or missing (its worktree is gone). Frontends should show a state they don't know as is.",
   "type": "array",
   "items": {
     "type": "object",
@@ -11,7 +11,7 @@
       },
       "state": {
         "type": "string",
-        "description": "to do, working, needs you, ready, done or missing; more may be added."
+        "description": "to do, working, needs you, reviewing, ready, done or missing; more may be added."
       },
       "detail": {
         "type": "string",
@@ -104,6 +104,17 @@
           "null"
         ],
         "description": "merged or removed, once done."
+      },
+      "review": {
+        "type": "boolean",
+        "description": "Whether a second agent reviews its work before it's ready: `task add --review`, or the config's `tasks.review`; `task review` turns it on."
+      },
+      "notes": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The file its latest reviewer wrote its notes to, once written; null before."
       }
     },
     "required": [
@@ -124,7 +135,9 @@
       "parent",
       "created_ms",
       "done_ms",
-      "outcome"
+      "outcome",
+      "review",
+      "notes"
     ]
   }
 }

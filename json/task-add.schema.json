@@ -79,6 +79,17 @@
             "paths"
           ]
         }
+      },
+      "review": {
+        "type": "boolean",
+        "description": "Whether it's reviewed before it's ready (`--review`, `--no-review`, else the config's `tasks.review`)."
+      },
+      "ignore": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "When its worktree's folder is inside the repository and git doesn't ignore it (so your checkout lists it as untracked): the line to add to the repository's .gitignore or .git/info/exclude, like `/.worktrees/`. Trailboss never writes either. Null otherwise."
       }
     },
     "required": [
@@ -92,7 +103,9 @@
       "host",
       "terminal",
       "parent",
-      "detail"
+      "detail",
+      "review",
+      "ignore"
     ]
   }
 }

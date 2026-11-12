@@ -1,7 +1,7 @@
 {
   "n": 3,
   "state": "ready",
-  "detail": "at rest with commits",
+  "detail": "at rest with commits; reviewed, notes in /home/user/.local/share/trailboss/task-reviews/3-1.md",
   "title": "Fix the login redirect",
   "agent": "claude",
   "branch": "work/3-fix-the-login-redirect",
@@ -58,5 +58,19 @@
       "subject": "Keep the return page across login",
       "ts": "2026-11-11T18:19:40-08:00"
     }
-  ]
+  ],
+  "review": true,
+  "notes": "/home/user/.local/share/trailboss/task-reviews/3-1.md",
+  "reviewer": {
+    "on": true,
+    "reviews": 1,
+    "agent": "codex",
+    "host": "herdr",
+    "terminal": "t11",
+    "started_ms": 1793725000000,
+    "where": null,
+    "working": false,
+    "notes": "/home/user/.local/share/trailboss/task-reviews/3-1.md",
+    "text": "Does what the brief asks. The redirect test covers the logged-out case only: add one for an expired session.\n"
+  }
 }

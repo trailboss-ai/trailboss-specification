@@ -18,7 +18,9 @@
           "src/login.rs"
         ]
       }
-    ]
+    ],
+    "review": false,
+    "ignore": null
   },
   {
     "n": 4,
@@ -39,6 +41,8 @@
           "src/login.rs"
         ]
       }
-    ]
+    ],
+    "review": false,
+    "ignore": null
   }
 ]

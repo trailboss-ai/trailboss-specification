@@ -19,7 +19,9 @@
     "parent": null,
     "created_ms": 1793700000000,
     "done_ms": 1793710000000,
-    "outcome": "merged"
+    "outcome": "merged",
+    "review": false,
+    "notes": null
   },
   {
     "n": 3,
@@ -41,6 +43,32 @@
     "parent": "claude:5f1c2a7e-0b2d-4c55-9a51-1f0e8f9d2c11",
     "created_ms": 1793720000000,
     "done_ms": null,
-    "outcome": null
+    "outcome": null,
+    "review": false,
+    "notes": null
+  },
+  {
+    "n": 4,
+    "state": "reviewing",
+    "detail": "at rest with commits; no reviewer yet: `trailboss task review 4 --yes` starts one",
+    "title": "Add a coupon field",
+    "agent": "claude",
+    "branch": "work/4-add-a-coupon-field",
+    "base": "main",
+    "folder": "/home/user/shop",
+    "worktree": "/home/user/.local/share/trailboss/worktrees/shop-4-add-a-coupon-field",
+    "commits": 2,
+    "files": 3,
+    "uncommitted": 0,
+    "host": "herdr",
+    "terminal": "t10",
+    "where": "t10 shop / task-4",
+    "session": "claude:3b9f0c21-6d4e-4f8a-8b1c-2e5d7a9f0c13",
+    "parent": "claude:5f1c2a7e-0b2d-4c55-9a51-1f0e8f9d2c11",
+    "created_ms": 1793721000000,
+    "done_ms": null,
+    "outcome": null,
+    "review": true,
+    "notes": null
   }
 ]

@@ -9,7 +9,7 @@
     },
     "state": {
       "type": "string",
-      "description": "to do, working, needs you, ready, done or missing; more may be added."
+      "description": "to do, working, needs you, reviewing, ready, done or missing; more may be added."
     },
     "detail": {
       "type": "string",
@@ -259,6 +259,92 @@
           "ts"
         ]
       }
+    },
+    "review": {
+      "type": "boolean",
+      "description": "Whether a second agent reviews its work before it's ready: `task add --review`, or the config's `tasks.review`; `task review` turns it on."
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The file its latest reviewer wrote its notes to, once written; null before."
+    },
+    "reviewer": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "Its review, when it's on or one ran: the latest reviewer and the notes it wrote, read from their file and printed for you only. Null when review is off and none ran.",
+      "properties": {
+        "on": {
+          "type": "boolean"
+        },
+        "reviews": {
+          "type": "integer",
+          "description": "Reviewers started for it so far."
+        },
+        "agent": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The latest reviewer's definition; null before one started."
+        },
+        "host": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "terminal": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "started_ms": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "where": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Where the reviewer runs now, as `live` says; null when it doesn't."
+        },
+        "working": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The file it was asked to write its notes to, in `task-reviews/` beside the index."
+        },
+        "text": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Its notes (the first 256 KiB); null until written."
+        }
+      },
+      "required": [
+        "on",
+        "reviews",
+        "agent",
+        "started_ms",
+        "where",
+        "working",
+        "notes",
+        "text"
+      ]
     }
   },
   "required": [
@@ -287,6 +373,9 @@
     "checks",
     "can_accept",
     "accept_blocked",
-    "log"
+    "log",
+    "review",
+    "notes",
+    "reviewer"
   ]
 }

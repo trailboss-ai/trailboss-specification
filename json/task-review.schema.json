@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json task review",
+  "description": "One row: the reviewer `task review <n>` would start (no --yes), or started (--yes). A reviewer is a second agent, from the definition --agent names (default: the task's agent kind), resolved from the task's folder like `task add`'s (a repository's only once trusted). It starts in a new host terminal in the task's worktree with a fixed first prompt: the task's brief, the diff against the branch it started from to review, the notes file to write, and to change nothing. Frontends should show an action they don't know as is.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "n": {
+        "type": "integer",
+        "description": "The task's number."
+      },
+      "action": {
+        "type": "string",
+        "description": "would start or started; more may be added."
+      },
+      "agent": {
+        "type": "string",
+        "description": "The reviewer's definition."
+      },
+      "host": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "null when no host is running (the plan then says so)."
+      },
+      "terminal": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The new terminal's address, once started."
+      },
+      "worktree": {
+        "type": "string",
+        "description": "The task's worktree, where the reviewer runs."
+      },
+      "notes": {
+        "type": "string",
+        "description": "The file it's asked to write its notes to: `task-reviews/<n>-<review>.md` beside the index."
+      },
+      "command": {
+        "type": "string",
+        "description": "What runs, with the brief as `<brief>`."
+      },
+      "detail": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "n",
+      "action",
+      "agent",
+      "host",
+      "terminal",
+      "worktree",
+      "notes",
+      "command",
+      "detail"
+    ]
+  }
+}
