@@ -13,7 +13,7 @@
         "type": "object",
         "properties": {
           "check": {
-            "description": "What was checked: version, config, index, source:<agent>, herdr, herdr-mod, herdr-layout, herdr-keys, tmux, tuios, gh. More may be added.",
+            "description": "What was checked: version, config, index, source:<agent>, quota:<provider> (whether its stored sign-in is there; never read), checkpoint-folder:<folder> (one per folder under checkpoints.auto), auto-checkpoints (recent failed or timed-out automatic saves), herdr, herdr-mod, herdr-files (the mod's files against the hashes its installer recorded), herdr-layout, herdr-keys, tmux, tuios, gh. More may be added.",
             "type": "string"
           },
           "detail": {
