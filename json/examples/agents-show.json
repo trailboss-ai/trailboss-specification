@@ -1,0 +1,32 @@
+[
+  {
+    "name": "reviewer",
+    "kind": "codex",
+    "source": "repo",
+    "path": "/home/user/shop/.trailboss/agents/reviewer.json",
+    "active": true,
+    "description": "Reviews the branch, edits nothing",
+    "model": "gpt-5",
+    "args": [
+      "--sandbox",
+      "read-only"
+    ],
+    "rules": "Review only: don't edit files. Report what you'd change and why.",
+    "problem": null,
+    "command": "codex --model gpt-5 --sandbox read-only 'Review only: don'\\''t edit files. Report what you'\\''d change and why.\n\n<brief>'",
+    "argv": [
+      "codex",
+      "--model",
+      "gpt-5",
+      "--sandbox",
+      "read-only",
+      "Review only: don't edit files. Report what you'd change and why.\n\n<brief>"
+    ],
+    "overrides": [
+      {
+        "source": "user",
+        "path": "/home/user/.config/trailboss/agents/reviewer.json"
+      }
+    ]
+  }
+]

@@ -1,0 +1,71 @@
+[
+  {
+    "name": "reviewer",
+    "kind": "codex",
+    "source": "repo",
+    "path": "/home/user/shop/.trailboss/agents/reviewer.json",
+    "active": true,
+    "description": "Reviews the branch, edits nothing",
+    "model": "gpt-5",
+    "args": [
+      "--sandbox",
+      "read-only"
+    ],
+    "rules": "Review only: don't edit files. Report what you'd change and why.",
+    "problem": null
+  },
+  {
+    "name": "reviewer",
+    "kind": "claude",
+    "source": "user",
+    "path": "/home/user/.config/trailboss/agents/reviewer.json",
+    "active": false,
+    "description": null,
+    "model": null,
+    "args": [
+      "--permission-mode",
+      "plan"
+    ],
+    "rules": null,
+    "problem": null
+  },
+  {
+    "name": "tester",
+    "kind": "claude",
+    "source": "user",
+    "path": "/home/user/.config/trailboss/agents/tester.json",
+    "active": true,
+    "description": null,
+    "model": null,
+    "args": [
+      "--add-dir",
+      "/home/user/fixtures"
+    ],
+    "rules": null,
+    "problem": "--add-dir takes any number of values, so the brief after it would be read as one: put another flag after its values"
+  },
+  {
+    "name": "claude",
+    "kind": "claude",
+    "source": "built-in",
+    "path": null,
+    "active": true,
+    "description": "claude as it starts by default",
+    "model": null,
+    "args": [],
+    "rules": null,
+    "problem": null
+  },
+  {
+    "name": "codex",
+    "kind": "codex",
+    "source": "built-in",
+    "path": null,
+    "active": true,
+    "description": "codex as it starts by default",
+    "model": null,
+    "args": [],
+    "rules": null,
+    "problem": null
+  }
+]
