@@ -49,7 +49,7 @@
         "integer",
         "null"
       ],
-      "description": "The loop waits until this time (seconds since the epoch) before typing: the plan's quota is used up, or (with rate_limited) the turn ended on a rate limit."
+      "description": "The loop waits until this time (seconds since the epoch) before typing: the plan's quota is used up, or (with rate_limited) the turn ended on a rate limit: until the retry time the agent was given when its row has one (never past a known plan reset), else the plan's reset, else 5 minutes."
     },
     "rate_limited": {
       "type": [
@@ -77,7 +77,7 @@
         "string",
         "null"
       ],
-      "description": "Why the loop ended, on its last line: passed, max_rounds, max_cost, max_time, same_failure, no_changes, session_ended, check_error or stopped (`trailboss until stop`). null while it goes on."
+      "description": "Why the loop ended, on its last line: passed, max_rounds, max_cost, max_time, same_failure, no_changes, session_ended, check_error or stopped (`trailboss until stop`, which also kills a check that's running). null while it goes on."
     },
     "reason": {
       "type": [

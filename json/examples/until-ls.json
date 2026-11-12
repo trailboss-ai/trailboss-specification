@@ -12,7 +12,8 @@
     "last_passed": false,
     "cost_usd": 0.84,
     "minutes": 12,
-    "paused_until": null
+    "paused_until": null,
+    "log": null
   },
   {
     "id": 48390,
@@ -27,6 +28,7 @@
     "last_passed": false,
     "cost_usd": 0.2,
     "minutes": 4,
-    "paused_until": 1790000000
+    "paused_until": 1790000000,
+    "log": "/home/user/.local/share/trailboss/until/1789996400000.log"
   }
 ]

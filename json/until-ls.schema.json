@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "trailboss --json until ls (and until pause, resume, stop)",
-  "description": "The `until` loops running on this machine, one object each; `until pause|resume|stop` print the loops they asked, in the same shape. A loop whose process has ended is dropped. Nothing from the check's output or the session's transcript is in it.",
+  "title": "trailboss --json until ls (and until pause, resume, stop, and until --detach)",
+  "description": "The `until` loops running on this machine, one object each; `until pause|resume|stop` print the loops they asked, and `until --detach` the loop it started (an empty array when that loop already ended on a pass), in the same shape. A loop whose process has ended is dropped. Nothing from the check's output or the session's transcript is in it.",
   "type": "array",
   "items": {
     "type": "object",
@@ -38,7 +38,7 @@
       },
       "state": {
         "type": "string",
-        "description": "running, checking (the check is running now), paused (`until pause`), waiting (for a quota or rate-limit reset) or stopped (its last moment)."
+        "description": "running, checking (the check is running now; `until stop` kills it), paused (`until pause`), waiting (for a quota or rate-limit reset) or stopped (its last moment)."
       },
       "requested": {
         "type": [
@@ -72,6 +72,13 @@
           "null"
         ],
         "description": "While waiting: until when (seconds since the epoch)."
+      },
+      "log": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "A detached loop's log (`until --detach`): the file its lines go to, beside the index. null for a loop running in a terminal."
       }
     },
     "required": [
@@ -81,6 +88,7 @@
       "cwd",
       "id",
       "last_passed",
+      "log",
       "minutes",
       "paused_until",
       "requested",
