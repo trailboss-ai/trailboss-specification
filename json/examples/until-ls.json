@@ -1,0 +1,32 @@
+[
+  {
+    "id": 48213,
+    "agent": "claude",
+    "session": "0b9d6a1e-5f2c-4c1e-9a77-3d1f2e8c4b10",
+    "terminal": "herdr:t2f",
+    "cwd": "/home/user/shop",
+    "check": "cargo test",
+    "state": "running",
+    "requested": null,
+    "round": 2,
+    "last_passed": false,
+    "cost_usd": 0.84,
+    "minutes": 12,
+    "paused_until": null
+  },
+  {
+    "id": 48390,
+    "agent": "codex",
+    "session": "rollout-7c1d",
+    "terminal": "tmux:work:2.1",
+    "cwd": "/home/user/api",
+    "check": "npm test",
+    "state": "waiting",
+    "requested": "pause",
+    "round": 1,
+    "last_passed": false,
+    "cost_usd": 0.2,
+    "minutes": 4,
+    "paused_until": 1790000000
+  }
+]

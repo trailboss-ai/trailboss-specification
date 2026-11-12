@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json until ls (and until pause, resume, stop)",
+  "description": "The `until` loops running on this machine, one object each; `until pause|resume|stop` print the loops they asked, in the same shape. A loop whose process has ended is dropped. Nothing from the check's output or the session's transcript is in it.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "integer",
+        "description": "The loop's id (its process id): what `until pause|resume|stop` take, besides the session."
+      },
+      "agent": {
+        "type": "string",
+        "description": "The agent the loop drives (claude, codex, …)."
+      },
+      "session": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Its session id; null for an agent without one."
+      },
+      "terminal": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Where it runs, as host:terminal."
+      },
+      "cwd": {
+        "type": "string",
+        "description": "The folder the check runs in."
+      },
+      "check": {
+        "type": "string",
+        "description": "The check as given, its words joined by spaces."
+      },
+      "state": {
+        "type": "string",
+        "description": "running, checking (the check is running now), paused (`until pause`), waiting (for a quota or rate-limit reset) or stopped (its last moment)."
+      },
+      "requested": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "pause or stop when asked and not yet taken up (the loop reads it at its next look); null when nothing is asked."
+      },
+      "round": {
+        "type": "integer",
+        "description": "Rounds (counted checks) so far."
+      },
+      "last_passed": {
+        "type": [
+          "boolean",
+          "null"
+        ],
+        "description": "Whether the last check passed; null before the first."
+      },
+      "cost_usd": {
+        "type": "number",
+        "description": "Dollars the session has spent since the loop started."
+      },
+      "minutes": {
+        "type": "integer",
+        "description": "Minutes the loop has run, not counting pauses and resets."
+      },
+      "paused_until": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "While waiting: until when (seconds since the epoch)."
+      }
+    },
+    "required": [
+      "agent",
+      "check",
+      "cost_usd",
+      "cwd",
+      "id",
+      "last_passed",
+      "minutes",
+      "paused_until",
+      "requested",
+      "round",
+      "session",
+      "state",
+      "terminal"
+    ]
+  }
+}

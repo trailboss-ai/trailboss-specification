@@ -1,0 +1,15 @@
+{
+  "round": 2,
+  "passed": null,
+  "exit_code": null,
+  "timed_out": null,
+  "files_changed": null,
+  "cost_usd": 0.61,
+  "minutes": 9,
+  "paused_until": 1790000000,
+  "rate_limited": true,
+  "control": null,
+  "waiting_to_send": null,
+  "stopped": null,
+  "reason": null
+}
