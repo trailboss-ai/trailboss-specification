@@ -11,6 +11,27 @@
           "string"
         ]
       },
+      "context_pct": {
+        "description": "context_tokens over context_window, as a whole percentage; null when either is unknown, or the tokens exceed the window (a larger-context mode).",
+        "type": [
+          "integer",
+          "null"
+        ]
+      },
+      "context_tokens": {
+        "description": "The prompt of the last response (input plus cache read and written): what the context held; null when unknown.",
+        "type": [
+          "integer",
+          "null"
+        ]
+      },
+      "context_window": {
+        "description": "The model's context window in tokens: what Codex records, else the price table's max_input_tokens; null when unknown.",
+        "type": [
+          "integer",
+          "null"
+        ]
+      },
       "cost_usd": {
         "type": [
           "null",
@@ -23,7 +44,21 @@
           "string"
         ]
       },
+      "effort": {
+        "description": "The reasoning effort the agent runs at, where it records one: the transcript's latest (Codex, pi), else the launch flag (Claude Code --effort, Codex -c model_reasoning_effort, pi --thinking), else Claude Code's settings (effortLevel); null otherwise.",
+        "type": [
+          "null",
+          "string"
+        ]
+      },
       "host": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "model": {
+        "description": "The model of the session's last response (as the agent names it); null when none is indexed yet, or for Copilot CLI (usage arrives when it ends) unless launched with --model.",
         "type": [
           "null",
           "string"
@@ -52,6 +87,10 @@
           "null"
         ]
       },
+      "pinned": {
+        "description": "The user pinned this terminal or session (`live --pin`).",
+        "type": "boolean"
+      },
       "quiet_min": {
         "type": "null"
       },
@@ -75,6 +114,13 @@
       },
       "status": {
         "type": "string"
+      },
+      "status_since": {
+        "description": "When the agent entered its current status, in ms since the epoch: as `events` last saw it change, else (at rest) when its last turn ended or its transcript last changed; null when unknown (working, with no earlier look).",
+        "type": [
+          "integer",
+          "null"
+        ]
       },
       "stuck": {
         "type": "boolean"

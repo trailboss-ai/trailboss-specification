@@ -79,6 +79,13 @@
       "turn_ended_ms": null,
       "needs": null,
       "needs_kind": null,
+      "model": "claude-opus-5-5",
+      "effort": "high",
+      "context_tokens": 380112,
+      "context_window": 1000000,
+      "context_pct": 38,
+      "status_since": 1790848650000,
+      "pinned": true,
       "workspace": "/home/user/code/api",
       "shares_with": [
         "t5 api"
@@ -103,6 +110,13 @@
       "turn_ended_ms": null,
       "needs": "Run: cargo test -p client",
       "needs_kind": "run",
+      "model": "gpt-5-codex",
+      "effort": "medium",
+      "context_tokens": 96004,
+      "context_window": 258400,
+      "context_pct": 37,
+      "status_since": 1790848790000,
+      "pinned": false,
       "workspace": "/home/user/code/api",
       "shares_with": [
         "t3 api"
@@ -127,7 +141,14 @@
       "turn": 4,
       "turn_ended_ms": 1790848809500,
       "needs": null,
-      "needs_kind": null
+      "needs_kind": null,
+      "model": "claude-sonnet-4-6",
+      "effort": "low",
+      "context_tokens": 20311,
+      "context_window": 1000000,
+      "context_pct": 2,
+      "status_since": 1790848809500,
+      "pinned": false
     }
   ]
 }
