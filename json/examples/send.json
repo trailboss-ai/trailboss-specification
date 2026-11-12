@@ -36,6 +36,13 @@
     "detail": "it's working"
   },
   {
+    "where": "t2 shop",
+    "agent": "claude",
+    "action": "queued",
+    "detail": "it's working; typed after its turn ends (q4)",
+    "id": "q4"
+  },
+  {
     "where": "pid 52007",
     "agent": "pi",
     "action": "skipped",

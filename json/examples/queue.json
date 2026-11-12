@@ -1,0 +1,35 @@
+[
+  {
+    "id": "q4",
+    "where": "t2 shop",
+    "agent": "claude",
+    "session": "0c6f2a5e-synthetic",
+    "state": "waiting",
+    "detail": "waits for its turn to end",
+    "message": "rebase on main when you're done",
+    "queued_ms": 1793000000000,
+    "at_ms": null
+  },
+  {
+    "id": "q5",
+    "where": "t8 web",
+    "agent": "codex",
+    "session": "019a-synthetic",
+    "state": "due",
+    "detail": "its turn ended; waits for it to be at rest",
+    "message": "run the e2e tests too",
+    "queued_ms": 1793000020000,
+    "at_ms": null
+  },
+  {
+    "id": "q3",
+    "where": "t3 api",
+    "agent": "claude",
+    "session": "5d1e-synthetic",
+    "state": "sent",
+    "detail": "was idle; started a turn",
+    "message": null,
+    "queued_ms": 1792999000000,
+    "at_ms": 1792999400000
+  }
+]

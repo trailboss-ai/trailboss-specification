@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json queue",
+  "description": "Messages `send --queue --yes` keeps for agents mid-turn, oldest first, then the last 20 that finished. state: waiting (its turn hasn't ended), due (it has; typed once the agent is at rest), typing, or, finished, what came of it as `send` says it (sent, held, no reaction, or unknown when the delivery stopped before saying). detail says why it waits or what the look found. A message is typed only into the session it was queued for, one per rest: the next for the same agent waits for the turn the first one started to end. Frontends should show a state they don't know as is.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "description": "q1, q2, \u2026: what `trailboss queue rm` takes."
+      },
+      "where": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "agent": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "session": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The session it's typed into; any other one in that terminal never gets it."
+      },
+      "state": {
+        "type": "string",
+        "description": "waiting, due, typing, sent, held, no reaction or unknown; more may be added."
+      },
+      "detail": {
+        "type": "string"
+      },
+      "message": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "What you typed, while it's queued; null once finished (it isn't kept)."
+      },
+      "queued_ms": {
+        "type": "integer",
+        "description": "When it was queued, in Unix milliseconds."
+      },
+      "at_ms": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "When it finished, in Unix milliseconds; null while queued."
+      }
+    },
+    "required": [
+      "id",
+      "where",
+      "agent",
+      "session",
+      "state",
+      "detail",
+      "message",
+      "queued_ms",
+      "at_ms"
+    ]
+  }
+}

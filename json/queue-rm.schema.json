@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json queue rm",
+  "description": "One row per id asked for (every queued one with --all). action: removed, not found, or typing (a delivery is typing it now, so it can't be taken back). Frontends should show an action they don't know as is.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "where": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "action": {
+        "type": "string",
+        "description": "removed, not found or typing; more may be added."
+      }
+    },
+    "required": [
+      "id",
+      "where",
+      "action"
+    ]
+  }
+}

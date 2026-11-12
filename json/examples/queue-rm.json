@@ -1,0 +1,12 @@
+[
+  {
+    "id": "q4",
+    "where": "t2 shop",
+    "action": "removed"
+  },
+  {
+    "id": "q9",
+    "where": null,
+    "action": "not found"
+  }
+]
