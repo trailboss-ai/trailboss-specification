@@ -1,0 +1,22 @@
+[
+  {
+    "n": 3,
+    "action": "fast-forwarded",
+    "detail": "main to work/3-fix-the-login-redirect (1 commit(s), 2 file(s)) in /home/user/shop"
+  },
+  {
+    "n": 3,
+    "action": "note",
+    "detail": "its agent is still open in t9 shop / task-3: close it there"
+  },
+  {
+    "n": 3,
+    "action": "removed",
+    "detail": "/home/user/.local/share/trailboss/worktrees/shop-3-fix-the-login-redirect"
+  },
+  {
+    "n": 3,
+    "action": "deleted",
+    "detail": "work/3-fix-the-login-redirect"
+  }
+]

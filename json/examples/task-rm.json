@@ -1,0 +1,12 @@
+[
+  {
+    "n": 4,
+    "action": "kept",
+    "detail": "work/4-try-a-new-cache: 3 commit(s) not in main (--force deletes them)"
+  },
+  {
+    "n": 4,
+    "action": "removed",
+    "detail": "/home/user/.local/share/trailboss/worktrees/shop-4-try-a-new-cache"
+  }
+]

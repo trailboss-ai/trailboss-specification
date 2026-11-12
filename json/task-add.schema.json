@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json task add",
+  "description": "One row: the task `task add` would start (no --yes), or started (--yes). Started, its branch `work/<n>-<slug>` and worktree exist, made off the folder's current branch without touching that checkout, and the agent runs there in a new host terminal with the brief as its first prompt. Frontends should show an action they don't know as is.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "n": {
+        "type": "integer",
+        "description": "The task's number: what `task accept` and `task rm` take."
+      },
+      "action": {
+        "type": "string",
+        "description": "would start or started; more may be added."
+      },
+      "agent": {
+        "type": "string"
+      },
+      "branch": {
+        "type": "string",
+        "description": "work/<n>-<slug>."
+      },
+      "base": {
+        "type": "string",
+        "description": "The branch it starts from, and accept merges into."
+      },
+      "folder": {
+        "type": "string",
+        "description": "The top of the checkout it starts from."
+      },
+      "worktree": {
+        "type": "string"
+      },
+      "host": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "herdr, tmux, …; null when no host is running (the plan then says so)."
+      },
+      "terminal": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The new terminal's address, once started."
+      },
+      "parent": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "AGENT:ID of the session it belongs to: the one named with --parent, else the one it was added from."
+      },
+      "detail": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "n",
+      "action",
+      "agent",
+      "branch",
+      "base",
+      "folder",
+      "worktree",
+      "host",
+      "terminal",
+      "parent",
+      "detail"
+    ]
+  }
+}

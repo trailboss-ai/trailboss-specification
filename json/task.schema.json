@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json task ls",
+  "description": "Every task, oldest first. state: to do (no agent in it and no commits), working, needs you (waiting on you, or at rest with no commits), ready (its agent at rest or ended, with commits on its branch), done (accepted or removed), or missing (its worktree is gone). Frontends should show a state they don't know as is.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "n": {
+        "type": "integer"
+      },
+      "state": {
+        "type": "string",
+        "description": "to do, working, needs you, ready, done or missing; more may be added."
+      },
+      "detail": {
+        "type": "string",
+        "description": "Why: the agent's status or what it waits on, or how it ended."
+      },
+      "title": {
+        "type": "string",
+        "description": "The brief's first line."
+      },
+      "agent": {
+        "type": "string"
+      },
+      "branch": {
+        "type": "string"
+      },
+      "base": {
+        "type": "string"
+      },
+      "folder": {
+        "type": "string"
+      },
+      "worktree": {
+        "type": "string"
+      },
+      "commits": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "Commits on its branch that the base branch doesn't have; null once done."
+      },
+      "files": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "Files its branch changed; null once done."
+      },
+      "uncommitted": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "Changed paths not committed in its worktree; null once done or gone."
+      },
+      "host": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "terminal": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "where": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Where its agent runs now, as `live` says; null when none is."
+      },
+      "session": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "AGENT:ID of its agent's session, while running."
+      },
+      "parent": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "created_ms": {
+        "type": "integer"
+      },
+      "done_ms": {
+        "type": [
+          "integer",
+          "null"
+        ]
+      },
+      "outcome": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "merged or removed, once done."
+      }
+    },
+    "required": [
+      "n",
+      "state",
+      "detail",
+      "title",
+      "agent",
+      "branch",
+      "base",
+      "folder",
+      "worktree",
+      "commits",
+      "files",
+      "host",
+      "terminal",
+      "where",
+      "parent",
+      "created_ms",
+      "done_ms",
+      "outcome"
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json task accept",
+  "description": "What accepting does, a row per step: would fast-forward / fast-forwarded (the base branch to the task's branch, in the checkout it started from), would remove / removed (its worktree), would delete / deleted (its branch), note (its agent is still open in a removed folder), failed. Refused (an error, no rows) unless the base branch is checked out and clean there, can fast-forward, the worktree has nothing uncommitted, and the agent isn't working. Frontends should show an action they don't know as is.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "n": {
+        "type": "integer"
+      },
+      "action": {
+        "type": "string",
+        "description": "would fast-forward, fast-forwarded, would remove, removed, would delete, deleted, note or failed; more may be added."
+      },
+      "detail": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "n",
+      "action",
+      "detail"
+    ]
+  }
+}

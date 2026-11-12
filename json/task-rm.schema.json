@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json task rm",
+  "description": "What removing does, a row per step: kept (uncommitted changes in its worktree, or commits its base branch doesn't have, without --force), would remove / removed (its worktree), would delete / deleted (its branch), note, failed. Frontends should show an action they don't know as is.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "n": {
+        "type": "integer"
+      },
+      "action": {
+        "type": "string",
+        "description": "kept, would remove, removed, would delete, deleted, note or failed; more may be added."
+      },
+      "detail": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "n",
+      "action",
+      "detail"
+    ]
+  }
+}
