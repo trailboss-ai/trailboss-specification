@@ -8,6 +8,7 @@
     "worktree": "/home/user/.local/share/trailboss/worktrees/shop-3-fix-the-login-redirect",
     "notes": "/home/user/.local/share/trailboss/task-reviews/3-1.md",
     "command": "codex <brief>",
-    "detail": "codex in a new herdr terminal in /home/user/.local/share/trailboss/worktrees/shop-3-fix-the-login-redirect, reviewing work/3-fix-the-login-redirect against main, its notes to /home/user/.local/share/trailboss/task-reviews/3-1.md"
+    "detail": "codex in a new herdr terminal in /home/user/.local/share/trailboss/worktrees/shop-3-fix-the-login-redirect, reviewing work/3-fix-the-login-redirect against main, its notes to /home/user/.local/share/trailboss/task-reviews/3-1.md",
+    "commit": "4b1f0c9d2e7a8b3c6d5e0f1a2b3c4d5e6f7a8b9c"
   }
 ]

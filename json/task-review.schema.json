@@ -46,6 +46,10 @@
       },
       "detail": {
         "type": "string"
+      },
+      "commit": {
+        "type": "string",
+        "description": "The task branch's commit it reviews. Once the branch moves past it, its notes are for an older commit: the task is reviewing again until another review."
       }
     },
     "required": [

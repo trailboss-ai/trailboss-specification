@@ -333,6 +333,17 @@
             "null"
           ],
           "description": "Its notes (the first 256 KiB); null until written."
+        },
+        "commit": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The task branch's commit the latest reviewer reviewed; null before one started, or for a review recorded before Trailboss kept it."
+        },
+        "stale": {
+          "type": "boolean",
+          "description": "Whether the branch has moved past that commit, so the notes are for an older one: the task is then reviewing, not ready, until it's reviewed again."
         }
       },
       "required": [

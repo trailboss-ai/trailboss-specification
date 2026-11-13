@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "trailboss --json task ls",
-  "description": "Every task, oldest first. state: to do (no agent in it and no commits), working, needs you (waiting on you, or at rest with no commits), reviewing (ready but for its review: no reviewer yet, one working, or no notes written; only when its review is on), ready (its agent at rest or ended, with commits on its branch, and reviewed when its review is on), done (accepted or removed), or missing (its worktree is gone). Frontends should show a state they don't know as is.",
+  "description": "Every task, oldest first. state: to do (no agent in it and no commits), working, needs you (waiting on you, or at rest with no commits), reviewing (ready but for its review: no reviewer yet, one working, no notes written, or notes for an older commit of its branch; only when its review is on), ready (its agent at rest or ended, with commits on its branch, and reviewed when its review is on), done (accepted or removed), or missing (its worktree is gone). Frontends should show a state they don't know as is.",
   "type": "array",
   "items": {
     "type": "object",

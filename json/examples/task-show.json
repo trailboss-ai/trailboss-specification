@@ -71,6 +71,8 @@
     "where": null,
     "working": false,
     "notes": "/home/user/.local/share/trailboss/task-reviews/3-1.md",
-    "text": "Does what the brief asks. The redirect test covers the logged-out case only: add one for an expired session.\n"
+    "text": "Does what the brief asks. The redirect test covers the logged-out case only: add one for an expired session.\n",
+    "commit": "4b1f0c9d2e7a8b3c6d5e0f1a2b3c4d5e6f7a8b9c",
+    "stale": false
   }
 }
