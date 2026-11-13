@@ -226,13 +226,13 @@
     },
     "next": {
       "type": "array",
-      "description": "At most one step per row: every decision before any wait.",
+      "description": "At most one step per row: every decision before any wait, every wait before any info.",
       "items": {
         "type": "object",
         "properties": {
           "kind": {
             "type": "string",
-            "description": "decision (yours: answer an agent, accept a task, merge a PR, fix failing CI, resolve conflicts or review threads) or wait (an agent or CI is working); more may be added."
+            "description": "decision (yours: answer an agent, accept a task, merge a PR, fix failing CI, resolve conflicts or review threads) wait (an agent or CI is working) or info (an agent at rest after its turn that asks nothing); more may be added."
           },
           "name": {
             "type": [
