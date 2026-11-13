@@ -90,6 +90,28 @@
           "null"
         ],
         "description": "When its worktree's folder is inside the repository and git doesn't ignore it (so your checkout lists it as untracked): the line to add to the repository's .gitignore or .git/info/exclude, like `/.worktrees/`. Trailboss never writes either. Null otherwise."
+      },
+      "source": {
+        "type": "string",
+        "description": "Where its agent definition comes from: repo (the repository's `.trailboss/agents/`, started only once trusted), user (yours) or built-in."
+      },
+      "path": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The definition's file; null for a built-in one."
+      },
+      "argv": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "What it runs, directly, never through a shell, with the first prompt (the definition's rules and the brief) shown as `<brief>`."
+      },
+      "command": {
+        "type": "string",
+        "description": "argv as one line to read; nothing runs it through a shell."
       }
     },
     "required": [
@@ -105,7 +127,11 @@
       "parent",
       "detail",
       "review",
-      "ignore"
+      "ignore",
+      "source",
+      "path",
+      "argv",
+      "command"
     ]
   }
 }

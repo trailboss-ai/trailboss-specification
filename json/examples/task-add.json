@@ -20,7 +20,14 @@
       }
     ],
     "review": false,
-    "ignore": null
+    "ignore": null,
+    "source": "built-in",
+    "path": null,
+    "argv": [
+      "claude",
+      "<brief>"
+    ],
+    "command": "claude <brief>"
   },
   {
     "n": 4,
@@ -43,6 +50,13 @@
       }
     ],
     "review": false,
-    "ignore": null
+    "ignore": null,
+    "source": "built-in",
+    "path": null,
+    "argv": [
+      "claude",
+      "<brief>"
+    ],
+    "command": "claude <brief>"
   }
 ]
