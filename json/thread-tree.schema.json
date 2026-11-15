@@ -30,7 +30,7 @@
           },
           "turn": {
             "type": "integer",
-            "description": "The turn's number in its session, from 1, counting the session's prompts. A fork's turns count from its first own prompt."
+            "description": "The turn's number in its session, from 1, counting the session's prompts as `thread` does. A fork's copied turns are left out, so its first node keeps its number in the fork (after the copied ones)."
           },
           "parent": {
             "type": [
