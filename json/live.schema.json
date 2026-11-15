@@ -83,6 +83,13 @@
           "string"
         ]
       },
+      "transcript": {
+        "description": "The transcript file the agent's session writes, when known (from the agent, else the index); null otherwise.",
+        "type": [
+          "null",
+          "string"
+        ]
+      },
       "effort": {
         "description": "The reasoning effort the agent runs at, where it records one: the transcript's latest (Codex, pi), else the launch flag (Claude Code --effort, Codex -c model_reasoning_effort, pi --thinking), else Claude Code's settings (effortLevel); null otherwise.",
         "type": [
