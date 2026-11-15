@@ -1,0 +1,5 @@
+{
+  "api": 1,
+  "text": "Trailboss: a guide for coding agents\n\nTrailboss runs a fleet of coding agents from one CLI.\n\nRead it as data\n  Every command that prints data takes --json. Parse that, not the tables.\n",
+  "version": "0.7.3"
+}
