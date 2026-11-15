@@ -37,7 +37,7 @@
               "null",
               "string"
             ],
-            "description": "The node this one follows: the previous turn in the same session, or for a session's first turn, the turn it came out of. Null only for the root session's first turn."
+            "description": "The node this one follows: the previous turn in the same session, or for a session's first turn, the turn it came out of (for a fork asked from an earlier turn, that turn). Null only for the root session's first turn."
           },
           "edge": {
             "type": [
