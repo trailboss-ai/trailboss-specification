@@ -43,7 +43,7 @@
               "string",
               "null"
             ],
-            "description": "AGENT:ID of its session, while known."
+            "description": "AGENT:ID of its session, while known; for an agent `start` started that has ended, the latest session of its kind in its folder since it started."
           },
           "parent": {
             "type": "string",
@@ -59,6 +59,20 @@
               "null"
             ],
             "description": "Where its agent runs, as `live` says; for an agent that ended, the terminal it ran in."
+          },
+          "host": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The host its terminal is in, as `live` names it; null when unknown or its terminal is gone."
+          },
+          "terminal": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Its terminal, as `live` names it, also before its session is known; null when unknown or its terminal is gone."
           },
           "state": {
             "type": "string",
@@ -90,7 +104,7 @@
               "string",
               "null"
             ],
-            "description": "The first non-empty line of its agent's last message, from the local index."
+            "description": "The first non-empty line of its agent's last message, including turns finished since the index was last brought up to date."
           },
           "said_at": {
             "type": [
@@ -104,7 +118,7 @@
               "string",
               "null"
             ],
-            "description": "A task's branch."
+            "description": "A task's branch, or the branch checked out where an agent `start` started runs, unless it's the default branch."
           },
           "base": {
             "type": [
@@ -118,7 +132,7 @@
               "string",
               "null"
             ],
-            "description": "A task's checkout."
+            "description": "A task's checkout, or the folder an agent `start` started runs in."
           },
           "worktree": {
             "type": [
@@ -139,7 +153,7 @@
               "object",
               "null"
             ],
-            "description": "The open, merged or closed PR whose head is the task's branch, through `gh`; null when there's none, for agents, for done tasks, or when `gh` couldn't say (see gh_note).",
+            "description": "The open, merged or closed PR whose head is the row's branch, through `gh`; null when there's none, without a branch, for done tasks, or when `gh` couldn't say (see gh_note).",
             "properties": {
               "number": {
                 "type": "integer"
@@ -177,7 +191,7 @@
                   "integer",
                   "null"
                 ],
-                "description": "Review threads not resolved, bots' included (the first 100); null when `gh` couldn't say (see gh_note)."
+                "description": "Review threads not resolved, bots' included; null when `gh` couldn't say (see gh_note)."
               }
             },
             "required": [
@@ -208,6 +222,8 @@
           "parent",
           "depth",
           "where",
+          "host",
+          "terminal",
           "state",
           "detail",
           "needs",
