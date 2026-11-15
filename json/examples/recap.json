@@ -1,0 +1,31 @@
+[
+  {
+    "session": "claude:7f9c2d1e-0a4b-4c55-9e1f-2b3c4d5e6f70",
+    "agent": "claude",
+    "title": "Add retry to the billing client",
+    "host": "herdr",
+    "terminal": "t3",
+    "since_ms": 1790846280000,
+    "until_ms": 1790848800000,
+    "away_ms": 2520000,
+    "turns": 3,
+    "files": 6,
+    "commands": 11,
+    "checks": [
+      {
+        "command": "cargo build",
+        "passed": true
+      },
+      {
+        "command": "cargo test",
+        "passed": true
+      }
+    ],
+    "state": "done",
+    "said": "Retries are in, with backoff; all tests pass.",
+    "model": "claude-opus-5-5",
+    "context_pct": 41,
+    "cost_usd": 0.42,
+    "line": "api while you were away (42m): 3 turns, 6 files, 11 commands, cargo build passed, cargo test passed, at prompt"
+  }
+]

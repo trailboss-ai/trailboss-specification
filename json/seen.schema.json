@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json seen",
+  "description": "`trailboss seen AGENT:ID|TERMINAL` marks a session seen now: its finished turns stop counting as unread in `live`. With --unread, its latest finished turn counts as unread again, until you mark it seen or prompt it. One row.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "session": {
+        "type": "string",
+        "description": "AGENT:ID of the session marked."
+      },
+      "seen_ms": {
+        "type": "integer",
+        "description": "When it was marked, in ms since the epoch."
+      },
+      "unread": {
+        "type": "boolean",
+        "description": "Whether it has an unread turn now: false after `seen`, true after `seen --unread`."
+      }
+    },
+    "required": [
+      "session",
+      "seen_ms",
+      "unread"
+    ]
+  }
+}

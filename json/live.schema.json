@@ -255,6 +255,34 @@
       "started": {
         "type": "integer",
         "description": "How many agents and tasks this row's session started directly (the first level of `trailboss sweep --parent` for it): tasks and agents started with it as their parent, and agents nested under its terminal or process. 0 for a row with no session."
+      },
+      "unread": {
+        "description": "Whether the session has a finished turn you haven't seen: one that ended after the later of when you last marked it seen (`trailboss seen`) and your last prompt to it. false without a session.",
+        "type": [
+          "boolean",
+          "null"
+        ]
+      },
+      "unread_turns": {
+        "description": "How many of its finished turns are unread.",
+        "type": [
+          "integer",
+          "null"
+        ]
+      },
+      "unread_since_ms": {
+        "description": "When its oldest unread turn ended, in ms since the epoch; null when none is unread.",
+        "type": [
+          "integer",
+          "null"
+        ]
+      },
+      "branches_unread": {
+        "description": "How many sessions started from this one (by `branch` or `start`, ended ones included) have an unread turn.",
+        "type": [
+          "integer",
+          "null"
+        ]
       }
     },
     "required": [

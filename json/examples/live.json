@@ -44,7 +44,11 @@
     "tokens_note": null,
     "label": "auth review",
     "definition": "reviewer",
-    "started": 1
+    "started": 1,
+    "unread": false,
+    "unread_turns": 0,
+    "unread_since_ms": null,
+    "branches_unread": 1
   },
   {
     "where": "t5 api",
@@ -86,7 +90,11 @@
     "tokens_note": null,
     "label": null,
     "definition": null,
-    "started": 0
+    "started": 0,
+    "unread": true,
+    "unread_turns": 2,
+    "unread_since_ms": 1790848420000,
+    "branches_unread": 0
   },
   {
     "where": "pid 52007",
@@ -123,7 +131,11 @@
     "tokens_note": null,
     "label": null,
     "definition": null,
-    "started": 0
+    "started": 0,
+    "unread": false,
+    "unread_turns": 0,
+    "unread_since_ms": null,
+    "branches_unread": 0
   },
   {
     "where": "pid 52311",
@@ -160,7 +172,11 @@
     "tokens_note": "not until it ends",
     "label": null,
     "definition": null,
-    "started": 0
+    "started": 0,
+    "unread": false,
+    "unread_turns": 0,
+    "unread_since_ms": null,
+    "branches_unread": 0
   },
   {
     "where": "t8 web",

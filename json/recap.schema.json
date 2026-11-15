@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json recap",
+  "description": "What sessions did while you were away: the session named, else every session with unread turns (an empty array when there's none). The window runs from --since (else when you last saw the session: the later of when you marked it seen and your last prompt to it; else 30 minutes ago) until now. Recap only reads.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "session": {
+        "type": "string",
+        "description": "AGENT:ID."
+      },
+      "agent": {
+        "type": "string"
+      },
+      "title": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The session's title, as `live` and `sessions` show it."
+      },
+      "host": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The host its terminal is in; null when it isn't running in one."
+      },
+      "terminal": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Its terminal; null when it isn't running in one."
+      },
+      "since_ms": {
+        "type": "integer",
+        "description": "Start of the window, in ms since the epoch."
+      },
+      "until_ms": {
+        "type": "integer",
+        "description": "End of the window (now), in ms since the epoch."
+      },
+      "away_ms": {
+        "type": "integer",
+        "description": "until_ms minus since_ms."
+      },
+      "turns": {
+        "type": "integer",
+        "description": "Turns it finished in the window."
+      },
+      "files": {
+        "type": "integer",
+        "description": "Files its own tools changed in the window (as `changes --session` counts them)."
+      },
+      "commands": {
+        "type": "integer",
+        "description": "Shell commands it ran in the window. Counted for Claude Code, Codex and pi; 0 for other agents."
+      },
+      "checks": {
+        "type": "array",
+        "description": "Commands among them that look like tests or builds, by short name (`cargo test`, `npm run build`), each once, in the order last run.",
+        "items": {
+          "type": "object",
+          "properties": {
+            "command": {
+              "type": "string"
+            },
+            "passed": {
+              "type": "boolean",
+              "description": "Whether its last run passed, from its exit status; absent when the transcript doesn't say, or its result isn't written."
+            }
+          },
+          "required": [
+            "command"
+          ]
+        }
+      },
+      "state": {
+        "type": "string",
+        "description": "working, needs you, done (at rest after its turn) or ended (not running); more may be added."
+      },
+      "said": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The first line of its last reply, at most 200 characters."
+      },
+      "model": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "context_pct": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "As `live` says, while it runs; else null."
+      },
+      "cost_usd": {
+        "type": [
+          "number",
+          "null"
+        ],
+        "description": "The session's cost so far."
+      },
+      "line": {
+        "type": "string",
+        "description": "The one-line summary, e.g. `api while you were away (42m): 3 turns, 6 files, 11 commands, cargo test passed, at prompt`."
+      }
+    },
+    "required": [
+      "session",
+      "agent",
+      "since_ms",
+      "until_ms",
+      "away_ms",
+      "turns",
+      "files",
+      "commands",
+      "checks",
+      "state",
+      "line"
+    ]
+  }
+}
