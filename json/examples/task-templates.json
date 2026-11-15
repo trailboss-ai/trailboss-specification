@@ -1,0 +1,14 @@
+[
+  {
+    "name": "plain",
+    "title": "Docs only",
+    "problem": "it has no {{brief}} for the brief to go in",
+    "path": "/home/user/shop/.trailboss/briefs/plain.md"
+  },
+  {
+    "name": "rust",
+    "title": "Rust work in the shop",
+    "problem": null,
+    "path": "/home/user/shop/.trailboss/briefs/rust.md"
+  }
+]

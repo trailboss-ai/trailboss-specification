@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json task templates",
+  "description": "The brief templates `task add --brief-template <name>` can use: each `.md` file in `.trailboss/briefs/` at the top of the repository the folder is in, by name. A template is text: each brief goes where it says `{{brief}}`, the rest is copied as is. Nothing in it is run. Empty when there are none.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "What `--brief-template` takes: the file's name without `.md`."
+      },
+      "title": {
+        "type": "string",
+        "description": "Its first line that isn't empty, without a Markdown heading's `#`."
+      },
+      "problem": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Why `task add` would refuse it (a name it doesn't take, no `{{brief}}`); null when it's fine."
+      },
+      "path": {
+        "type": "string",
+        "description": "The template's file."
+      }
+    },
+    "required": [
+      "name",
+      "title",
+      "problem",
+      "path"
+    ]
+  }
+}

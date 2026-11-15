@@ -27,7 +27,9 @@
       "claude",
       "<brief>"
     ],
-    "command": "claude <brief>"
+    "command": "claude <brief>",
+    "template": null,
+    "brief": "Fix the login redirect"
   },
   {
     "n": 4,
@@ -57,6 +59,8 @@
       "claude",
       "<brief>"
     ],
-    "command": "claude <brief>"
+    "command": "claude <brief>",
+    "template": null,
+    "brief": "Test the login redirect"
   }
 ]
