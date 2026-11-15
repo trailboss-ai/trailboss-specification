@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json skill",
+  "description": "A short guide for coding agents driving Trailboss: what it is, --json, what an agent may run on its own and what needs the user's say-so, and where the fuller skills are.",
+  "type": "object",
+  "properties": {
+    "api": {
+      "type": "integer",
+      "description": "The version of the --json output, as `trailboss version` gives it."
+    },
+    "text": {
+      "type": "string",
+      "description": "The guide, as plain text: what `trailboss skill` prints without --json."
+    },
+    "version": {
+      "type": "string",
+      "description": "This build's version."
+    }
+  },
+  "required": [
+    "api",
+    "text",
+    "version"
+  ]
+}
