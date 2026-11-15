@@ -112,6 +112,17 @@
       "command": {
         "type": "string",
         "description": "argv as one line to read; nothing runs it through a shell."
+      },
+      "template": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The brief template each brief went in (`--brief-template`, a `.md` file in the repository's `.trailboss/briefs/`); null without one."
+      },
+      "brief": {
+        "type": "string",
+        "description": "The brief as the agent gets it: in its template, when there's one, else as given; the definition's rules, if any, go before it."
       }
     },
     "required": [
@@ -131,7 +142,9 @@
       "source",
       "path",
       "argv",
-      "command"
+      "command",
+      "template",
+      "brief"
     ]
   }
 }
