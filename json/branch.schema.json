@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json branch",
+  "description": "One row: the fork of a session `branch` would start (no --yes), or started (--yes), to ask a side question: the agent's own fork of that session, in a new host terminal in the session's folder, leaving the session itself alone. The command runs directly, never through a shell. Started, it's kept as started from the session, so `live`, `resume`, `sweep` and `thread --tree` show it there. An agent whose CLI has no fork, a session that isn't indexed or whose folder is gone, and a start that fails are errors, not rows. Frontends should show an action they don't know as is.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string",
+        "description": "would branch or branched; more may be added."
+      },
+      "parent": {
+        "type": "string",
+        "description": "AGENT:ID of the session branched from."
+      },
+      "kind": {
+        "type": "string",
+        "description": "The agent: claude for now; more as their CLIs offer a fork."
+      },
+      "at": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "--at: the turn (as `thread` numbers them) whose prompt the first prompt quotes, everything after it set aside; null to branch from the session's end."
+      },
+      "folder": {
+        "type": "string",
+        "description": "The folder it runs in: the session's."
+      },
+      "argv": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "What it runs, with the question shown as `<question>`. With --at, the first prompt also holds a fixed sentence quoting the first line of your prompt at that turn. Without a question, no first prompt: it waits for you."
+      },
+      "command": {
+        "type": "string",
+        "description": "argv as one line to read; nothing runs it through a shell."
+      },
+      "question": {
+        "type": "boolean",
+        "description": "Whether it was given a question (--prompt or --prompt-file). The question itself isn't printed."
+      },
+      "label": {
+        "type": "string",
+        "description": "--name, else `KIND branch`: its terminal's name, and what `live` and `resume` show."
+      },
+      "host": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "herdr, tmux, \u2026; null when no host is running (the plan then says so)."
+      },
+      "terminal": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The new terminal's address, once started."
+      },
+      "detail": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "parent",
+      "kind",
+      "at",
+      "folder",
+      "argv",
+      "command",
+      "question",
+      "label",
+      "host",
+      "terminal",
+      "detail"
+    ]
+  }
+}
