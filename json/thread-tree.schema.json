@@ -54,6 +54,13 @@
             "type": "string",
             "description": "The first line of the turn's prompt, at most 120 characters."
           },
+          "tag": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Your label for where a topic starts, on the turn you gave it with `thread tag`. Null on other turns; absent from versions before it."
+          },
           "at_ms": {
             "type": [
               "null",
