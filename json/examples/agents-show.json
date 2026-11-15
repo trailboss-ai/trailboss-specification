@@ -12,6 +12,7 @@
       "read-only"
     ],
     "rules": "Review only: don't edit files. Report what you'd change and why.",
+    "permission": null,
     "problem": null,
     "command": "codex --model gpt-5 --sandbox read-only 'Review only: don'\\''t edit files. Report what you'\\''d change and why.\n\n<brief>'",
     "argv": [

@@ -1,0 +1,118 @@
+[
+  {
+    "name": "reviewer",
+    "kind": "codex",
+    "source": "repo",
+    "path": "/home/user/shop/.trailboss/agents/reviewer.json",
+    "active": true,
+    "description": "Reviews the branch, edits nothing",
+    "model": "gpt-5",
+    "args": [
+      "--sandbox",
+      "read-only"
+    ],
+    "rules": "Review only: don't edit files. Report what you'd change and why.",
+    "permission": null,
+    "problem": null,
+    "trust": "trusted",
+    "shadows": [
+      "user"
+    ]
+  },
+  {
+    "name": "reviewer",
+    "kind": "claude",
+    "source": "user",
+    "path": "/home/user/.config/trailboss/agents/reviewer.json",
+    "active": false,
+    "description": null,
+    "model": null,
+    "args": [],
+    "rules": null,
+    "permission": "read-only",
+    "problem": null,
+    "trust": null,
+    "shadows": []
+  },
+  {
+    "name": "tester",
+    "kind": "codex",
+    "source": "user",
+    "path": "/home/user/.config/trailboss/agents/tester.json",
+    "active": true,
+    "description": null,
+    "model": null,
+    "args": [
+      "--resume",
+      "last"
+    ],
+    "rules": null,
+    "permission": null,
+    "problem": "--resume isn't a flag Trailboss passes to codex (the ones resume keeps)",
+    "trust": null,
+    "shadows": []
+  },
+  {
+    "name": "tester",
+    "kind": "claude",
+    "source": "user",
+    "path": "/home/user/.config/trailboss/agents/tester.json",
+    "active": true,
+    "description": null,
+    "model": null,
+    "args": [
+      "--add-dir",
+      "/home/user/fixtures"
+    ],
+    "rules": null,
+    "permission": null,
+    "problem": "--add-dir takes any number of values, so the brief after it would be read as one: put another flag after its values",
+    "trust": null,
+    "shadows": []
+  },
+  {
+    "name": "claude",
+    "kind": "claude",
+    "source": "built-in",
+    "path": null,
+    "active": true,
+    "description": "claude as it starts by default",
+    "model": null,
+    "args": [],
+    "rules": null,
+    "permission": null,
+    "problem": null,
+    "trust": null,
+    "shadows": []
+  },
+  {
+    "name": "codex",
+    "kind": "codex",
+    "source": "built-in",
+    "path": null,
+    "active": true,
+    "description": "codex as it starts by default",
+    "model": null,
+    "args": [],
+    "rules": null,
+    "permission": null,
+    "problem": null,
+    "trust": null,
+    "shadows": []
+  },
+  {
+    "name": "review",
+    "kind": "claude",
+    "source": "built-in",
+    "path": null,
+    "active": true,
+    "description": "Reviews changes and reports what to fix, edits nothing",
+    "model": null,
+    "args": [],
+    "rules": "Review only: review the changes named below (or, with none, this folder's uncommitted changes and its branch's commits not on the default branch). Report bugs, risks and missing tests, most serious first, each with its file and line. Don't edit any file.",
+    "permission": "read-only",
+    "problem": null,
+    "trust": null,
+    "shadows": []
+  }
+]

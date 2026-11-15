@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "trailboss --json agents ls",
-  "description": "Every agent definition `task add --agent <name>` can start, repo ones first, then yours, then the built-in one per agent kind; names sorted within each. Broken definitions are listed with their problem.",
+  "description": "Every agent definition `task add --agent <name>` can start, repo ones first, then yours, then the built-in ones (one per agent kind, then the read-only starters investigate, review and test); names sorted within each. Broken definitions are listed with their problem.",
   "type": "array",
   "items": {
     "type": "object",
@@ -56,6 +56,13 @@
         ],
         "description": "Text put before the brief, a blank line between."
       },
+      "permission": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "read-only (look, change nothing), ask (ask before each change) or auto (make edits without asking): turned into the agent's own flags, put after the model and before `args`. Only kinds whose CLI has such flags take it (Claude Code: `--permission-mode plan`, `manual` or `acceptEdits`); never a mode that skips every check. Null when the definition sets none."
+      },
       "problem": {
         "type": [
           "string",
@@ -88,6 +95,7 @@
       "model",
       "args",
       "rules",
+      "permission",
       "problem",
       "trust",
       "shadows"
