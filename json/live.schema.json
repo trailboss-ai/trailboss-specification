@@ -244,6 +244,10 @@
           "null"
         ],
         "description": "The agent definition `trailboss start` started in this terminal; null for one it didn't start."
+      },
+      "started": {
+        "type": "integer",
+        "description": "How many agents and tasks this row's session started directly (the first level of `trailboss sweep --parent` for it): tasks and agents started with it as their parent, and agents nested under its terminal or process. 0 for a row with no session."
       }
     },
     "required": [

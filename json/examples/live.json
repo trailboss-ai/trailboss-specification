@@ -42,7 +42,8 @@
     ],
     "tokens_note": null,
     "label": "auth review",
-    "definition": "reviewer"
+    "definition": "reviewer",
+    "started": 1
   },
   {
     "where": "t5 api",
@@ -82,7 +83,8 @@
     "parent": "t3 api",
     "tokens_note": null,
     "label": null,
-    "definition": null
+    "definition": null,
+    "started": 0
   },
   {
     "where": "pid 52007",
@@ -117,7 +119,8 @@
     "pinned": false,
     "tokens_note": null,
     "label": null,
-    "definition": null
+    "definition": null,
+    "started": 0
   },
   {
     "where": "pid 52311",
@@ -152,7 +155,8 @@
     "pinned": false,
     "tokens_note": "not until it ends",
     "label": null,
-    "definition": null
+    "definition": null,
+    "started": 0
   },
   {
     "where": "t8 web",
@@ -160,6 +164,7 @@
     "terminal": "t8",
     "status": "lost (trailboss resume)",
     "label": null,
-    "definition": null
+    "definition": null,
+    "started": 0
   }
 ]
