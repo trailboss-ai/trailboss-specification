@@ -1,0 +1,28 @@
+[
+  {
+    "where": "t3 api",
+    "agent": "claude",
+    "action": "sent",
+    "detail": "was idle; started a turn"
+  },
+  {
+    "where": "t2 shop",
+    "agent": "claude",
+    "action": "queued",
+    "detail": "it's working; typed after its turn ends (q4)",
+    "id": "q4",
+    "nothing_looking": true,
+    "outcome": "sent",
+    "outcome_detail": "was idle; started a turn"
+  },
+  {
+    "where": "t5 docs",
+    "agent": "codex",
+    "action": "queued",
+    "detail": "it's working; typed after its turn ends (q5)",
+    "id": "q5",
+    "nothing_looking": true,
+    "outcome": "still queued",
+    "outcome_detail": "not typed in 30 min; it stays queued (`trailboss queue rm q5` takes it back)"
+  }
+]
