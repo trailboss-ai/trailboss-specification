@@ -15,6 +15,11 @@
     "title": "Add retry to the billing client",
     "cost_usd": 4.12,
     "reported_cost_usd": 4.3,
+    "alert": {
+      "limit": "session",
+      "amount_usd": 4.12,
+      "limit_usd": 4.0
+    },
     "tokens": 1830442,
     "turn": 7,
     "turn_ended_ms": null,

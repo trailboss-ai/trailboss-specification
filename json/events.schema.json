@@ -20,6 +20,29 @@
               "type": "string"
             }
           },
+          "alert": {
+            "description": "spend_alert: the limit crossed, announced once per session, per folder and day, or per day (and again when the limit is raised and crossed again). The key says which: session:AGENT:ID, folder:DAY:ID or day:DAY; a folder's event has its folder in cwd, a day's has no where.",
+            "type": "object",
+            "properties": {
+              "limit": {
+                "description": "session, folder or day; more may be added.",
+                "type": "string"
+              },
+              "amount_usd": {
+                "description": "What was spent, at API-equivalent prices, rounded to the cent: the session's cost, or the folder's or everyone's today.",
+                "type": "number"
+              },
+              "limit_usd": {
+                "description": "The limit crossed, from the config.",
+                "type": "number"
+              }
+            },
+            "required": [
+              "limit",
+              "amount_usd",
+              "limit_usd"
+            ]
+          },
           "cwd": {
             "type": [
               "null",
@@ -119,6 +142,29 @@
             "type": [
               "null",
               "string"
+            ]
+          },
+          "alert": {
+            "description": "The first spending limit from the config's alerts this agent is over: its session's (session_usd), else its folder's today (folder_usd), else everything today (day_usd). Absent when it's under them all, or none is set.",
+            "type": "object",
+            "properties": {
+              "limit": {
+                "description": "session, folder or day; more may be added.",
+                "type": "string"
+              },
+              "amount_usd": {
+                "description": "What was spent, at API-equivalent prices, rounded to the cent: the session's cost, or the folder's or everyone's today.",
+                "type": "number"
+              },
+              "limit_usd": {
+                "description": "The limit crossed, from the config.",
+                "type": "number"
+              }
+            },
+            "required": [
+              "limit",
+              "amount_usd",
+              "limit_usd"
             ]
           },
           "background": {
