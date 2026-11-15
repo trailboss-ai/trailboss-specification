@@ -50,6 +50,29 @@
       "passed": true
     }
   ],
+  "evidence": [
+    {
+      "source": "transcript",
+      "command": "cargo test",
+      "passed": true,
+      "at_ms": 1794450020000,
+      "stale": false
+    },
+    {
+      "source": "until",
+      "command": "cargo test --workspace",
+      "passed": false,
+      "at_ms": 1794449700000,
+      "stale": false
+    },
+    {
+      "source": "transcript",
+      "command": "cargo build",
+      "passed": true,
+      "at_ms": 1794449100000,
+      "stale": true
+    }
+  ],
   "can_accept": true,
   "accept_blocked": null,
   "log": [

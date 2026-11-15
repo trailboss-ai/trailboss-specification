@@ -222,6 +222,48 @@
         ]
       }
     },
+    "evidence": {
+      "type": "array",
+      "description": "What shows the work was checked, newest first: the latest run of each test or build its agent ran, read from the session's transcript in memory (only the check's name, result and time), and the `until` loops that ended on its session or in its worktree in the last 30 days. Absent from output before this field was added; empty when none is known.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source": {
+            "type": "string",
+            "description": "transcript (the agent ran it) or until (a loop ended); more may be added."
+          },
+          "command": {
+            "type": "string",
+            "description": "The check: its short name (`cargo test`, `npm run build`) for a transcript run, the command as given for a loop."
+          },
+          "passed": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "Whether it passed: its exit status for a transcript run (null when the transcript doesn't say, or it's still running), how the loop's last check went for a loop (null when none ran)."
+          },
+          "at_ms": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "When it ran (ms since the epoch); when the loop ended for a loop. null when the transcript doesn't say."
+          },
+          "stale": {
+            "type": "boolean",
+            "description": "A pass from before the branch's latest commit: it checked older code."
+          }
+        },
+        "required": [
+          "source",
+          "command",
+          "passed",
+          "at_ms",
+          "stale"
+        ]
+      }
+    },
     "can_accept": {
       "type": "boolean",
       "description": "Whether `task accept <n> --yes` would merge it now."
