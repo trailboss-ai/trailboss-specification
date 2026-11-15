@@ -57,6 +57,38 @@
       "title": "/home/user/code/api",
       "cwd": "/home/user/code/api",
       "in_herdr": true
+    },
+    {
+      "kind": "spend_alert",
+      "key": "session:claude:7f9c2d1e-0a4b-4c55-9e1f-2b3c4d5e6f70",
+      "where": "t3 api",
+      "terminal": "t3",
+      "agent": "claude",
+      "session": "7f9c2d1e-0a4b-4c55-9e1f-2b3c4d5e6f70",
+      "title": "Add retry to the billing client",
+      "cwd": "/home/user/code/api",
+      "in_herdr": false,
+      "alert": {
+        "limit": "session",
+        "amount_usd": 4.12,
+        "limit_usd": 4.0
+      }
+    },
+    {
+      "kind": "spend_alert",
+      "key": "day:2026-10-01",
+      "where": null,
+      "terminal": null,
+      "agent": null,
+      "session": null,
+      "title": null,
+      "cwd": null,
+      "in_herdr": false,
+      "alert": {
+        "limit": "day",
+        "amount_usd": 51.37,
+        "limit_usd": 50.0
+      }
     }
   ],
   "live": [
@@ -75,6 +107,11 @@
       "title": "Add retry to the billing client",
       "cost_usd": 4.12,
       "reported_cost_usd": 4.3,
+      "alert": {
+        "limit": "session",
+        "amount_usd": 4.12,
+        "limit_usd": 4.0
+      },
       "tokens": 1830442,
       "turn": 7,
       "turn_ended_ms": null,
