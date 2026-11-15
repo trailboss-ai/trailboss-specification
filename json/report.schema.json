@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json report, task report",
+  "description": "`trailboss report AGENT:ID` (a session started from another reports its last reply to that parent session) and `trailboss task report N` (a task's latest review notes go to the task's agent) both print one row in this shape. Without --yes, action is would queue and nothing is queued; with --yes it's queued: the message waits in `trailboss queue` (its id in id) and is typed into the target once it's at rest and in front, with no draft of yours in its input box. message is the full text that is (or would be) queued: one fixed line saying where it came from, a blank line, then the reply or the notes. A refusal (no recorded parent, nothing to report, the parent has ended, no notes, or notes for an older commit than the task branch's latest) is an error, not a row.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string",
+        "description": "would queue or queued; more may be added."
+      },
+      "kind": {
+        "type": "string",
+        "description": "branch (from `report`) or task (from `task report`)."
+      },
+      "from": {
+        "type": "string",
+        "description": "Where it came from: the reporting session (AGENT:ID), or the task's review and its notes file."
+      },
+      "to": {
+        "type": "string",
+        "description": "The session it's typed into, AGENT:ID."
+      },
+      "where": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The target's terminal, as `live` shows it."
+      },
+      "agent": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "id": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The queued message's id, for `trailboss queue rm`; null without --yes."
+      },
+      "message": {
+        "type": "string"
+      },
+      "nothing_looking": {
+        "type": "boolean",
+        "description": "true when queued while nothing has looked at the agents in the last 5 minutes (no `trailboss events`, `watch` or Herdr block), so it waits until one runs; detail says so too."
+      },
+      "detail": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "kind",
+      "from",
+      "to",
+      "where",
+      "agent",
+      "id",
+      "message",
+      "nothing_looking",
+      "detail"
+    ]
+  }
+}

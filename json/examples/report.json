@@ -1,0 +1,14 @@
+[
+  {
+    "action": "queued",
+    "kind": "branch",
+    "from": "claude:5b1e0c9a-2f43-4d1e-9c7a-0d2b6e8f1a33",
+    "to": "claude:9e4f2a10-7c3b-4b8e-a1d5-3f6c2e9b7d04",
+    "where": "t2 shop",
+    "agent": "claude",
+    "id": "q7",
+    "message": "Reply from the branch you started at turn 4:\n\nA RwLock fits better here: the cart is read on every request and written only at checkout.",
+    "nothing_looking": false,
+    "detail": "typed once it's at rest and in front, with no draft of yours in its input box (q7); `trailboss queue rm q7` takes it back"
+  }
+]

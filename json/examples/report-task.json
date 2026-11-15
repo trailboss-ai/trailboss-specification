@@ -1,0 +1,14 @@
+[
+  {
+    "action": "would queue",
+    "kind": "task",
+    "from": "task 3's review (/home/user/.local/share/trailboss/task-reviews/3-1.md)",
+    "to": "claude:1c7d3e52-8a09-4f6b-b2e4-6d0a9c3f5e17",
+    "where": "t6 task-3",
+    "agent": "claude",
+    "id": null,
+    "message": "Review notes on your branch:\n\n- The empty-cart case has no test.\n- `total()` rounds before summing.",
+    "nothing_looking": false,
+    "detail": "typed once it's at rest and in front, with no draft of yours in its input box; nothing is queued without --yes"
+  }
+]
