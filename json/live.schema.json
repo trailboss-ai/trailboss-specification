@@ -162,6 +162,10 @@
           "number"
         ]
       },
+      "retry_at_ms": {
+        "description": "When a rate-limited agent may try again (ms since the epoch), as its error stated it: a reset time, or a wait counted from the error. Only present when `needs_kind` is `rate_limit` and the error said when; nothing else from the transcript.",
+        "type": "integer"
+      },
       "rss_bytes": {
         "description": "Resident memory of the agent's process tree, in bytes (memory shared between its processes counted in each); null when unknown.",
         "type": [
