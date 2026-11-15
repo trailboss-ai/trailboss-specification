@@ -148,6 +148,20 @@
             ],
             "description": "Commits on a task's branch its base doesn't have; null for agents and done tasks."
           },
+          "notes": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "Whether a task's latest review has written its notes, as `task ls` says; null for an agent."
+          },
+          "notes_current": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "Whether those notes are for the task branch's latest commit, so `task report` would send them; false without notes, null for an agent."
+          },
           "pr": {
             "type": [
               "object",
