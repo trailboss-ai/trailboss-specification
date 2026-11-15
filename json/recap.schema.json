@@ -56,7 +56,7 @@
       },
       "commands": {
         "type": "integer",
-        "description": "Shell commands it ran in the window. Counted for Claude Code, Codex and pi; 0 for other agents."
+        "description": "Shell commands it ran in the window."
       },
       "checks": {
         "type": "array",
