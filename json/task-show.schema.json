@@ -39,14 +39,14 @@
         "integer",
         "null"
       ],
-      "description": "Commits on its branch that the base branch doesn't have; null once done."
+      "description": "Commits on its branch that the base branch doesn't have; once merged, the commits the merge brought in (null when that wasn't recorded); null once removed."
     },
     "files": {
       "type": [
         "integer",
         "null"
       ],
-      "description": "Files its branch changed; null once done."
+      "description": "Files its branch changed; once merged, the files the merge changed (null when that wasn't recorded); null once removed."
     },
     "uncommitted": {
       "type": [
@@ -134,7 +134,7 @@
         "array",
         "null"
       ],
-      "description": "Files its branch changed since it left the base branch; null once done.",
+      "description": "Files its branch changed since it left the base branch; once merged, the files the merge changed (`merged`); null once removed, or merged before that was recorded.",
       "items": {
         "type": "object",
         "properties": {
@@ -169,7 +169,7 @@
         "object",
         "null"
       ],
-      "description": "Totals of `changed`; null once done.",
+      "description": "Totals of `changed`; null when `changed` is.",
       "properties": {
         "files": {
           "type": "integer"
@@ -238,7 +238,7 @@
         "array",
         "null"
       ],
-      "description": "Commits on its branch the base branch doesn't have, newest first (`commits` counts them); null once done (its branch is gone).",
+      "description": "Commits on its branch the base branch doesn't have, newest first (`commits` counts them); once merged, the commits the merge brought in (`merged`); null once removed, or merged before that was recorded.",
       "items": {
         "type": "object",
         "properties": {
@@ -356,6 +356,25 @@
         "notes",
         "text"
       ]
+    },
+    "merged": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "Once accepted: the base branch's commit before the fast-forward (`from`) and the task's commit it moved to (`to`); `log` and `changed` are that range. null while open, once removed, and for a task merged before this was recorded.",
+      "properties": {
+        "from": {
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "from",
+        "to"
+      ]
     }
   },
   "required": [
@@ -387,6 +406,7 @@
     "log",
     "review",
     "notes",
-    "reviewer"
+    "reviewer",
+    "merged"
   ]
 }
