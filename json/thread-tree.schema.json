@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json thread --tree",
+  "type": "object",
+  "properties": {
+    "root": {
+      "type": "string",
+      "description": "The topmost session of the tree, `AGENT:ID`: following forks, sub-agents and started agents back from the session named."
+    },
+    "focus": {
+      "type": "string",
+      "description": "The session named, `AGENT:ID`."
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The node: `<session>#<turn>`."
+          },
+          "session": {
+            "type": "string",
+            "description": "The session the turn is in, `AGENT:ID`."
+          },
+          "agent": {
+            "type": "string",
+            "description": "The session's agent (claude, codex, ...)."
+          },
+          "turn": {
+            "type": "integer",
+            "description": "The turn's number in its session, from 1, counting the session's prompts. A fork's turns count from its first own prompt."
+          },
+          "parent": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The node this one follows: the previous turn in the same session, or for a session's first turn, the turn it came out of. Null only for the root session's first turn."
+          },
+          "edge": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "How this node follows its parent: \"continues\" (the next turn in the same session), or for a session's first turn \"forked\" (a fork of the parent's session), \"subagent\" (a sub-agent it spawned) or \"started\" (an agent or task started from it). Null only for the root session's first turn."
+          },
+          "depth": {
+            "type": "integer",
+            "description": "0 for the root session's turns; a branch's turns are one deeper than the turn it came out of."
+          },
+          "prompt": {
+            "type": "string",
+            "description": "The first line of the turn's prompt, at most 120 characters."
+          },
+          "at_ms": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "description": "When the prompt was sent, Unix milliseconds."
+          },
+          "state": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The session's live state, on its last turn only, while it runs: \"working\", \"blocked\" (waiting on you) or \"done\" (at rest after its turn). Null on other turns and for a session not running."
+          },
+          "host": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The host whose terminal runs the session, as `live` names it, on every turn of a running session."
+          },
+          "terminal": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "That terminal, as `live` names it, on every turn of a running session."
+          }
+        },
+        "required": [
+          "id",
+          "session",
+          "agent",
+          "turn",
+          "parent",
+          "edge",
+          "depth",
+          "prompt",
+          "at_ms",
+          "state",
+          "host",
+          "terminal"
+        ]
+      },
+      "description": "One node per turn, in drawing order: depth first, a session's turns in order, a branch right after the turn it came out of. A session with no branches is a straight line."
+    }
+  },
+  "required": [
+    "root",
+    "focus",
+    "nodes"
+  ],
+  "description": "The tree of work around one session: its turns, and the forks, sub-agents and agents or tasks that came out of them, each hanging from the turn that was running when it started. Read-only."
+}

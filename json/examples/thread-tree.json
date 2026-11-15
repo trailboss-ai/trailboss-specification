@@ -1,0 +1,90 @@
+{
+  "root": "claude:s-tree-root",
+  "focus": "claude:s-tree-fork",
+  "nodes": [
+    {
+      "id": "claude:s-tree-root#1",
+      "session": "claude:s-tree-root",
+      "agent": "claude",
+      "turn": 1,
+      "parent": null,
+      "edge": null,
+      "depth": 0,
+      "prompt": "Plan the cache layer",
+      "at_ms": 1790758800000,
+      "state": null,
+      "host": "herdr",
+      "terminal": "t3"
+    },
+    {
+      "id": "claude:s-tree-root#2",
+      "session": "claude:s-tree-root",
+      "agent": "claude",
+      "turn": 2,
+      "parent": "claude:s-tree-root#1",
+      "edge": "continues",
+      "depth": 0,
+      "prompt": "Add the client for it",
+      "at_ms": 1790759400000,
+      "state": null,
+      "host": "herdr",
+      "terminal": "t3"
+    },
+    {
+      "id": "claude:agent-t1#1",
+      "session": "claude:agent-t1",
+      "agent": "claude",
+      "turn": 1,
+      "parent": "claude:s-tree-root#2",
+      "edge": "subagent",
+      "depth": 1,
+      "prompt": "Survey the client libraries",
+      "at_ms": 1790759402000,
+      "state": null,
+      "host": null,
+      "terminal": null
+    },
+    {
+      "id": "claude:s-tree-fork#1",
+      "session": "claude:s-tree-fork",
+      "agent": "claude",
+      "turn": 1,
+      "parent": "claude:s-tree-root#2",
+      "edge": "forked",
+      "depth": 1,
+      "prompt": "Why this client and not the other one?",
+      "at_ms": 1790760000000,
+      "state": "blocked",
+      "host": "herdr",
+      "terminal": "t7"
+    },
+    {
+      "id": "claude:s-tree-root#3",
+      "session": "claude:s-tree-root",
+      "agent": "claude",
+      "turn": 3,
+      "parent": "claude:s-tree-root#2",
+      "edge": "continues",
+      "depth": 0,
+      "prompt": "Write the tests",
+      "at_ms": 1790761800000,
+      "state": "working",
+      "host": "herdr",
+      "terminal": "t3"
+    },
+    {
+      "id": "codex:s-helper#1",
+      "session": "codex:s-helper",
+      "agent": "codex",
+      "turn": 1,
+      "parent": "claude:s-tree-root#3",
+      "edge": "started",
+      "depth": 1,
+      "prompt": "Update the docs for the cache",
+      "at_ms": 1790761900000,
+      "state": null,
+      "host": null,
+      "terminal": null
+    }
+  ]
+}
