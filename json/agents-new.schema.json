@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json agents new",
+  "description": "One row: the definition file `agents new` writes, checked as `agents ls` checks one (a name, kind, model, flag or permission it would list with a problem is refused instead). Without --yes nothing is written. It writes only that one file, never over an existing one.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "The definition's name, the file's name without `.json`."
+      },
+      "kind": {
+        "type": "string",
+        "description": "claude, codex, gemini, copilot, opencode or pi."
+      },
+      "source": {
+        "type": "string",
+        "description": "user (your definitions folder, `~/.config/trailboss/agents/`) or repo (`--repo`: the repository's `.trailboss/agents/`)."
+      },
+      "path": {
+        "type": "string",
+        "description": "The file it writes, or would write without --yes."
+      },
+      "written": {
+        "type": "boolean",
+        "description": "Whether the file was written: true only with --yes. An existing file is never overwritten (that's an error)."
+      },
+      "file": {
+        "type": "string",
+        "description": "The file's content, JSON with the fields given (kind, description, model, permission, args, rules), ending in a newline."
+      },
+      "trust": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "new for a repository's definition, which starts only once trusted with `agents trust --yes`; null for yours."
+      },
+      "command": {
+        "type": "string",
+        "description": "The command it would run, as one line to read, with the brief shown as `<brief>`."
+      },
+      "argv": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "The same as separate arguments, run without a shell."
+      }
+    },
+    "required": [
+      "name",
+      "kind",
+      "source",
+      "path",
+      "written",
+      "file",
+      "trust",
+      "command",
+      "argv"
+    ]
+  }
+}

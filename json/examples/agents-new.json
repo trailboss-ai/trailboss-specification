@@ -1,0 +1,18 @@
+[
+  {
+    "name": "looker",
+    "kind": "claude",
+    "source": "user",
+    "path": "/home/user/.config/trailboss/agents/looker.json",
+    "written": false,
+    "file": "{\n  \"kind\": \"claude\",\n  \"description\": \"Looks at the API, edits nothing\",\n  \"permission\": \"read-only\",\n  \"rules\": \"Look only: change nothing.\"\n}\n",
+    "trust": null,
+    "command": "claude --permission-mode plan 'Look only: change nothing.\n\n<brief>'",
+    "argv": [
+      "claude",
+      "--permission-mode",
+      "plan",
+      "Look only: change nothing.\n\n<brief>"
+    ]
+  }
+]
