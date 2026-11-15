@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json thread tag",
+  "type": "object",
+  "properties": {
+    "session": {
+      "type": "string",
+      "description": "The session, `AGENT:ID`."
+    },
+    "turn": {
+      "type": "integer",
+      "description": "The turn, numbered as `thread` numbers them."
+    },
+    "label": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "description": "The label now on the turn, on one line, at most 80 characters; null after `--rm`."
+    },
+    "removed": {
+      "type": "boolean",
+      "description": "`--rm` took a label off (false when the turn had none)."
+    }
+  },
+  "required": [
+    "session",
+    "turn",
+    "label",
+    "removed"
+  ],
+  "description": "`thread tag <AGENT:ID> <turn> <label>` labels the turn where a topic starts, shown on it in `thread --tree`; `--rm` takes the label off. Writes only `thread-tags.json` beside the index."
+}
