@@ -1,0 +1,33 @@
+[
+  {
+    "action": "would branch",
+    "parent": "claude:5f1c2a7e-0b2d-4c55-9a51-1f0e8f9d2c11",
+    "kind": "claude",
+    "at": 3,
+    "folder": "/home/user/.local/share/trailboss/worktrees/shop-4-try-a-lock-free-queue",
+    "argv": [
+      "claude",
+      "--resume",
+      "5f1c2a7e-0b2d-4c55-9a51-1f0e8f9d2c11",
+      "--fork-session",
+      "This is a branch of our conversation for a side question. Set aside everything after turn 3, where I asked: \"Add the cart page\". Answer as of that point.\n\n<question>"
+    ],
+    "command": "claude --resume 5f1c2a7e-0b2d-4c55-9a51-1f0e8f9d2c11 --fork-session 'This is a branch of our conversation for a side question. Set aside everything after turn 3, where I asked: \"Add the cart page\". Answer as of that point.\n\n<question>'",
+    "question": true,
+    "label": "cart question",
+    "host": "herdr",
+    "terminal": null,
+    "detail": "a fork of claude:5f1c2a7e-0b2d-4c55-9a51-1f0e8f9d2c11 in a new herdr terminal, from turn 3, in a new worktree /home/user/.local/share/trailboss/worktrees/shop-4-try-a-lock-free-queue on branch/4-try-a-lock-free-queue off main (task 4); it starts from turn 3's checkpoint 7 (saved 2026-11-02T10:15:04+00:00): main at 8c1d2e3f4a, the folder's files as that turn left them, uncommitted; the session itself is left alone",
+    "task": 4,
+    "worktree": "/home/user/.local/share/trailboss/worktrees/shop-4-try-a-lock-free-queue",
+    "branch": "branch/4-try-a-lock-free-queue",
+    "base": "main",
+    "start": {
+      "commit": "8c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d",
+      "checkpoint": 7,
+      "turn": 3
+    },
+    "ignore": null,
+    "mid_edit": 2
+  }
+]

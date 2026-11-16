@@ -115,6 +115,28 @@
           "null"
         ],
         "description": "The file its latest reviewer wrote its notes to, once written; null before."
+      },
+      "from_branch": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "description": "Made by `branch --worktree`: the session it forked (AGENT:ID) and the turn (`--at`) it forked at, null from its end; null for a task `task add` made. Its branch is `branch/<n>-<slug>`.",
+        "properties": {
+          "session": {
+            "type": "string"
+          },
+          "turn": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "session",
+          "turn"
+        ]
       }
     },
     "required": [

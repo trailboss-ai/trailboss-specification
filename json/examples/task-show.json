@@ -98,5 +98,6 @@
     "commit": "4b1f0c9d2e7a8b3c6d5e0f1a2b3c4d5e6f7a8b9c",
     "stale": false
   },
-  "merged": null
+  "merged": null,
+  "from_branch": null
 }
