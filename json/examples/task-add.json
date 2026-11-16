@@ -29,7 +29,10 @@
     ],
     "command": "claude <brief>",
     "template": null,
-    "brief": "Fix the login redirect"
+    "brief": "Fix the login redirect",
+    "after": null,
+    "at_ms": null,
+    "auto_review": false
   },
   {
     "n": 4,
@@ -61,6 +64,9 @@
     ],
     "command": "claude <brief>",
     "template": null,
-    "brief": "Test the login redirect"
+    "brief": "Test the login redirect",
+    "after": null,
+    "at_ms": null,
+    "auto_review": false
   }
 ]

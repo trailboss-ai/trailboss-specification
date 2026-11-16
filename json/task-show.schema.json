@@ -9,7 +9,7 @@
     },
     "state": {
       "type": "string",
-      "description": "to do, working, needs you, reviewing, ready, done or missing; more may be added."
+      "description": "queued, to do, working, needs you, reviewing, ready, done or missing; more may be added."
     },
     "detail": {
       "type": "string",
@@ -101,7 +101,7 @@
         "string",
         "null"
       ],
-      "description": "merged or removed, once done."
+      "description": "merged, removed, or failed (a queued task that couldn't start), once done."
     },
     "brief": {
       "type": "string",
@@ -439,6 +439,28 @@
         "session",
         "turn"
       ]
+    },
+    "queued": {
+      "type": "boolean",
+      "description": "Whether it waits to start (`task add --queue`, `--after`, `--at`, or past the config's `tasks.max_parallel`): no worktree, branch or agent yet. It starts at a look (`events`, `watch`, the Herdr block) once it's due and there's room."
+    },
+    "after": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "While queued: the task it waits for to be accepted (`--after`); null otherwise."
+    },
+    "at_ms": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "While queued: the time it waits for (`--at`), in milliseconds since the epoch; null otherwise."
+    },
+    "auto_review": {
+      "type": "boolean",
+      "description": "Whether its reviewer starts on its own, at a look, once its agent comes to rest with commits no reviewer has seen yet (`task add --auto-review`, or the config's `tasks.auto_review` for a reviewed task); once per commit."
     }
   },
   "required": [
@@ -471,6 +493,10 @@
     "review",
     "notes",
     "reviewer",
-    "merged"
+    "merged",
+    "queued",
+    "after",
+    "at_ms",
+    "auto_review"
   ]
 }

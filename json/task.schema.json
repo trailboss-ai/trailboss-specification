@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "trailboss --json task ls",
-  "description": "Every task, oldest first. state: to do (no agent in it and no commits), working, needs you (waiting on you, or at rest with no commits), reviewing (ready but for its review: no reviewer yet, one working, no notes written, or notes for an older commit of its branch; only when its review is on), ready (its agent at rest or ended, with commits on its branch, and reviewed when its review is on), done (accepted or removed), or missing (its worktree is gone). Frontends should show a state they don't know as is.",
+  "description": "Every task, oldest first. state: queued (waiting to start: nothing made for it yet), to do (no agent in it and no commits), working, needs you (waiting on you, or at rest with no commits), reviewing (ready but for its review: no reviewer yet, one working, no notes written, or notes for an older commit of its branch; only when its review is on), ready (its agent at rest or ended, with commits on its branch, and reviewed when its review is on), done (accepted, removed, or a queued task that couldn't start), or missing (its worktree is gone). Frontends should show a state they don't know as is.",
   "type": "array",
   "items": {
     "type": "object",
@@ -11,7 +11,7 @@
       },
       "state": {
         "type": "string",
-        "description": "to do, working, needs you, reviewing, ready, done or missing; more may be added."
+        "description": "queued, to do, working, needs you, reviewing, ready, done or missing; more may be added."
       },
       "detail": {
         "type": "string",
@@ -103,7 +103,7 @@
           "string",
           "null"
         ],
-        "description": "merged or removed, once done."
+        "description": "merged, removed, or failed (a queued task that couldn't start), once done."
       },
       "review": {
         "type": "boolean",
@@ -137,6 +137,28 @@
           "session",
           "turn"
         ]
+      },
+      "queued": {
+        "type": "boolean",
+        "description": "Whether it waits to start (`task add --queue`, `--after`, `--at`, or past the config's `tasks.max_parallel`): no worktree, branch or agent yet. It starts at a look (`events`, `watch`, the Herdr block) once it's due and there's room."
+      },
+      "after": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "While queued: the task it waits for to be accepted (`--after`); null otherwise."
+      },
+      "at_ms": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "While queued: the time it waits for (`--at`), in milliseconds since the epoch; null otherwise."
+      },
+      "auto_review": {
+        "type": "boolean",
+        "description": "Whether its reviewer starts on its own, at a look, once its agent comes to rest with commits no reviewer has seen yet (`task add --auto-review`, or the config's `tasks.auto_review` for a reviewed task); once per commit."
       }
     },
     "required": [
@@ -159,7 +181,11 @@
       "done_ms",
       "outcome",
       "review",
-      "notes"
+      "notes",
+      "queued",
+      "after",
+      "at_ms",
+      "auto_review"
     ]
   }
 }
