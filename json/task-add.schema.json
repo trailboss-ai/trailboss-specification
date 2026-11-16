@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "trailboss --json task add",
-  "description": "One row per brief: the tasks `task add` would start (no --yes), or started (--yes). With several briefs, every worktree is made before any agent starts. Started, its branch `work/<n>-<slug>` and worktree exist, made off the folder's current branch without touching that checkout, and the agent runs there in a new host terminal with the brief as its first prompt. A start that failed took its worktree and branch back (action `failed`). Frontends should show an action they don't know as is.",
+  "description": "One row per brief: the tasks `task add` would start (no --yes), or started (--yes). With several briefs, every worktree is made before any agent starts. Started, its branch `work/<n>-<slug>` and worktree exist, made off the folder's current branch without touching that checkout, and the agent runs there in a new host terminal with the brief as its first prompt. A start that failed took its worktree and branch back (action `failed`). A task that waits to start (`--queue`, `--after`, `--at`, or past the config's `tasks.max_parallel`) is `would queue` / `queued`: nothing is made for it until a look (`events`, `watch`, the Herdr block) starts it. Frontends should show an action they don't know as is.",
   "type": "array",
   "items": {
     "type": "object",
@@ -12,7 +12,7 @@
       },
       "action": {
         "type": "string",
-        "description": "would start, started or failed; more may be added."
+        "description": "would start, started, failed, would queue or queued; more may be added."
       },
       "agent": {
         "type": "string"
@@ -123,6 +123,24 @@
       "brief": {
         "type": "string",
         "description": "The brief as the agent gets it: in its template, when there's one, else as given; the definition's rules, if any, go before it."
+      },
+      "after": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "While queued: the task it waits for to be accepted (`--after`); null otherwise."
+      },
+      "at_ms": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "While queued: the time it waits for (`--at`), in milliseconds since the epoch; null otherwise."
+      },
+      "auto_review": {
+        "type": "boolean",
+        "description": "Whether its reviewer starts on its own, at a look, once its agent comes to rest with commits no reviewer has seen yet (`task add --auto-review`, or the config's `tasks.auto_review` for a reviewed task); once per commit."
       }
     },
     "required": [
@@ -144,7 +162,10 @@
       "argv",
       "command",
       "template",
-      "brief"
+      "brief",
+      "after",
+      "at_ms",
+      "auto_review"
     ]
   }
 }

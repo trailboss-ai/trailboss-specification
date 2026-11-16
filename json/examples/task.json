@@ -21,7 +21,11 @@
     "done_ms": 1793710000000,
     "outcome": "merged",
     "review": false,
-    "notes": null
+    "notes": null,
+    "queued": false,
+    "after": null,
+    "at_ms": null,
+    "auto_review": false
   },
   {
     "n": 3,
@@ -45,7 +49,11 @@
     "done_ms": null,
     "outcome": null,
     "review": false,
-    "notes": null
+    "notes": null,
+    "queued": false,
+    "after": null,
+    "at_ms": null,
+    "auto_review": false
   },
   {
     "n": 4,
@@ -69,6 +77,38 @@
     "done_ms": null,
     "outcome": null,
     "review": true,
-    "notes": null
+    "notes": null,
+    "queued": false,
+    "after": null,
+    "at_ms": null,
+    "auto_review": false
+  },
+  {
+    "n": 5,
+    "state": "queued",
+    "detail": "starts at the first look with room for it once task 4 is accepted",
+    "title": "Add a test for the redirect",
+    "agent": "claude",
+    "branch": "work/5-add-a-test-for-the-redirect",
+    "base": "main",
+    "folder": "/home/user/shop",
+    "worktree": "/home/user/.local/share/trailboss/worktrees/shop-5-add-a-test-for-the-redirect",
+    "commits": null,
+    "files": null,
+    "uncommitted": null,
+    "host": null,
+    "terminal": null,
+    "where": null,
+    "session": null,
+    "parent": "claude:5f1c2a7e-0b2d-4c55-9a51-1f0e8f9d2c11",
+    "created_ms": 1793721060000,
+    "done_ms": null,
+    "outcome": null,
+    "review": false,
+    "notes": null,
+    "queued": true,
+    "after": 4,
+    "at_ms": null,
+    "auto_review": false
   }
 ]

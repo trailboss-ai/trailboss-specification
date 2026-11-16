@@ -53,6 +53,10 @@
   ],
   "review": true,
   "notes": "/home/user/.local/share/trailboss/task-reviews/3-1.md",
+  "queued": false,
+  "after": null,
+  "at_ms": null,
+  "auto_review": false,
   "reviewer": {
     "on": true,
     "reviews": 1,
