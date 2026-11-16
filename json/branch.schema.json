@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "trailboss --json branch",
-  "description": "One row: the fork of a session `branch` would start (no --yes), or started (--yes), to ask a side question: the agent's own fork of that session, in a new host terminal in the session's folder, leaving the session itself alone. The command runs directly, never through a shell. Started, it's kept as started from the session, so `live`, `resume`, `sweep` and `thread --tree` show it there. An agent whose CLI has no fork, a session that isn't indexed or whose folder is gone, and a start that fails are errors, not rows. Frontends should show an action they don't know as is.",
+  "description": "One row: the fork of a session `branch` would start (no --yes), or started (--yes), to ask a side question: the agent's own fork of that session, in a new host terminal in the session's folder (or, with --worktree, in a new git worktree of its repository on a new branch `branch/<n>-<slug>`, kept as a task so `task ls`, `task show`, `task accept` and `task rm` work on it), leaving the session itself alone. The command runs directly, never through a shell. Started, it's kept as started from the session, so `live`, `resume`, `sweep` and `thread --tree` show it there. An agent whose CLI has no fork, a session that isn't indexed or whose folder is gone, and a start that fails are errors, not rows. Frontends should show an action they don't know as is.",
   "type": "array",
   "items": {
     "type": "object",
@@ -27,7 +27,7 @@
       },
       "folder": {
         "type": "string",
-        "description": "The folder it runs in: the session's."
+        "description": "The folder it runs in: the session's, or with --worktree the new worktree."
       },
       "argv": {
         "type": "array",
@@ -64,6 +64,77 @@
       },
       "detail": {
         "type": "string"
+      },
+      "task": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "With --worktree: the task number it's kept as (the next one, in a plan); else null."
+      },
+      "worktree": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "With --worktree: the new worktree's folder; else null."
+      },
+      "branch": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "With --worktree: the new git branch, `branch/<n>-<slug>`; else null."
+      },
+      "base": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "With --worktree: the branch checked out in the session's folder, which `task accept` fast-forwards to the new branch; else null."
+      },
+      "start": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "description": "With --worktree: where the new branch starts. `commit` is the commit; `checkpoint` the session's checkpoint number whose files are written into the worktree, uncommitted (the first one saved after `turn` ended and before the next turn began), or null when none was, and the branch starts from the folder's HEAD; `turn` is --at, else the session's last turn, null with none. Else null.",
+        "properties": {
+          "commit": {
+            "type": "string"
+          },
+          "checkpoint": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "turn": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "commit",
+          "checkpoint",
+          "turn"
+        ]
+      },
+      "ignore": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "With --worktree, when the worktrees folder is inside the repository and git doesn't ignore it: the line that ignores it (as `task add`'s). Else null."
+      },
+      "mid_edit": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "Tracked files with uncommitted changes in the session's folder; null when it isn't in a git repository. Without --worktree, more than 0 makes the plan suggest --worktree."
       }
     },
     "required": [
@@ -78,7 +149,14 @@
       "label",
       "host",
       "terminal",
-      "detail"
+      "detail",
+      "task",
+      "worktree",
+      "branch",
+      "base",
+      "start",
+      "ignore",
+      "mid_edit"
     ]
   }
 }

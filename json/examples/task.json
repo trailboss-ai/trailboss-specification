@@ -21,7 +21,8 @@
     "done_ms": 1793710000000,
     "outcome": "merged",
     "review": false,
-    "notes": null
+    "notes": null,
+    "from_branch": null
   },
   {
     "n": 3,
@@ -45,7 +46,8 @@
     "done_ms": null,
     "outcome": null,
     "review": false,
-    "notes": null
+    "notes": null,
+    "from_branch": null
   },
   {
     "n": 4,
@@ -69,6 +71,7 @@
     "done_ms": null,
     "outcome": null,
     "review": true,
-    "notes": null
+    "notes": null,
+    "from_branch": null
   }
 ]
