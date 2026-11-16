@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "trailboss --json live",
-  "description": "The agents running now, one row per terminal or process. `live --pin X` and `live --unpin X` print the same rows, with the change made and `pinned` updated, so a frontend needn't look again (without --json: the same table). --pin takes a row's terminal or session and fails (exit code 1, a message on stderr, nothing printed or changed) when no running agent has it. --unpin takes either name of a row and lets go of its pin whichever name was pinned (both, if both were), or a pin by the name given when its agent is gone; a name not pinned changes nothing and isn't an error.",
+  "description": "The agents running now, one row per terminal or process. `live --pin X` and `live --unpin X` print the same rows, with the change made and `pinned` updated, so a frontend needn't look again (without --json: the same table). --pin takes a row's terminal or session and fails (exit code 1, a message on stderr, nothing printed or changed) when no running agent has it. --unpin takes either name of a row and lets go of its pin whichever name was pinned (both, if both were), or a pin by the name given when its agent is gone; a name not pinned changes nothing and isn't an error. `live --settle X`, `--unsettle X`, `--quiet X` and `--unquiet X` print the same rows too, with `settled` and `quiet` updated; --settle and --quiet take a row's terminal or session and fail like --pin when no running agent has it, and the undoing ones take either name of a row, like --unpin. `live --board` prints the rows grouped by state instead (see live-board).",
   "type": "array",
   "items": {
     "type": "object",
@@ -311,6 +311,14 @@
           "amount_usd",
           "limit_usd"
         ]
+      },
+      "settled": {
+        "description": "Settled (`live --settle`): off the board until it needs you (a question, an approval, an error, a finished turn, a message typed into it, or it exits), when the settle is cleared. Only on rows with an agent; absent in older versions.",
+        "type": "boolean"
+      },
+      "quiet": {
+        "description": "A background worker (`live --quiet`): its finished turns and questions don't count as needing you, on the board and in `events` (no `finished` event, and no `needs_you` event whose `needs_kind` is question or reply; `turn_finished` stays), but approvals and errors still do. Kept until `--unquiet`, its terminal is gone, or its session hasn't run for 30 days. Only on rows with an agent; absent in older versions.",
+        "type": "boolean"
       }
     },
     "required": [

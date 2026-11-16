@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json live --board",
+  "description": "The agents running now, grouped by state, as `live --board` shows them. Takes the same --pin, --unpin, --settle, --unsettle, --quiet and --unquiet as `live`, made before the board is printed. --all shows the agents at rest for over an hour in their groups instead of folding them.",
+  "type": "object",
+  "properties": {
+    "groups": {
+      "description": "Every state, in this order, even with no rows: needs_you, working, done, idle, failed, stopped. more may be added. needs_you: waiting for the person (status blocked, waiting, needs_input or permission), or at rest with a reason it waits on you (`needs`: a question, a plan, a command to approve, a reply that asked something). working: status working or busy. done: status done. idle: any other status of a running agent (idle, running, unknown). failed: its last turn ended on an error or a rate limit (`needs_kind` error or rate_limit), or status failed or error. stopped: a terminal whose agent is gone (no `agent`). A quiet agent's finished turn (done) and its question or reply show as idle. Within a group, pinned rows first, then as `live` found them.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "state": {
+            "type": "string"
+          },
+          "rows": {
+            "type": "array",
+            "items": {
+              "description": "A `live` row (see live), plus its sub-agents at work.",
+              "type": "object",
+              "properties": {
+                "where": {
+                  "type": "string"
+                },
+                "agent": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "status": {
+                  "type": "string"
+                },
+                "needs": {
+                  "description": "What it waits for, in at most about 40 characters (as on `live`): on a needs_you row, the question, the command to approve, the plan.",
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "needs_kind": {
+                  "description": "As on `live`.",
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "subagents": {
+                  "description": "Rows it started that are at work (in the working state) and not settled or folded, each a row like this one, with its own `subagents`. They aren't listed again in the working group. A sub-agent in any other state is a row of its own group, with `parent`.",
+                  "type": "array",
+                  "items": {
+                    "type": "object"
+                  }
+                }
+              },
+              "required": [
+                "where",
+                "status",
+                "subagents"
+              ]
+            }
+          }
+        },
+        "required": [
+          "state",
+          "rows"
+        ]
+      }
+    },
+    "folded": {
+      "description": "Agents at rest (done or idle) for over an hour by `status_since`, not pinned and not settled: the text table shows them as one \"+N at rest\" line. Empty with --all.",
+      "type": "object",
+      "properties": {
+        "count": {
+          "type": "integer"
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "description": "A `live` row (see live), as `live` prints it.",
+            "type": "object",
+            "properties": {
+              "where": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "where",
+              "status"
+            ]
+          }
+        }
+      },
+      "required": [
+        "count",
+        "rows"
+      ]
+    },
+    "settled": {
+      "description": "Agents settled with `live --settle` and not yet back: they aren't on the board. One comes back on its own, its settle cleared, when it needs you (a question, an approval, an error), finishes or starts a turn (a message typed into it), or exits; a quiet agent's finished turns and questions don't bring it back. `live --unsettle` brings one back by hand.",
+      "type": "object",
+      "properties": {
+        "count": {
+          "type": "integer"
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "description": "A `live` row (see live), as `live` prints it.",
+            "type": "object",
+            "properties": {
+              "where": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "where",
+              "status"
+            ]
+          }
+        }
+      },
+      "required": [
+        "count",
+        "rows"
+      ]
+    }
+  },
+  "required": [
+    "groups",
+    "folded",
+    "settled"
+  ]
+}

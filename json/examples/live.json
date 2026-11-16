@@ -53,7 +53,9 @@
     "unread": false,
     "unread_turns": 0,
     "unread_since_ms": null,
-    "branches_unread": 1
+    "branches_unread": 1,
+    "settled": false,
+    "quiet": false
   },
   {
     "where": "t5 api",
@@ -99,7 +101,9 @@
     "unread": true,
     "unread_turns": 2,
     "unread_since_ms": 1790848420000,
-    "branches_unread": 0
+    "branches_unread": 0,
+    "settled": false,
+    "quiet": false
   },
   {
     "where": "pid 52007",
@@ -140,7 +144,9 @@
     "unread": false,
     "unread_turns": 0,
     "unread_since_ms": null,
-    "branches_unread": 0
+    "branches_unread": 0,
+    "settled": false,
+    "quiet": false
   },
   {
     "where": "pid 52140",
@@ -182,7 +188,9 @@
     "unread": false,
     "unread_turns": 0,
     "unread_since_ms": null,
-    "branches_unread": 0
+    "branches_unread": 0,
+    "settled": false,
+    "quiet": false
   },
   {
     "where": "pid 52311",
@@ -223,7 +231,9 @@
     "unread": false,
     "unread_turns": 0,
     "unread_since_ms": null,
-    "branches_unread": 0
+    "branches_unread": 0,
+    "settled": false,
+    "quiet": true
   },
   {
     "where": "t8 web",
