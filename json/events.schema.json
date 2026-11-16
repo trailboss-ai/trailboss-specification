@@ -21,7 +21,7 @@
             }
           },
           "alert": {
-            "description": "spend_alert: the limit crossed, announced once per session, per folder and day, or per day (and again when the limit is raised and crossed again). The key says which: session:AGENT:ID, folder:DAY:ID or day:DAY; a folder's event has its folder in cwd, a day's has no where.",
+            "description": "spend_alert: the limit crossed, announced once per session (for as long as that session isn't deleted), per folder and day, or per day (and again when the limit is raised and crossed again). The key says which: session:AGENT:ID, folder:DAY:ID or day:DAY; a folder's event has its folder in cwd, a day's has no where.",
             "type": "object",
             "properties": {
               "limit": {
@@ -145,7 +145,7 @@
             ]
           },
           "alert": {
-            "description": "The first spending limit from the config's alerts this agent is over: its session's (session_usd), else its folder's today (folder_usd), else everything today (day_usd). Absent when it's under them all, or none is set.",
+            "description": "The first spending limit from the config's alerts this agent is over: its session's (session_usd), else its folder's today (folder_usd). The day limit (day_usd) is only announced as a spend_alert event, never put on a row. Absent when it's under them all, or none is set.",
             "type": "object",
             "properties": {
               "limit": {

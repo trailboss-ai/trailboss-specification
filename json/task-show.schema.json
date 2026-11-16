@@ -248,11 +248,11 @@
               "integer",
               "null"
             ],
-            "description": "When it ran (ms since the epoch); when the loop ended for a loop. null when the transcript doesn't say."
+            "description": "When it ran (ms since the epoch): for a loop, when its last check started (when the loop ended if no check ran, or for a loop recorded before this was kept). null when the transcript doesn't say."
           },
           "stale": {
             "type": "boolean",
-            "description": "A pass from before the branch's latest commit: it checked older code."
+            "description": "A result, passed or failed, from before the branch's latest commit: it checked older code."
           }
         },
         "required": [
