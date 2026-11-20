@@ -141,6 +141,14 @@
       "auto_review": {
         "type": "boolean",
         "description": "Whether its reviewer starts on its own, at a look, once its agent comes to rest with commits no reviewer has seen yet (`task add --auto-review`, or the config's `tasks.auto_review` for a reviewed task); once per commit."
+      },
+      "team": {
+        "type": "integer",
+        "description": "The team whose lead started it (with --role), as a member; absent otherwise."
+      },
+      "role": {
+        "type": "string",
+        "description": "Its role in that team; absent outside a team."
       }
     },
     "required": [

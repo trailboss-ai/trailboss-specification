@@ -82,6 +82,14 @@
       },
       "detail": {
         "type": "string"
+      },
+      "team": {
+        "type": "integer",
+        "description": "The team whose lead started it (with --role), as a member; absent otherwise."
+      },
+      "role": {
+        "type": "string",
+        "description": "Its role in that team; absent outside a team."
       }
     },
     "required": [

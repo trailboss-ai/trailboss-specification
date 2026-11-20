@@ -1,0 +1,34 @@
+[
+  {
+    "n": 3,
+    "action": "stop",
+    "member": null,
+    "role": null,
+    "task": null,
+    "detail": "no more members start; their work stays for `task accept` or `task rm`"
+  },
+  {
+    "n": 3,
+    "action": "took back",
+    "member": "implementer (task 15)",
+    "role": "implementer",
+    "task": 15,
+    "detail": "task 15 hadn't started"
+  },
+  {
+    "n": 3,
+    "action": "note",
+    "member": "lead",
+    "role": "lead",
+    "task": null,
+    "detail": "still open in shop t12: close it there"
+  },
+  {
+    "n": 3,
+    "action": "note",
+    "member": "implementer (task 14)",
+    "role": "implementer",
+    "task": 14,
+    "detail": "still open in shop t13: close it there"
+  }
+]

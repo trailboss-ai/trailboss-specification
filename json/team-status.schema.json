@@ -1,0 +1,223 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json team status",
+  "description": "The teams you started, newest first; with N, or run in a team's lead or member, that team alone. Each with its members, their state from `live`, and the cost against the cap.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "n": {
+        "type": "integer",
+        "description": "The team's number."
+      },
+      "team": {
+        "type": "string",
+        "description": "The team definition it started from."
+      },
+      "source": {
+        "type": "string",
+        "description": "repo, user or built-in."
+      },
+      "path": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "folder": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string",
+        "description": "The task's first line."
+      },
+      "state": {
+        "type": "string",
+        "description": "running, at cap (no more members start) or stopped; more may be added."
+      },
+      "cap": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Why it's at its cap: the dollars spent or the hours run; null otherwise."
+      },
+      "spent_usd": {
+        "type": "number",
+        "description": "What its members (the lead included) have cost so far."
+      },
+      "dollars": {
+        "type": "number",
+        "description": "Its cap in dollars, as approved."
+      },
+      "hours": {
+        "type": "number",
+        "description": "Its cap in hours, as approved."
+      },
+      "hours_run": {
+        "type": "number",
+        "description": "Hours since it started."
+      },
+      "started_ms": {
+        "type": "integer"
+      },
+      "stopped_ms": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "When `team stop` stopped it."
+      },
+      "parent": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "AGENT:ID of the session `team start` ran in."
+      },
+      "lead": {
+        "type": "string",
+        "description": "The lead's role."
+      },
+      "roles": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "role": {
+              "type": "string"
+            },
+            "works": {
+              "type": "string"
+            },
+            "agent": {
+              "type": "string"
+            },
+            "count": {
+              "type": "integer",
+              "description": "The most that may start."
+            },
+            "started": {
+              "type": "integer",
+              "description": "How many have started."
+            }
+          },
+          "required": [
+            "role",
+            "works",
+            "agent",
+            "count",
+            "started"
+          ]
+        },
+        "description": "The approved roster, and how much of it has started."
+      },
+      "members": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "role": {
+              "type": "string"
+            },
+            "lead": {
+              "type": "boolean",
+              "description": "Whether it's the lead."
+            },
+            "definition": {
+              "type": "string",
+              "description": "The agent definition it started from."
+            },
+            "works": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "task, review or shared-readonly; more may be added."
+            },
+            "task": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "description": "The task it works on (works task) or reviews (works review); null otherwise."
+            },
+            "host": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "terminal": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Its terminal's address; null for a task that hasn't started."
+            },
+            "where": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Where it runs now, as `live` says; null when it isn't running."
+            },
+            "session": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "AGENT:ID of its session, once seen running."
+            },
+            "state": {
+              "type": "string",
+              "description": "working, needs you, at rest, ended (its session ran and isn't running now) or not seen; more may be added."
+            },
+            "cost_usd": {
+              "type": "number",
+              "description": "What its session has cost so far."
+            },
+            "started_ms": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "role",
+            "lead",
+            "definition",
+            "works",
+            "task",
+            "host",
+            "terminal",
+            "where",
+            "session",
+            "state",
+            "cost_usd",
+            "started_ms"
+          ]
+        },
+        "description": "The lead first, then each member in the order it started."
+      }
+    },
+    "required": [
+      "n",
+      "team",
+      "source",
+      "path",
+      "folder",
+      "title",
+      "state",
+      "cap",
+      "spent_usd",
+      "dollars",
+      "hours",
+      "hours_run",
+      "started_ms",
+      "stopped_ms",
+      "parent",
+      "lead",
+      "roles",
+      "members"
+    ]
+  }
+}

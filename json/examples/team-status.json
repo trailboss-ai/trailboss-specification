@@ -1,0 +1,73 @@
+[
+  {
+    "n": 3,
+    "team": "build",
+    "source": "built-in",
+    "path": null,
+    "folder": "/home/user/shop",
+    "title": "Add a login page with tests",
+    "state": "running",
+    "cap": null,
+    "spent_usd": 2.4,
+    "dollars": 20.0,
+    "hours": 4.0,
+    "hours_run": 0.8,
+    "started_ms": 1763540000000,
+    "stopped_ms": null,
+    "parent": "claude:5f1c2a7e-0b2d-4c55-9a51-1f0e8f9d2c11",
+    "lead": "lead",
+    "roles": [
+      {
+        "role": "implementer",
+        "works": "task",
+        "agent": "claude",
+        "count": 2,
+        "started": 1
+      },
+      {
+        "role": "lead",
+        "works": "shared-readonly",
+        "agent": "claude",
+        "count": 1,
+        "started": 1
+      },
+      {
+        "role": "reviewer",
+        "works": "review",
+        "agent": "claude",
+        "count": 2,
+        "started": 0
+      }
+    ],
+    "members": [
+      {
+        "role": "lead",
+        "lead": true,
+        "definition": "claude",
+        "works": "shared-readonly",
+        "task": null,
+        "host": "herdr",
+        "terminal": "t12",
+        "where": "shop t12",
+        "session": "claude:9b8e1c2d-5a4f-4e3b-8c7d-6f5e4d3c2b1a",
+        "state": "at rest",
+        "cost_usd": 0.9,
+        "started_ms": 1763540000000
+      },
+      {
+        "role": "implementer",
+        "lead": false,
+        "definition": "claude",
+        "works": "task",
+        "task": 14,
+        "host": "herdr",
+        "terminal": "t13",
+        "where": "shop t13",
+        "session": "claude:1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+        "state": "working",
+        "cost_usd": 1.5,
+        "started_ms": 1763540300000
+      }
+    ]
+  }
+]
