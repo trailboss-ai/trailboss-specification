@@ -112,14 +112,14 @@
         ]
       },
       "needs": {
-        "description": "Why the agent waits on you, in a few words (\"Plan to approve\", a question's first words, \"Run: npm test\", \"Rate limited\", the question a finished turn ended on); null when it doesn't.",
+        "description": "Why the agent waits on you, in a few words (\"Plan to approve\", a question's first words, \"Run: npm test\", \"Rate limited\", the question a finished turn ended on, \"Same error 3× in a row: Bash\"); null when it doesn't.",
         "type": [
           "null",
           "string"
         ]
       },
       "needs_kind": {
-        "description": "What kind of request `needs` is, with nothing from the transcript: plan, question, run, edit, read, fetch, search, tool, rate_limit, error, waiting or reply (a turn that ended on a question; more may be added).",
+        "description": "What kind of request `needs` is, with nothing from the transcript: plan, question, run, edit, read, fetch, search, tool, rate_limit, error, waiting or reply (a turn that ended on a question); or, when the agent seems to spin rather than work (shown even while it works): same_error (the same tool error several times in a row), same_call (the same call getting the same result several times in a row; calls that wait or poll by design don't count), stopped_short (a turn that ended saying it would do something, without doing it), quiet_subagent (waiting on a sub-agent that has written nothing for a while) or still_failing (an `until` check on this agent still failing after several rounds). More may be added.",
         "type": [
           "null",
           "string"

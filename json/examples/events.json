@@ -26,6 +26,19 @@
       "needs_kind": "run"
     },
     {
+      "kind": "needs_you",
+      "key": "herdr:t3",
+      "where": "t3 api",
+      "terminal": "t3",
+      "agent": "claude",
+      "session": "7f9c2d1e-0a4b-4c55-9e1f-2b3c4d5e6f70",
+      "title": "Add retry to the billing client",
+      "cwd": "/home/user/code/api",
+      "in_herdr": true,
+      "needs": "Same error 3× in a row: Bash",
+      "needs_kind": "same_error"
+    },
+    {
       "kind": "turn_finished",
       "key": "pid:52007",
       "where": "pid 52007",
@@ -115,8 +128,8 @@
       "tokens": 1830442,
       "turn": 7,
       "turn_ended_ms": null,
-      "needs": null,
-      "needs_kind": null,
+      "needs": "Same error 3× in a row: Bash",
+      "needs_kind": "same_error",
       "model": "claude-opus-5-5",
       "effort": "high",
       "context_tokens": 380112,
