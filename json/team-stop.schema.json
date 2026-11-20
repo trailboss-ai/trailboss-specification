@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json team stop",
+  "description": "What `team stop <n>` does (no --yes: `would …`): the team stopped, so no more members start; each member task that hasn't started taken back; each member still running named for you to close. It types nothing, ends no process and removes no work: `task accept` and `task rm` stay yours.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "n": {
+        "type": "integer",
+        "description": "The team."
+      },
+      "action": {
+        "type": "string",
+        "description": "stop, took back, note or failed, each as `would …` without --yes; more may be added."
+      },
+      "member": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The member a row is about, `role (task n)`; null for the team's own row."
+      },
+      "role": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "task": {
+        "type": [
+          "integer",
+          "null"
+        ]
+      },
+      "detail": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "n",
+      "action",
+      "member",
+      "role",
+      "task",
+      "detail"
+    ]
+  }
+}

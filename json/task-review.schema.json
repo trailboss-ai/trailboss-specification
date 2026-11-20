@@ -50,6 +50,14 @@
       "commit": {
         "type": "string",
         "description": "The task branch's commit it reviews. Once the branch moves past it, its notes are for an older commit: the task is reviewing again until another review."
+      },
+      "team": {
+        "type": "integer",
+        "description": "The team whose lead started it (with --role), as a member; absent otherwise."
+      },
+      "role": {
+        "type": "string",
+        "description": "Its role in that team; absent outside a team."
       }
     },
     "required": [

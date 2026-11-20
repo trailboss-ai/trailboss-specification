@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json team ls",
+  "description": "Every team definition visible from the folder (--folder, else here): the repository's first, then yours, then the built-in ones (build, investigate); names sorted within each. A broken team is listed with its problem.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "What `team start` and `team show` take: the file's name without `.json`, or a built-in team's name."
+      },
+      "source": {
+        "type": "string",
+        "description": "repo (the repository's `.trailboss/teams/`), user (`~/.config/trailboss/teams/`) or built-in. A name from an earlier source wins."
+      },
+      "path": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The team's file; null when built in."
+      },
+      "active": {
+        "type": "boolean",
+        "description": "Whether this is the one its name starts: false when a team earlier in repo, user, built-in order has the same name."
+      },
+      "trust": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "A repository team's trust: trusted, new or changed (since you trusted it). Null for yours and built-in ones, which need none."
+      },
+      "description": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "lead": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The lead's role; null when the file couldn't be read."
+      },
+      "dollars": {
+        "type": [
+          "number",
+          "null"
+        ],
+        "description": "The most the team may spend, in dollars: the file's, else 20; null when the file couldn't be read."
+      },
+      "hours": {
+        "type": [
+          "number",
+          "null"
+        ],
+        "description": "The most hours it may run: the file's, else 4."
+      },
+      "members": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "The most members of all its roles together, the lead included."
+      },
+      "problem": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Why it can't be used; null when it can."
+      },
+      "roles": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Each role as `name×count (works)`."
+      }
+    },
+    "required": [
+      "name",
+      "source",
+      "path",
+      "active",
+      "trust",
+      "description",
+      "lead",
+      "dollars",
+      "hours",
+      "members",
+      "problem",
+      "roles"
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+[
+  {
+    "name": "pair",
+    "source": "repo",
+    "path": "/home/user/shop/.trailboss/teams/pair.json",
+    "active": true,
+    "trust": "trusted",
+    "description": "A lead and one Codex implementer",
+    "lead": "lead",
+    "roles": [
+      "coder×1 (task)",
+      "lead×1 (shared-readonly)"
+    ],
+    "members": 2,
+    "dollars": 5.0,
+    "hours": 2.0,
+    "problem": null
+  },
+  {
+    "name": "build",
+    "source": "built-in",
+    "path": null,
+    "active": true,
+    "trust": null,
+    "description": "A lead who splits the task, two implementers in their own worktrees, and reviewers who check their work",
+    "lead": "lead",
+    "roles": [
+      "implementer×2 (task)",
+      "lead×1 (shared-readonly)",
+      "reviewer×2 (review)"
+    ],
+    "members": 5,
+    "dollars": 20.0,
+    "hours": 4.0,
+    "problem": null
+  },
+  {
+    "name": "investigate",
+    "source": "built-in",
+    "path": null,
+    "active": true,
+    "trust": null,
+    "description": "A lead and read-only investigators who look for a problem's cause from different angles; nobody edits",
+    "lead": "lead",
+    "roles": [
+      "investigator×3 (shared-readonly)",
+      "lead×1 (shared-readonly)"
+    ],
+    "members": 4,
+    "dollars": 10.0,
+    "hours": 2.0,
+    "problem": null
+  }
+]

@@ -1,0 +1,63 @@
+{
+  "name": "pair",
+  "source": "repo",
+  "path": "/home/user/shop/.trailboss/teams/pair.json",
+  "active": true,
+  "trust": "trusted",
+  "description": "A lead and one Codex implementer",
+  "lead": "lead",
+  "roles": [
+    {
+      "role": "coder",
+      "lead": false,
+      "agent": "coder",
+      "works": "task",
+      "count": 1,
+      "description": null,
+      "kind": null,
+      "source": null,
+      "path": null,
+      "trust": null,
+      "command": null,
+      "problem": "/home/user/shop/.trailboss/agents/coder.json is a repository's agent definition you haven't trusted. It would run:\n  codex '<brief>'\nRead it, then trust it with: trailboss agents trust coder --folder /home/user/shop --yes"
+    },
+    {
+      "role": "lead",
+      "lead": true,
+      "agent": "claude",
+      "works": "shared-readonly",
+      "count": 1,
+      "description": "Plans and splits the task, starts the members and follows their work; edits nothing itself",
+      "kind": "claude",
+      "source": "built-in",
+      "path": null,
+      "trust": null,
+      "command": "claude <brief>",
+      "problem": null
+    }
+  ],
+  "members": 2,
+  "dollars": 5.0,
+  "hours": 2.0,
+  "problem": null,
+  "file": {
+    "description": "A lead and one Codex implementer",
+    "lead": "lead",
+    "roles": {
+      "coder": {
+        "agent": "coder",
+        "works": "task",
+        "count": 1
+      },
+      "lead": {
+        "agent": "claude",
+        "works": "shared-readonly",
+        "count": 1
+      }
+    },
+    "limits": {
+      "dollars": 5.0,
+      "hours": 2.0
+    }
+  }
+}

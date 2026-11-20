@@ -1,0 +1,219 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json team start",
+  "description": "One object: the plan `team start <team> --task …` shows (no --yes), or with --yes the plan approved and the lead started, alone, in a new host terminal in the folder; it starts the members within the plan. The command runs directly, never through a shell. Refused at --yes when a role's definition has a problem or no host is running. Frontends should show an action they don't know as is.",
+  "type": "object",
+  "properties": {
+    "action": {
+      "type": "string",
+      "description": "would start (no --yes) or started; more may be added."
+    },
+    "n": {
+      "type": "integer",
+      "description": "The team's number, for `team status` and `team stop`; in the plan, the number it would get."
+    },
+    "team": {
+      "type": "string",
+      "description": "The team definition's name."
+    },
+    "source": {
+      "type": "string",
+      "description": "repo, user or built-in."
+    },
+    "path": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The team's file; null for a built-in one."
+    },
+    "trust": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "A repository team's trust: always trusted here (an untrusted one is refused). Null for yours and built-in ones."
+    },
+    "folder": {
+      "type": "string",
+      "description": "The folder the team works in, where the lead starts."
+    },
+    "title": {
+      "type": "string",
+      "description": "The task's first line."
+    },
+    "lead": {
+      "type": "string",
+      "description": "The lead's role."
+    },
+    "roles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "description": "The role's name."
+          },
+          "lead": {
+            "type": "boolean",
+            "description": "Whether it's the lead's role: its one member is the lead `team start --yes` starts."
+          },
+          "agent": {
+            "type": "string",
+            "description": "The agent definition its members start from (`agents ls`)."
+          },
+          "works": {
+            "type": "string",
+            "description": "How its members work: task (its own git worktree and branch, started with `task add --role`), review (one of the team's tasks, with `task review --role`) or shared-readonly (in the team's folder, to read and plan, with `start --role`); more may be added."
+          },
+          "count": {
+            "type": "integer",
+            "description": "The most members of it that may start, over the team's whole run."
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "What its members do, from the team file."
+          },
+          "kind": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The agent kind the definition starts: claude, codex, …; null when it has a problem."
+          },
+          "source": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Where the definition comes from: repo, user or built-in; null when it has a problem."
+          },
+          "path": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The definition's file; null for a built-in one."
+          },
+          "trust": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "A repository definition's trust (always trusted when resolved); null for yours and built-in ones."
+          },
+          "command": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "What a member runs, its brief shown as `<brief>`; null when it has a problem."
+          },
+          "problem": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Why the definition can't start as things are (unknown, broken, a repository's not trusted); null when it can."
+          }
+        },
+        "required": [
+          "role",
+          "lead",
+          "agent",
+          "works",
+          "count",
+          "description",
+          "kind",
+          "source",
+          "path",
+          "trust",
+          "command",
+          "problem"
+        ]
+      },
+      "description": "The roster the plan approves: each role, its definition, how members work and how many may start."
+    },
+    "dollars": {
+      "type": "number",
+      "description": "The most the team may spend: --dollars, else the team's, else 20. At it no more members start."
+    },
+    "hours": {
+      "type": "number",
+      "description": "The most hours it may run: --hours, else the team's, else 4."
+    },
+    "estimate_usd": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "What it might cost with every member started: each at the average cost of recent sessions of its agent kind in the index; null with no sessions to go by."
+    },
+    "estimate_basis": {
+      "type": "string",
+      "description": "What the estimate is based on, per agent kind."
+    },
+    "host": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "herdr, tmux, …; null when no host is running (the plan then says so)."
+    },
+    "terminal": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The lead's terminal's address, once started."
+    },
+    "label": {
+      "type": "string",
+      "description": "The lead's label, shown by `live`: `team <n> <role>`."
+    },
+    "command": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "What the lead runs, its first prompt (its definition's rules, then the team's guide and the task) shown as `<brief>`; null when its definition has a problem."
+    },
+    "parent": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "AGENT:ID of the session `team start` ran in."
+    },
+    "detail": {
+      "type": "string",
+      "description": "The plan in a line: the lead, how many more members, the limits and the estimate; anything that stops it from starting."
+    }
+  },
+  "required": [
+    "action",
+    "n",
+    "team",
+    "source",
+    "path",
+    "trust",
+    "folder",
+    "title",
+    "lead",
+    "roles",
+    "dollars",
+    "hours",
+    "estimate_usd",
+    "estimate_basis",
+    "host",
+    "terminal",
+    "label",
+    "command",
+    "parent",
+    "detail"
+  ]
+}

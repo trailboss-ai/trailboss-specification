@@ -1,0 +1,189 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json team show",
+  "description": "One team: what `team show <name>` gives, and `team trust <name>` too (its `trust` then trusted with --yes). Each repository agent definition a role names still needs its own trust, shown as the role's problem.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "What `team start` and `team show` take: the file's name without `.json`, or a built-in team's name."
+    },
+    "source": {
+      "type": "string",
+      "description": "repo (the repository's `.trailboss/teams/`), user (`~/.config/trailboss/teams/`) or built-in. A name from an earlier source wins."
+    },
+    "path": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The team's file; null when built in."
+    },
+    "active": {
+      "type": "boolean",
+      "description": "Whether this is the one its name starts: false when a team earlier in repo, user, built-in order has the same name."
+    },
+    "trust": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "A repository team's trust: trusted, new or changed (since you trusted it). Null for yours and built-in ones, which need none."
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "lead": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The lead's role; null when the file couldn't be read."
+    },
+    "dollars": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "The most the team may spend, in dollars: the file's, else 20; null when the file couldn't be read."
+    },
+    "hours": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "The most hours it may run: the file's, else 4."
+    },
+    "members": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "The most members of all its roles together, the lead included."
+    },
+    "problem": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Why it can't be used; null when it can."
+    },
+    "roles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "description": "The role's name."
+          },
+          "lead": {
+            "type": "boolean",
+            "description": "Whether it's the lead's role: its one member is the lead `team start --yes` starts."
+          },
+          "agent": {
+            "type": "string",
+            "description": "The agent definition its members start from (`agents ls`)."
+          },
+          "works": {
+            "type": "string",
+            "description": "How its members work: task (its own git worktree and branch, started with `task add --role`), review (one of the team's tasks, with `task review --role`) or shared-readonly (in the team's folder, to read and plan, with `start --role`); more may be added."
+          },
+          "count": {
+            "type": "integer",
+            "description": "The most members of it that may start, over the team's whole run."
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "What its members do, from the team file."
+          },
+          "kind": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The agent kind the definition starts: claude, codex, …; null when it has a problem."
+          },
+          "source": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Where the definition comes from: repo, user or built-in; null when it has a problem."
+          },
+          "path": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The definition's file; null for a built-in one."
+          },
+          "trust": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "A repository definition's trust (always trusted when resolved); null for yours and built-in ones."
+          },
+          "command": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "What a member runs, its brief shown as `<brief>`; null when it has a problem."
+          },
+          "problem": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Why the definition can't start as things are (unknown, broken, a repository's not trusted); null when it can."
+          }
+        },
+        "required": [
+          "role",
+          "lead",
+          "agent",
+          "works",
+          "count",
+          "description",
+          "kind",
+          "source",
+          "path",
+          "trust",
+          "command",
+          "problem"
+        ]
+      },
+      "description": "Each role, its definition resolved from the folder as `task add` and `start` would resolve it."
+    },
+    "file": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "The team file as read: description, lead, roles and limits."
+    }
+  },
+  "required": [
+    "name",
+    "source",
+    "path",
+    "active",
+    "trust",
+    "description",
+    "lead",
+    "dollars",
+    "hours",
+    "members",
+    "problem",
+    "roles",
+    "file"
+  ]
+}
