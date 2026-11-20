@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json serve",
+  "description": "The one line `serve` prints once it's listening; it then keeps running.",
+  "type": "object",
+  "properties": {
+    "url": {
+      "type": "string",
+      "description": "Where the server answers: http://127.0.0.1:<port>/"
+    },
+    "port": {
+      "type": "integer"
+    },
+    "token_file": {
+      "type": "string",
+      "description": "The file holding the token every request needs (readable by its owner only)."
+    },
+    "open_url": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The URL with the token in its fragment (#token=...), only on the start that made the token; null after."
+    }
+  },
+  "required": [
+    "url",
+    "port",
+    "token_file",
+    "open_url"
+  ]
+}
