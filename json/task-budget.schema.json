@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json task budget",
+  "description": "Setting or clearing a task's budget (the dollars its agent and reviewers may spend between them), one row: would set / set, or would clear / cleared. Without --yes nothing changes. Over its budget, a task's automatic reviewer and the tasks queued --after it wait; raising the budget above what it spent, or clearing it, lets them start at the next look. Frontends should show an action they don't know as is.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "n": {
+        "type": "integer"
+      },
+      "action": {
+        "type": "string",
+        "description": "would set, set, would clear or cleared; more may be added."
+      },
+      "detail": {
+        "type": "string",
+        "description": "The budget it has after, and the one it had before."
+      }
+    },
+    "required": [
+      "n",
+      "action",
+      "detail"
+    ]
+  }
+}

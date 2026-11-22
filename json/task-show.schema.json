@@ -458,6 +458,24 @@
       ],
       "description": "While queued: the time it waits for (`--at`), in milliseconds since the epoch; null otherwise."
     },
+    "budget_usd": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Dollars its agent and reviewers may spend between them (`task add --budget`, the config's `tasks.budget`, `task budget`); null without one. Over it, its automatic reviewer and the tasks queued --after it wait until it's raised or cleared; nothing is stopped."
+    },
+    "spent_usd": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "What its agent and reviewers have spent so far, at API-equivalent prices, rounded to the cent; null without a budget."
+    },
+    "over_budget": {
+      "type": "boolean",
+      "description": "Whether it has spent its budget; false without one. Its detail says so, and a queued task held by the budget of the task it waits for says that."
+    },
     "auto_review": {
       "type": "boolean",
       "description": "Whether its reviewer starts on its own, at a look, once its agent comes to rest with commits no reviewer has seen yet (`task add --auto-review`, or the config's `tasks.auto_review` for a reviewed task); once per commit."

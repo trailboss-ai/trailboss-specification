@@ -103,5 +103,8 @@
     "stale": false
   },
   "merged": null,
-  "from_branch": null
+  "from_branch": null,
+  "budget_usd": 10.0,
+  "spent_usd": 4.37,
+  "over_budget": false
 }

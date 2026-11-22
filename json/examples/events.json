@@ -102,6 +102,23 @@
         "amount_usd": 51.37,
         "limit_usd": 50.0
       }
+    },
+    {
+      "kind": "spend_alert",
+      "key": "task:4",
+      "where": "t5 shop",
+      "terminal": "t5",
+      "agent": "claude",
+      "session": "3c1d9e2a-7b44-4f0e-8a61-5d2e9f0b1c33",
+      "title": "Try a new cache",
+      "cwd": "/home/user/.local/share/trailboss/worktrees/shop-4-try-a-new-cache",
+      "in_herdr": false,
+      "alert": {
+        "limit": "task",
+        "amount_usd": 8.21,
+        "limit_usd": 8.0,
+        "task": 4
+      }
     }
   ],
   "live": [

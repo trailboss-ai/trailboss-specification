@@ -21,20 +21,24 @@
             }
           },
           "alert": {
-            "description": "spend_alert: the limit crossed, announced once per session (for as long as that session isn't deleted), per folder and day, or per day (and again when the limit is raised and crossed again). The key says which: session:AGENT:ID, folder:DAY:ID or day:DAY; a folder's event has its folder in cwd, a day's has no where.",
+            "description": "spend_alert: the limit crossed, announced once per session (for as long as that session isn't deleted), per folder and day, per day, or per task while it's open (and again when the limit is raised and crossed again). The key says which: session:AGENT:ID, folder:DAY:ID, day:DAY or task:N; a folder's event has its folder in cwd, a day's has no where, a task's has its agent's where when it's running, else the task's worktree in cwd. A task over its budget holds its automatic reviewer and the tasks queued --after it until the budget is raised or cleared (`task budget`).",
             "type": "object",
             "properties": {
               "limit": {
-                "description": "session, folder or day; more may be added.",
+                "description": "session, folder, day or task; more may be added.",
                 "type": "string"
               },
               "amount_usd": {
-                "description": "What was spent, at API-equivalent prices, rounded to the cent: the session's cost, or the folder's or everyone's today.",
+                "description": "What was spent, at API-equivalent prices, rounded to the cent: the session's cost, the folder's or everyone's today, or the task's agent and reviewers' together.",
                 "type": "number"
               },
               "limit_usd": {
-                "description": "The limit crossed, from the config.",
+                "description": "The limit crossed, from the config, or the task's budget.",
                 "type": "number"
+              },
+              "task": {
+                "description": "For a task's budget: the task's number. Absent otherwise.",
+                "type": "integer"
               }
             },
             "required": [
@@ -145,20 +149,24 @@
             ]
           },
           "alert": {
-            "description": "The first spending limit from the config's alerts this agent is over: its session's (session_usd), else its folder's today (folder_usd). The day limit (day_usd) is only announced as a spend_alert event, never put on a row. Absent when it's under them all, or none is set.",
+            "description": "The first spending limit this agent is over: its task's budget (task, when it's a task's agent: `task add --budget` or the config's `tasks.budget`), else, from the config's alerts, its session's (session_usd), else its folder's today (folder_usd). The day limit (day_usd) is only announced as a spend_alert event, never put on a row. Absent when it's under them all, or none is set.",
             "type": "object",
             "properties": {
               "limit": {
-                "description": "session, folder or day; more may be added.",
+                "description": "session, folder, day or task; more may be added.",
                 "type": "string"
               },
               "amount_usd": {
-                "description": "What was spent, at API-equivalent prices, rounded to the cent: the session's cost, or the folder's or everyone's today.",
+                "description": "What was spent, at API-equivalent prices, rounded to the cent: the session's cost, the folder's or everyone's today, or the task's agent and reviewers' together.",
                 "type": "number"
               },
               "limit_usd": {
-                "description": "The limit crossed, from the config.",
+                "description": "The limit crossed, from the config, or the task's budget.",
                 "type": "number"
+              },
+              "task": {
+                "description": "For a task's budget: the task's number. Absent otherwise.",
+                "type": "integer"
               }
             },
             "required": [
