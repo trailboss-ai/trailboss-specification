@@ -26,7 +26,9 @@
     "queued": false,
     "after": null,
     "at_ms": null,
-    "auto_review": false
+    "auto_review": false,
+    "clashes": [],
+    "clash": null
   },
   {
     "n": 3,
@@ -55,7 +57,26 @@
     "queued": false,
     "after": null,
     "at_ms": null,
-    "auto_review": false
+    "auto_review": false,
+    "clashes": [
+      {
+        "pair": "9d14be07a3c2",
+        "kind": "clash",
+        "with": "task 4",
+        "task": 4,
+        "where": [
+          "t10 shop / task-4"
+        ],
+        "files": [
+          "src/routes.ts",
+          "src/session.ts"
+        ],
+        "lines": [
+          "src/routes.ts"
+        ]
+      }
+    ],
+    "clash": "same lines as task 4: src/routes.ts"
   },
   {
     "n": 4,
@@ -84,7 +105,26 @@
     "queued": false,
     "after": null,
     "at_ms": null,
-    "auto_review": false
+    "auto_review": false,
+    "clashes": [
+      {
+        "pair": "9d14be07a3c2",
+        "kind": "clash",
+        "with": "task 3",
+        "task": 3,
+        "where": [
+          "t9 shop / task-3"
+        ],
+        "files": [
+          "src/routes.ts",
+          "src/session.ts"
+        ],
+        "lines": [
+          "src/routes.ts"
+        ]
+      }
+    ],
+    "clash": "same lines as task 3: src/routes.ts"
   },
   {
     "n": 5,
@@ -113,6 +153,8 @@
     "after": 4,
     "at_ms": null,
     "auto_review": false,
-    "from_branch": null
+    "from_branch": null,
+    "clashes": [],
+    "clash": null
   }
 ]

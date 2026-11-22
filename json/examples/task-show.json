@@ -103,5 +103,21 @@
     "stale": false
   },
   "merged": null,
-  "from_branch": null
+  "from_branch": null,
+  "clashes": [
+    {
+      "pair": "31f0c6e2d8ab",
+      "kind": "same_file",
+      "with": "t4 shop",
+      "task": null,
+      "where": [
+        "t4 shop"
+      ],
+      "files": [
+        "src/cart.ts"
+      ],
+      "lines": []
+    }
+  ],
+  "clash": "same file, other lines, as t4 shop: src/cart.ts"
 }

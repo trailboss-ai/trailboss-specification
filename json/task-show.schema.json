@@ -461,6 +461,71 @@
     "auto_review": {
       "type": "boolean",
       "description": "Whether its reviewer starts on its own, at a look, once its agent comes to rest with commits no reviewer has seen yet (`task add --auto-review`, or the config's `tasks.auto_review` for a reviewed task); once per commit."
+    },
+    "clashes": {
+      "description": "Each other open task branch or running agent in the same repository changing a file this task's branch or worktree changes since its base; empty once done.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "pair": {
+            "description": "The same on both sides' rows: which pair this is.",
+            "type": "string"
+          },
+          "kind": {
+            "description": "clash (changed lines overlap in a file both change) or same_file (the same files, other lines); more may be added.",
+            "type": "string"
+          },
+          "with": {
+            "description": "The other side: `task N` for an open task, else where its agent runs.",
+            "type": "string"
+          },
+          "task": {
+            "description": "The other side's task number, when it's a task.",
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "where": {
+            "description": "Where the other side's agents run; empty for a task with none running.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "files": {
+            "description": "Files both sides change.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "lines": {
+            "description": "Of those, the ones where their changed lines overlap; empty for same_file.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "pair",
+          "kind",
+          "with",
+          "task",
+          "where",
+          "files",
+          "lines"
+        ]
+      }
+    },
+    "clash": {
+      "description": "The clashes in a line: \"same lines as task 3: src/a.rs; same file, other lines, as t2 api: src/b.rs\"; null without any.",
+      "type": [
+        "null",
+        "string"
+      ]
     }
   },
   "required": [
