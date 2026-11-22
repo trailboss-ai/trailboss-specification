@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json statusline",
+  "description": "One short line of the fleet for a status line, and its parts. Kept a few seconds (Claude's quota for two minutes), so looked_ms and quota_checked_ms say how old each part is.",
+  "type": "object",
+  "properties": {
+    "claude_5h": {
+      "description": "Claude's 5-hour window; null with no sign-in, offline, past its reset, or with --no-quota.",
+      "type": [
+        "null",
+        "object"
+      ],
+      "properties": {
+        "pace_percent": {
+          "description": "Where usage ends up by the reset at the rate so far; null early in the window.",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "resets_at": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        },
+        "resets_in": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "used_percent": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "used_percent",
+        "resets_at",
+        "resets_in",
+        "pace_percent"
+      ]
+    },
+    "first_terminal": {
+      "description": "The first agent that needs you: its terminal, or \"pid N\" outside one; null when none does.",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "line": {
+      "description": "What the command prints without --json.",
+      "type": "string"
+    },
+    "looked_ms": {
+      "type": "integer"
+    },
+    "needs_you": {
+      "type": "integer"
+    },
+    "quota_checked_ms": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "today_usd": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "needs_you",
+    "first_terminal",
+    "today_usd",
+    "claude_5h",
+    "looked_ms",
+    "quota_checked_ms",
+    "line"
+  ]
+}
