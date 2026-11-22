@@ -72,6 +72,22 @@
       "in_herdr": true
     },
     {
+      "kind": "clash",
+      "key": "herdr:t3",
+      "where": "t3 api",
+      "terminal": "t3",
+      "agent": "claude",
+      "session": "7f9c2d1e-0a4b-4c55-9e1f-2b3c4d5e6f70",
+      "title": "Add retry to the billing client",
+      "cwd": "/home/user/code/api",
+      "with": "task 7",
+      "task": 7,
+      "files": [
+        "src/billing/client.ts"
+      ],
+      "in_herdr": true
+    },
+    {
       "kind": "spend_alert",
       "key": "session:claude:7f9c2d1e-0a4b-4c55-9e1f-2b3c4d5e6f70",
       "where": "t3 api",
@@ -167,7 +183,25 @@
       "workspace": "/home/user/code/api",
       "shares_with": [
         "t5 api"
-      ]
+      ],
+      "clashes": [
+        {
+          "pair": "5b0e2a9c41d7",
+          "kind": "clash",
+          "with": "task 7",
+          "task": 7,
+          "where": [
+            "t8 api / task-7"
+          ],
+          "files": [
+            "src/billing/client.ts"
+          ],
+          "lines": [
+            "src/billing/client.ts"
+          ]
+        }
+      ],
+      "clash": "same lines as task 7: src/billing/client.ts"
     },
     {
       "where": "t5 api",
@@ -204,7 +238,25 @@
       "shares_with": [
         "t3 api"
       ],
-      "parent": "t3 api"
+      "parent": "t3 api",
+      "clashes": [
+        {
+          "pair": "5b0e2a9c41d7",
+          "kind": "clash",
+          "with": "task 7",
+          "task": 7,
+          "where": [
+            "t8 api / task-7"
+          ],
+          "files": [
+            "src/billing/client.ts"
+          ],
+          "lines": [
+            "src/billing/client.ts"
+          ]
+        }
+      ],
+      "clash": "same lines as task 7: src/billing/client.ts"
     },
     {
       "where": "pid 52007",
@@ -236,7 +288,9 @@
       "procs": 1,
       "background": null,
       "status_since": 1790848809500,
-      "pinned": false
+      "pinned": false,
+      "clashes": [],
+      "clash": null
     }
   ]
 }

@@ -29,7 +29,9 @@
     "auto_review": false,
     "budget_usd": 10.0,
     "spent_usd": 4.37,
-    "over_budget": false
+    "over_budget": false,
+    "clashes": [],
+    "clash": null
   },
   {
     "n": 3,
@@ -61,7 +63,26 @@
     "auto_review": false,
     "budget_usd": null,
     "spent_usd": null,
-    "over_budget": false
+    "over_budget": false,
+    "clashes": [
+      {
+        "pair": "9d14be07a3c2",
+        "kind": "clash",
+        "with": "task 4",
+        "task": 4,
+        "where": [
+          "t10 shop / task-4"
+        ],
+        "files": [
+          "src/routes.ts",
+          "src/session.ts"
+        ],
+        "lines": [
+          "src/routes.ts"
+        ]
+      }
+    ],
+    "clash": "same lines as task 4: src/routes.ts"
   },
   {
     "n": 4,
@@ -93,7 +114,26 @@
     "auto_review": false,
     "budget_usd": null,
     "spent_usd": null,
-    "over_budget": false
+    "over_budget": false,
+    "clashes": [
+      {
+        "pair": "9d14be07a3c2",
+        "kind": "clash",
+        "with": "task 3",
+        "task": 3,
+        "where": [
+          "t9 shop / task-3"
+        ],
+        "files": [
+          "src/routes.ts",
+          "src/session.ts"
+        ],
+        "lines": [
+          "src/routes.ts"
+        ]
+      }
+    ],
+    "clash": "same lines as task 3: src/routes.ts"
   },
   {
     "n": 5,
@@ -125,6 +165,8 @@
     "from_branch": null,
     "budget_usd": null,
     "spent_usd": null,
-    "over_budget": false
+    "over_budget": false,
+    "clashes": [],
+    "clash": null
   }
 ]

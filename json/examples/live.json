@@ -55,7 +55,25 @@
     "unread_since_ms": null,
     "branches_unread": 1,
     "settled": false,
-    "quiet": false
+    "quiet": false,
+    "clashes": [
+      {
+        "pair": "5b0e2a9c41d7",
+        "kind": "clash",
+        "with": "task 7",
+        "task": 7,
+        "where": [
+          "t8 api / task-7"
+        ],
+        "files": [
+          "src/billing/client.ts"
+        ],
+        "lines": [
+          "src/billing/client.ts"
+        ]
+      }
+    ],
+    "clash": "same lines as task 7: src/billing/client.ts"
   },
   {
     "where": "t5 api",
@@ -103,7 +121,25 @@
     "unread_since_ms": 1790848420000,
     "branches_unread": 0,
     "settled": false,
-    "quiet": false
+    "quiet": false,
+    "clashes": [
+      {
+        "pair": "5b0e2a9c41d7",
+        "kind": "clash",
+        "with": "task 7",
+        "task": 7,
+        "where": [
+          "t8 api / task-7"
+        ],
+        "files": [
+          "src/billing/client.ts"
+        ],
+        "lines": [
+          "src/billing/client.ts"
+        ]
+      }
+    ],
+    "clash": "same lines as task 7: src/billing/client.ts"
   },
   {
     "where": "pid 52007",
@@ -146,7 +182,9 @@
     "unread_since_ms": null,
     "branches_unread": 0,
     "settled": false,
-    "quiet": false
+    "quiet": false,
+    "clashes": [],
+    "clash": null
   },
   {
     "where": "pid 52140",
@@ -190,7 +228,9 @@
     "unread_since_ms": null,
     "branches_unread": 0,
     "settled": false,
-    "quiet": false
+    "quiet": false,
+    "clashes": [],
+    "clash": null
   },
   {
     "where": "pid 52311",
@@ -233,7 +273,9 @@
     "unread_since_ms": null,
     "branches_unread": 0,
     "settled": false,
-    "quiet": true
+    "quiet": true,
+    "clashes": [],
+    "clash": null
   },
   {
     "where": "t8 web",
