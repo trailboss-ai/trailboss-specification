@@ -156,6 +156,10 @@
       "role": {
         "type": "string",
         "description": "Its role in that team; absent outside a team."
+      },
+      "sha256": {
+        "type": "string",
+        "description": "The SHA-256 of the definition's content it's planned with (a file's bytes, or a built-in's canonical JSON), recorded with the task: a queued one starts only with that version."
       }
     },
     "required": [

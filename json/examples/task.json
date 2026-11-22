@@ -31,7 +31,8 @@
     "spent_usd": 4.37,
     "over_budget": false,
     "clashes": [],
-    "clash": null
+    "clash": null,
+    "definition_changed": false
   },
   {
     "n": 3,
@@ -82,7 +83,8 @@
         ]
       }
     ],
-    "clash": "same lines as task 4: src/routes.ts"
+    "clash": "same lines as task 4: src/routes.ts",
+    "definition_changed": false
   },
   {
     "n": 4,
@@ -133,7 +135,8 @@
         ]
       }
     ],
-    "clash": "same lines as task 3: src/routes.ts"
+    "clash": "same lines as task 3: src/routes.ts",
+    "definition_changed": false
   },
   {
     "n": 5,
@@ -167,6 +170,7 @@
     "spent_usd": null,
     "over_budget": false,
     "clashes": [],
-    "clash": null
+    "clash": null,
+    "definition_changed": false
   }
 ]

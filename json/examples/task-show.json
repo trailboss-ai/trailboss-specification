@@ -100,7 +100,12 @@
     "notes": "/home/user/.local/share/trailboss/task-reviews/3-1.md",
     "text": "Does what the brief asks. The redirect test covers the logged-out case only: add one for an expired session.\n",
     "commit": "4b1f0c9d2e7a8b3c6d5e0f1a2b3c4d5e6f7a8b9c",
-    "stale": false
+    "stale": false,
+    "definition": {
+      "source": "built-in",
+      "path": null,
+      "sha256": "b1e3c5a7d9f2468ac0e2b4d6f8a1c3e5079b2d4f6a8c0e2b4d6f8a1c3e5079b2"
+    }
   },
   "merged": null,
   "from_branch": null,
@@ -122,5 +127,17 @@
       "lines": []
     }
   ],
-  "clash": "same file, other lines, as t4 shop: src/cart.ts"
+  "clash": "same file, other lines, as t4 shop: src/cart.ts",
+  "definition_changed": false,
+  "definition": {
+    "source": "built-in",
+    "path": null,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "changed": false,
+    "current": {
+      "source": "built-in",
+      "path": null,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  }
 }

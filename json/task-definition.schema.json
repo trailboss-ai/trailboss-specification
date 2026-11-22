@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json task definition",
+  "description": "The version of its agent definition a task was planned with at `task add` and the one its folder would start now, one row: changed or unchanged; with --accept, would accept, accepted, or unchanged. Without --yes nothing changes. Only a queued task takes a new version: one whose definition changed waits until it's accepted, then starts at a look as before. Frontends should show an action they don't know as is.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "n": {
+        "type": "integer"
+      },
+      "action": {
+        "type": "string",
+        "description": "changed, unchanged, would accept or accepted; more may be added."
+      },
+      "detail": {
+        "type": "string",
+        "description": "The definition's name, the version planned with and the one now, each as its source, file and the hash's first 12 characters."
+      },
+      "planned": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "source": {
+            "type": "string",
+            "description": "repo, user or built-in."
+          },
+          "path": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Its file; null for a built-in one."
+          },
+          "sha256": {
+            "type": "string",
+            "description": "The SHA-256 of its content: the file's bytes, or a built-in's canonical JSON."
+          }
+        },
+        "required": [
+          "source",
+          "sha256"
+        ],
+        "description": "The version it was planned with; null for a task added before Trailboss kept it."
+      },
+      "current": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "source": {
+            "type": "string",
+            "description": "repo, user or built-in."
+          },
+          "path": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Its file; null for a built-in one."
+          },
+          "sha256": {
+            "type": "string",
+            "description": "The SHA-256 of its content: the file's bytes, or a built-in's canonical JSON."
+          }
+        },
+        "required": [
+          "source",
+          "sha256"
+        ],
+        "description": "The version its folder would start now (accepted: the one recorded); null when there's no such definition."
+      }
+    },
+    "required": [
+      "n",
+      "action",
+      "detail",
+      "planned",
+      "current"
+    ]
+  }
+}

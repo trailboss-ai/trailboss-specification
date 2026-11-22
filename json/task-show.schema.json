@@ -386,6 +386,34 @@
         "stale": {
           "type": "boolean",
           "description": "Whether the branch has moved past that commit, so the notes are for an older one: the task is then reviewing, not ready, until it's reviewed again."
+        },
+        "definition": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "source": {
+              "type": "string",
+              "description": "repo, user or built-in."
+            },
+            "path": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Its file; null for a built-in one."
+            },
+            "sha256": {
+              "type": "string",
+              "description": "The SHA-256 of its content: the file's bytes, or a built-in's canonical JSON."
+            }
+          },
+          "required": [
+            "source",
+            "sha256"
+          ],
+          "description": "The version of the definition the latest reviewer started with; null before one started, or for a review recorded before Trailboss kept it."
         }
       },
       "required": [
@@ -544,6 +572,72 @@
         "null",
         "string"
       ]
+    },
+    "definition_changed": {
+      "type": "boolean",
+      "description": "Whether a queued task's agent definition changed since `task add` (its content's SHA-256 differs from the one it was planned with): it doesn't start until you take the new version with `task definition <n> --accept --yes`, and its detail says so. False otherwise, and for tasks added before Trailboss kept the version."
+    },
+    "definition": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "source": {
+          "type": "string",
+          "description": "repo, user or built-in."
+        },
+        "path": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Its file; null for a built-in one."
+        },
+        "sha256": {
+          "type": "string",
+          "description": "The SHA-256 of its content: the file's bytes, or a built-in's canonical JSON."
+        },
+        "changed": {
+          "type": "boolean",
+          "description": "Whether the definition its folder would start now differs from this one."
+        },
+        "current": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "source": {
+              "type": "string",
+              "description": "repo, user or built-in."
+            },
+            "path": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Its file; null for a built-in one."
+            },
+            "sha256": {
+              "type": "string",
+              "description": "The SHA-256 of its content: the file's bytes, or a built-in's canonical JSON."
+            }
+          },
+          "required": [
+            "source",
+            "sha256"
+          ],
+          "description": "The version its folder would start now; null when there's no such definition any more."
+        }
+      },
+      "required": [
+        "source",
+        "sha256",
+        "changed",
+        "current"
+      ],
+      "description": "The version of its agent definition it was planned with at `task add`: a queued task starts only with it. Null for tasks added before Trailboss kept it, and for `branch --worktree` tasks."
     }
   },
   "required": [
