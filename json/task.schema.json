@@ -242,6 +242,10 @@
           "null",
           "string"
         ]
+      },
+      "definition_changed": {
+        "type": "boolean",
+        "description": "Whether a queued task's agent definition changed since `task add` (its content's SHA-256 differs from the one it was planned with): it doesn't start until you take the new version with `task definition <n> --accept --yes`, and its detail says so. False otherwise, and for tasks added before Trailboss kept the version."
       }
     },
     "required": [

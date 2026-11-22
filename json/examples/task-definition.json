@@ -1,0 +1,17 @@
+[
+  {
+    "n": 3,
+    "action": "accepted",
+    "detail": "careful: planned with repo /home/user/shop/.trailboss/agents/careful.json 1f0c2b9a7d4e; now starts with repo /home/user/shop/.trailboss/agents/careful.json 8a41de0b52c7",
+    "planned": {
+      "source": "repo",
+      "path": "/home/user/shop/.trailboss/agents/careful.json",
+      "sha256": "1f0c2b9a7d4e6b3f0a9c8e7d6c5b4a39281706f5e4d3c2b1a09f8e7d6c5b4a39"
+    },
+    "current": {
+      "source": "repo",
+      "path": "/home/user/shop/.trailboss/agents/careful.json",
+      "sha256": "8a41de0b52c7f9e8d7c6b5a49382716051f4e3d2c1b0a9f8e7d6c5b4a3928171"
+    }
+  }
+]
