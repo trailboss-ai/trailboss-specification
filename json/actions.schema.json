@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trailboss --json actions",
+  "description": "`trailboss actions [--since 30m|2h|1d|ISO] [-n N]`: what Trailboss itself did, newest first (at most N, default 50): every agent it started, message it typed, merge, removal, stop, restore, delete and resume, on your command or by a documented trigger. Each is a line of a hash-chained record beside the index; `doctor` checks the chain.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "seq": {
+        "type": "integer",
+        "description": "The action's number, from 1, counting up across the record's rotation."
+      },
+      "at_ms": {
+        "type": "integer",
+        "description": "When it happened, in ms since the epoch."
+      },
+      "at": {
+        "type": "string",
+        "description": "The same time, as ISO 8601 in UTC."
+      },
+      "kind": {
+        "type": "string",
+        "description": "What Trailboss did: start (an agent in a new terminal), type (a message into an agent), merge (a task's branch, `task accept`), remove (a task's worktree and branch, or a queued task taken back), stop (a team or an until loop), restore (project files written back: `checkpoint restore`, `review --undo`), delete (a session's transcript), resume (a session restarted in its terminal). More may be added."
+      },
+      "trigger": {
+        "type": "string",
+        "description": "The command the action ran under: its subcommand words and the flags that change what it does, never a value you typed, e.g. `task add --yes`, `send --yes --queue`, `queue deliver`, `task start-due`, `until`, `resume --auto`."
+      },
+      "via": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "For an action a background command took, the look that started it: `watch`, `events`, `serve` (a client following /events) or `send --yes --queue --wait`; null otherwise."
+      },
+      "agent": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The agent kind or definition it concerns, when known."
+      },
+      "session": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The session id it concerns, when known."
+      },
+      "host": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The host of the terminal it concerns."
+      },
+      "terminal": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The terminal's address in that host."
+      },
+      "where": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "HOST:TERMINAL, when both are known."
+      },
+      "task": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "The task it concerns."
+      },
+      "team": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "The team it was taken for: a team's lead start or a member started by its lead, or `team stop`."
+      },
+      "outcome": {
+        "type": "string",
+        "description": "ok, failed (Trailboss's own error in detail) or skipped (why in detail)."
+      },
+      "detail": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Trailboss's own words: the error, why it was skipped, or a short note (what was merged into, how many files were written back). Never typed text, a brief, transcript content or a token."
+      },
+      "prev": {
+        "type": "string",
+        "description": "The SHA-256, as hex, of the line before this one in the record; 64 zeros for the first. `doctor` checks the chain."
+      }
+    },
+    "required": [
+      "seq",
+      "at_ms",
+      "at",
+      "kind",
+      "trigger",
+      "via",
+      "agent",
+      "session",
+      "host",
+      "terminal",
+      "where",
+      "task",
+      "team",
+      "outcome",
+      "detail",
+      "prev"
+    ]
+  }
+}
