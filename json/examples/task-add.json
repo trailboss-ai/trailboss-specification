@@ -32,7 +32,8 @@
     "brief": "Fix the login redirect",
     "after": null,
     "at_ms": null,
-    "auto_review": false
+    "auto_review": false,
+    "budget_usd": 10.0
   },
   {
     "n": 4,
@@ -67,6 +68,7 @@
     "brief": "Test the login redirect",
     "after": null,
     "at_ms": null,
-    "auto_review": false
+    "auto_review": false,
+    "budget_usd": null
   }
 ]

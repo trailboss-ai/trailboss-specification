@@ -26,7 +26,10 @@
     "queued": false,
     "after": null,
     "at_ms": null,
-    "auto_review": false
+    "auto_review": false,
+    "budget_usd": 10.0,
+    "spent_usd": 4.37,
+    "over_budget": false
   },
   {
     "n": 3,
@@ -55,7 +58,10 @@
     "queued": false,
     "after": null,
     "at_ms": null,
-    "auto_review": false
+    "auto_review": false,
+    "budget_usd": null,
+    "spent_usd": null,
+    "over_budget": false
   },
   {
     "n": 4,
@@ -84,7 +90,10 @@
     "queued": false,
     "after": null,
     "at_ms": null,
-    "auto_review": false
+    "auto_review": false,
+    "budget_usd": null,
+    "spent_usd": null,
+    "over_budget": false
   },
   {
     "n": 5,
@@ -113,6 +122,9 @@
     "after": 4,
     "at_ms": null,
     "auto_review": false,
-    "from_branch": null
+    "from_branch": null,
+    "budget_usd": null,
+    "spent_usd": null,
+    "over_budget": false
   }
 ]
